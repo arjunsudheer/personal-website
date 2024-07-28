@@ -9,7 +9,7 @@ interface InfoCardProps {
 const InfoCard = ({ title, imgSrc, description, url, displayAnimation }: InfoCardProps) => {
 	const showInformationPage = (): void => {
 		if (displayAnimation) {
-			console.log("animate");
+			window.open(url);
 		} else {
 			window.open(url);
 		}

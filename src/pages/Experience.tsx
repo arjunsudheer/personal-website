@@ -8,8 +8,8 @@ const Experience = () => {
 				<InfoCard
 					title='SCE Internship'
 					imgSrc='src/assets/experience/SCE_SJSU_Logo.jpg'
-					description='Implemented QR codes and prometheus metrics fro a custom URL shortening service.'
-					url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=10&coid=42140'
+					description='Implemented QR codes and prometheus metrics for a custom URL shortening service.'
+					url=''
 					displayAnimation={false}
 				/>
 			</div>
@@ -20,15 +20,15 @@ const Experience = () => {
 					title='Code Ninjas'
 					imgSrc='src/assets/experience/Code_Ninjas_Logo.jpg'
 					description='Tutored K-8 students in Computer Science concepts and started an FLL robotics club.'
-					url='https://catalog.foothill.edu/course-outlines/C-S-55A/'
+					url=''
 					displayAnimation={false}
 				/>
 				<InfoCard
 					title='Cupertino Robotics'
 					imgSrc='src/assets/experience/Cupertino_Robotics_Logo.jpg'
 					description='Team lead for robot code and computer vision teams.'
-					url='https://www.deanza.edu/faculty/garbaceadelia/cis22a.html'
-					displayAnimation={false}
+					url='http://127.0.0.1:5173/experience/Cupertino%20Robotics'
+					displayAnimation={true}
 				/>
 			</div>
 		</>
