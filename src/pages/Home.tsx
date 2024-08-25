@@ -67,9 +67,8 @@ const Home = () => {
 			</p>
 			<p className='m-3 dark:text-white'>
 				Please feel free to learn more about my experiences and expertise by clicking various
-				sections on the navbar above. If you ever need to ask a quick question, you can always ask
-				Codey, a custom chatbot I trained using Llama 3. If you ever want to reach out or have a
-				quick chat, please don't hesitate to reach out to me at: arjun.sudheer@sjsu.edu
+				sections on the navbar above. If you ever want to reach out or have a
+				quick chat, please don't hesitate to reach out to me at: arjun.sudheer@sjsu.edu.
 			</p>
 
 			<div className='grid grid-cols-1 md:flex dark:text-white'>
