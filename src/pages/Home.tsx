@@ -16,7 +16,7 @@ const Home = () => {
 				</div>
 				<div className='w-full md:w-1/2 md:border-b border-black dark:border-white p-3'>
 					<img
-						src='/src/assets/home/Arjun_Sudheer_Professional_Headshot.jpg'
+						src='/assets/home/Arjun_Sudheer_Professional_Headshot.jpg'
 						alt='A picture of Arjun Sudheer'
 						className='mx-auto w-full md:w-1/3'
 					/>

@@ -28,7 +28,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Cupertino Robotics'
-							imgSrc='/src/assets/experience/Cupertino_Robotics_Logo.jpg'
+							imgSrc='/assets/experience/Cupertino_Robotics_Logo.jpg'
 							url='https://github.com/Tino-FRC-2473/FRC2022-Vision/commits/main/?author=arjunsudheer'
 							skillsLearned={[
 								"Communication",
@@ -64,7 +64,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Code Ninjas'
-							imgSrc='/src/assets/experience/Code_Ninjas_Logo.jpg'
+							imgSrc='/assets/experience/Code_Ninjas_Logo.jpg'
 							url='https://www.codeninjas.com/ca-cupertino'
 							skillsLearned={[
 								"Communication",
@@ -100,7 +100,7 @@ function App() {
 					element={
 						<InfoPage
 							title='SCE Internship'
-							imgSrc='/src/assets/experience/SCE_SJSU_Logo.jpg'
+							imgSrc='/assets/experience/SCE_SJSU_Logo.jpg'
 							url='https://github.com/SCE-Development/cleezy/commits/dev/?author=arjunsudheer'
 							skillsLearned={[
 								"Python Programming",
@@ -168,7 +168,7 @@ function App() {
 					element={
 						<InfoPage
 							title='IC CAE Scholar Research Program'
-							imgSrc='/src/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
+							imgSrc='/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
 							url='https://www.dni.gov/index.php/iccae'
 							skillsLearned={[
 								"Cybersecurity",
@@ -195,7 +195,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Project Engineering Success AI Research Program'
-							imgSrc='/src/assets/research/Traffic_Signs_AI_Research.jpg'
+							imgSrc='/assets/research/Traffic_Signs_AI_Research.jpg'
 							url='https://github.com/arjunsudheer/traffic-sign-detection'
 							skillsLearned={[
 								"Tensorflow",
@@ -230,7 +230,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Zero-day Malware Detection Using Diffusion and GAN Models'
-							imgSrc='/src/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
+							imgSrc='/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
 							url='https://github.com/arjunsudheer/identifying-malware-images-using-generative-models-research'
 							skillsLearned={[
 								"Tensorflow",
@@ -270,7 +270,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Automation Scripts'
-							imgSrc='/src/assets/projects/Automation_Scripts.jpg'
+							imgSrc='/assets/projects/Automation_Scripts.jpg'
 							url='https://github.com/arjunsudheer/automation-scripts'
 							skillsLearned={[
 								"Bash Scripting",
@@ -331,7 +331,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Online Food Store'
-							imgSrc='/src/assets/projects/Online_Food_Store.jpg'
+							imgSrc='/assets/projects/Online_Food_Store.jpg'
 							url='https://github.com/arjunsudheer/CMPE-131-Online-Food-Store'
 							skillsLearned={[
 								"HTML",
@@ -365,7 +365,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Cornhole Referee'
-							imgSrc='/src/assets/projects/Cornhole_Referee.jpg'
+							imgSrc='/assets/projects/Cornhole_Referee.jpg'
 							url='https://github.com/arjunsudheer/cornhole-referee'
 							skillsLearned={[
 								"Supervised Machine Learning",
@@ -399,7 +399,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Personal Website'
-							imgSrc='/src/assets/projects/personal_website.svg'
+							imgSrc='/assets/projects/personal_website.svg'
 							url='https://github.com/arjunsudheer/personal-website'
 							skillsLearned={[
 								"React",
