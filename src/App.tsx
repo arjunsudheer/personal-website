@@ -251,7 +251,7 @@ function App() {
 								"VirusShare Dataset"
 							]}
 							description={[
-								"I was an undergraduate student researcher in an NSF REU at San Jose State University. I am currently working on a research topic concerning zero-day malware detection using images and generative models.",
+								"I am an undergraduate student researcher in an NSF REU at San Jose State University. I am currently working on a research topic concerning zero-day malware detection using images and generative models.",
 
 								"My research aims to address the issue of the lack of adequate training data with regard to zero-day malware detection. As a result, I am writing DCGAN, WGAN-GP, and Diffusion models to generate synthetic malware and evaluating which of the three models produces the highest quality images. I am also evaluating the monochrome, grayscale, RGB, and CMYK color spaces to see which color space representation performs the best in synthetic malware image generation. The end goal is to see if generative models can be used to enhance the quality of malware datasets to increase the chances of detecting zero-day malware attacks.",
 
