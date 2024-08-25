@@ -2,7 +2,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface InfoPageProps {
 	title: string;
-	imgSrc: string;
+	imgSrc?: string;
 	url: string;
 	skillsLearned: string[];
 	toolsUsed: string[];
@@ -22,7 +22,7 @@ const InfoPage = ({ title, imgSrc, url, skillsLearned, toolsUsed, description }:
 			<h1 className='text-center text-lg font-bold underline dark:text-white'>{title}</h1>
 			<div className='grid grid-cols-1 md:flex'>
 				<div className='w-full md:w-1/4 px-2'>
-					<img src={imgSrc} alt='Information Image' className='dark:text-white mb-2' />
+					{(imgSrc !== undefined) && <img src={imgSrc} alt='Information Image' className='dark:text-white my-2 w-full max-h-80' />}
 					<hr />
 					<a href={url} target='_blank' className='block text-blue-400 underline my-2'>
 						Learn More <FaExternalLinkAlt className='inline size-3 text-black dark:text-white' />

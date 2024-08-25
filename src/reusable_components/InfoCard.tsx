@@ -1,6 +1,6 @@
 interface InfoCardProps {
 	title: string;
-	imgSrc: string;
+	imgSrc?: string;
 	description: string;
 	url: string;
 	displayAnimation: boolean;
@@ -21,7 +21,7 @@ const InfoCard = ({ title, imgSrc, description, url, displayAnimation }: InfoCar
 			onClick={showInformationPage}
 		>
 			<h3 className='m-1 font-bold text-lg'>{title}</h3>
-			<img className='mx-auto my-3 w-1/2' src={imgSrc} alt='Info Card Image' />
+			{(imgSrc !== undefined) && <img className='mx-auto my-3 w-1/2' src={imgSrc} alt='Info Card Image' />}
 			<p className='m-1'>{description}</p>
 		</div>
 	);
