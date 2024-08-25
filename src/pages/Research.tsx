@@ -28,13 +28,6 @@ const Research = () => {
 			<h3 className='underline text-lg m-3 dark:text-white'>Cybersecurity Research</h3>
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
-					title='Google Carla Autonomous Car Security'
-					imgSrc='#'
-					description='Worked on a research project sponsored by Google to identify the most likely causes of an autonomous car crash using fuzzing and falsification techniques.'
-					url='https://www.deanza.edu/faculty/garbaceadelia/cis22a.html'
-					displayAnimation={false}
-				/>
-				<InfoCard
 					title='Ransomware Attacks on US Critical Infrastructure'
 					imgSrc='/src/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
 					description='Presented my research work on ransomware attacks and its effects on US national security at the IC CAE Scholar event.'

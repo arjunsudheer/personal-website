@@ -43,8 +43,7 @@ const InfoPage = ({ title, imgSrc, url, skillsLearned, toolsUsed, description }:
 					</ul>
 				</div>
 				<hr />
-				<div className='w-full md:w-1/2 px-2 dark:text-white'>{descriptionList}</div>
-				<div className='w-full md:w-1/4 px-2 dark:text-white'>Ad space</div>
+				<div className='w-full md:w-3/4 px-2 dark:text-white'>{descriptionList}</div>
 			</div>
 		</>
 	);
