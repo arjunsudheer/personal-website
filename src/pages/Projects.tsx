@@ -30,7 +30,7 @@ const Projects = () => {
 					title='Online Food Store'
 					imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
 					description='Built an online food store website with HTML, CSS, JavaScript, PHP, and MySQL.'
-					url={location.pathname + '/OnlineFood%20Store'}
+					url={location.pathname + '/OnlineFoodStore'}
 					displayAnimation={false}
 				/>
 			</div>

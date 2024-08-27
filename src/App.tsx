@@ -164,7 +164,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/research/ICCAE ScholarProgram'
+					path='/research/ICCAEScholarProgram'
 					element={
 						<InfoPage
 							title='IC CAE Scholar Research Program'
