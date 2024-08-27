@@ -10,7 +10,7 @@ const Projects = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Cornhole Referee'
-					imgSrc='/assets/projects/Cornhole_Referee.jpg'
+					imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
 					description='Developed referee system to track points in a cornhole game using Python, YOLOv8 and Supervision.'
 					url={location.pathname + '/CornholeReferee'}
 					displayAnimation={false}
@@ -21,16 +21,16 @@ const Projects = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Personal Website'
-					imgSrc='/assets/projects/personal_website.svg'
+					imgSrc='/personal-website/assets/projects/personal_website.svg'
 					description='Made a personal website to highlight my expertise using Typescript and React.'
 					url={location.pathname + '/PersonalWebsite'}
 					displayAnimation={false}
 				/>
 				<InfoCard
 					title='Online Food Store'
-					imgSrc='/assets/projects/Online_Food_Store.jpg'
+					imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
 					description='Built an online food store website with HTML, CSS, JavaScript, PHP, and MySQL.'
-					url={location.pathname + '/OnlineFoodStore'}
+					url={location.pathname + '/OnlineFood%20Store'}
 					displayAnimation={false}
 				/>
 			</div>
@@ -49,7 +49,7 @@ const Projects = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Automation Scripts'
-					imgSrc='/assets/projects/Automation_Scripts.jpg'
+					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 					description='Built a custom CLI to automate daily workflows and help manage time effectively.'
 					url={location.pathname + '/AutomationScripts'}
 					displayAnimation={false}
