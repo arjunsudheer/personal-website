@@ -14,14 +14,14 @@ const Research = () => {
 					imgSrc='/personal-website/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
 					description='Conducting research on zero-day malware detection using Diffusion and GAN models.'
 					url={location.pathname + '/Zero-dayMalwareDetectionUsingDiffusionandGANModels'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 				<InfoCard
 					title='Traffic Signs Image Detection/Classification'
 					imgSrc='/personal-website/assets/research/Traffic_Signs_AI_Research.jpg'
 					description='Classified and identified German traffic signs using Tensorflow and YOLOv8.'
 					url={location.pathname + '/ProjectEngineeringSuccessProgram'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 
@@ -32,13 +32,13 @@ const Research = () => {
 					imgSrc='/personal-website/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
 					description='Presented my research work on ransomware attacks and its effects on US national security at the IC CAE Scholar event.'
 					url={location.pathname + '/ICCAEScholarProgram'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 				<InfoCard
 					title='Digital Forensics Research'
 					description='Studied digital forensics principles and tools, including how to use the Autopsy Software by Sleuth Kit. Wrote the curriculum for the Cybersecurity Clinics course at SJSU.'
 					url={location.pathname + '/DigitalForensics'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 		</>

@@ -3,7 +3,7 @@ import { useLocation } from "react-router-dom";
 
 const Experience = () => {
 	const location = useLocation();
-
+	
 	return (
 		<>
 			<h3 className='underline text-lg m-3 dark:text-white'>Internships</h3>
@@ -13,7 +13,7 @@ const Experience = () => {
 					imgSrc='/personal-website/assets/experience/SCE_SJSU_Logo.jpg'
 					description='Implemented QR codes and prometheus metrics for a custom URL shortening service.'
 					url={location.pathname + '/SCEInternship'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 
@@ -24,7 +24,7 @@ const Experience = () => {
 					imgSrc='/personal-website/assets/experience/Code_Ninjas_Logo.jpg'
 					description='Tutored K-8 students in Computer Science concepts and started an FLL robotics club.'
 					url={location.pathname + '/CodeNinjas'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 				<InfoCard
 					title='Cupertino Robotics'

@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom'
+
 interface InfoCardProps {
 	title: string;
 	imgSrc?: string;
@@ -7,9 +9,11 @@ interface InfoCardProps {
 }
 
 const InfoCard = ({ title, imgSrc, description, url, displayAnimation }: InfoCardProps) => {
+	const navigate = useNavigate();
+
 	const showInformationPage = (): void => {
 		if (displayAnimation) {
-			window.open(url);
+			navigate(url);
 		} else {
 			window.open(url);
 		}

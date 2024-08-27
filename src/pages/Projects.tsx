@@ -13,7 +13,7 @@ const Projects = () => {
 					imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
 					description='Developed referee system to track points in a cornhole game using Python, YOLOv8 and Supervision.'
 					url={location.pathname + '/CornholeReferee'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 
@@ -24,14 +24,14 @@ const Projects = () => {
 					imgSrc='/personal-website/assets/projects/personal_website.svg'
 					description='Made a personal website to highlight my expertise using Typescript and React.'
 					url={location.pathname + '/PersonalWebsite'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 				<InfoCard
 					title='Online Food Store'
 					imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
 					description='Built an online food store website with HTML, CSS, JavaScript, PHP, and MySQL.'
 					url={location.pathname + '/OnlineFoodStore'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 
@@ -41,7 +41,7 @@ const Projects = () => {
 					title='Access Vault'
 					description='Wrote a script that automates user and file privileges to make it easy to follow the principle of least privilege.'
 					url={location.pathname + '/AccessVault'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 
@@ -52,7 +52,7 @@ const Projects = () => {
 					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 					description='Built a custom CLI to automate daily workflows and help manage time effectively.'
 					url={location.pathname + '/AutomationScripts'}
-					displayAnimation={false}
+					displayAnimation={true}
 				/>
 			</div>
 		</>

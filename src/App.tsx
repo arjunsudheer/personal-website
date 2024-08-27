@@ -24,7 +24,7 @@ function App() {
 				<Route path='/certifications' element={<Certifications />} />
 
 				<Route
-					path='/experience/CupertinoRobotics'
+					path='experience/CupertinoRobotics'
 					element={
 						<InfoPage
 							title='Cupertino Robotics'
@@ -60,7 +60,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/experience/CodeNinjas'
+					path='experience/CodeNinjas'
 					element={
 						<InfoPage
 							title='Code Ninjas'
@@ -96,7 +96,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/experience/SCEInternship'
+					path='experience/SCEInternship'
 					element={
 						<InfoPage
 							title='SCE Internship'
@@ -421,7 +421,7 @@ function App() {
 
 								"My personal website showcases my work and research experience, personal projects, courses that I've completed, and any certifications that I have earned. My personal website is also responsive to it is easy to use in both desktop and mobile environments.",
 
-								"My personal website is hosted on AWS using the S3 service.",
+								"My personal website is hosted on GitHub Pages.",
 							]}
 						/>
 					}
