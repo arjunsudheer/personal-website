@@ -11,14 +11,14 @@ const Research = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Identifying Malware Images Using Diffusion and GAN Models'
-					imgSrc='/personal-website/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
+					imgSrc='/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
 					description='Conducting research on zero-day malware detection using Diffusion and GAN models.'
 					url={location.pathname + '/Zero-dayMalwareDetectionUsingDiffusionandGANModels'}
 					displayAnimation={false}
 				/>
 				<InfoCard
 					title='Traffic Signs Image Detection/Classification'
-					imgSrc='/personal-website/assets/research/Traffic_Signs_AI_Research.jpg'
+					imgSrc='/assets/research/Traffic_Signs_AI_Research.jpg'
 					description='Classified and identified German traffic signs using Tensorflow and YOLOv8.'
 					url={location.pathname + '/ProjectEngineeringSuccessProgram'}
 					displayAnimation={false}
@@ -29,7 +29,7 @@ const Research = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Ransomware Attacks on US Critical Infrastructure'
-					imgSrc='/personal-website/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
+					imgSrc='/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
 					description='Presented my research work on ransomware attacks and its effects on US national security at the IC CAE Scholar event.'
 					url={location.pathname + '/ICCAEScholarProgram'}
 					displayAnimation={false}

@@ -10,7 +10,7 @@ const Experience = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='SCE Internship'
-					imgSrc='/personal-website/assets/experience/SCE_SJSU_Logo.jpg'
+					imgSrc='/assets/experience/SCE_SJSU_Logo.jpg'
 					description='Implemented QR codes and prometheus metrics for a custom URL shortening service.'
 					url={location.pathname + '/SCEInternship'}
 					displayAnimation={false}
@@ -21,14 +21,14 @@ const Experience = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Code Ninjas'
-					imgSrc='/personal-website/assets/experience/Code_Ninjas_Logo.jpg'
+					imgSrc='/assets/experience/Code_Ninjas_Logo.jpg'
 					description='Tutored K-8 students in Computer Science concepts and started an FLL robotics club.'
 					url={location.pathname + '/CodeNinjas'}
 					displayAnimation={false}
 				/>
 				<InfoCard
 					title='Cupertino Robotics'
-					imgSrc='/personal-website/assets/experience/Cupertino_Robotics_Logo.jpg'
+					imgSrc='/assets/experience/Cupertino_Robotics_Logo.jpg'
 					description='Team lead for robot code and computer vision teams.'
 					url={location.pathname + '/CupertinoRobotics'}
 					displayAnimation={true}
