@@ -24,7 +24,7 @@ function App() {
 				<Route path='/certifications' element={<Certifications />} />
 
 				<Route
-					path='/experience/Cupertino Robotics'
+					path='/experience/CupertinoRobotics'
 					element={
 						<InfoPage
 							title='Cupertino Robotics'
@@ -60,7 +60,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/experience/Code Ninjas'
+					path='/experience/CodeNinjas'
 					element={
 						<InfoPage
 							title='Code Ninjas'
@@ -96,7 +96,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/experience/SCE Internship'
+					path='/experience/SCEInternship'
 					element={
 						<InfoPage
 							title='SCE Internship'
@@ -131,7 +131,7 @@ function App() {
 				/>
 
 				<Route
-					path='/research/Digital Forensics'
+					path='/research/DigitalForensics'
 					element={
 						<InfoPage
 							title='Digital Forensics Research'
@@ -164,7 +164,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/research/IC CAE Scholar Program'
+					path='/research/ICCAE ScholarProgram'
 					element={
 						<InfoPage
 							title='IC CAE Scholar Research Program'
@@ -191,7 +191,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/research/Project Engineering Success Program'
+					path='/research/ProjectEngineeringSuccessProgram'
 					element={
 						<InfoPage
 							title='Project Engineering Success AI Research Program'
@@ -226,7 +226,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/research/Zero-day Malware Detection Using Diffusion and GAN Models'
+					path='/research/Zero-dayMalwareDetectionUsingDiffusionandGANModels'
 					element={
 						<InfoPage
 							title='Zero-day Malware Detection Using Diffusion and GAN Models'
@@ -266,7 +266,7 @@ function App() {
 				/>
 
 				<Route
-					path='/projects/Automation Scripts'
+					path='/projects/AutomationScripts'
 					element={
 						<InfoPage
 							title='Automation Scripts'
@@ -301,7 +301,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/projects/Access Vault'
+					path='/projects/AccessVault'
 					element={
 						<InfoPage
 							title='Access Vault'
@@ -327,7 +327,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/projects/Online Food Store'
+					path='/projects/OnlineFoodStore'
 					element={
 						<InfoPage
 							title='Online Food Store'
@@ -361,7 +361,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/projects/Cornhole Referee'
+					path='/projects/CornholeReferee'
 					element={
 						<InfoPage
 							title='Cornhole Referee'
@@ -395,7 +395,7 @@ function App() {
 					}
 				/>
 				<Route
-					path='/projects/Personal Website'
+					path='/projects/PersonalWebsite'
 					element={
 						<InfoPage
 							title='Personal Website'

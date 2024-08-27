@@ -12,7 +12,7 @@ const Projects = () => {
 					title='Cornhole Referee'
 					imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
 					description='Developed referee system to track points in a cornhole game using Python, YOLOv8 and Supervision.'
-					url={location.pathname + '/Cornhole%20Referee'}
+					url={location.pathname + '/CornholeReferee'}
 					displayAnimation={false}
 				/>
 			</div>
@@ -22,15 +22,15 @@ const Projects = () => {
 				<InfoCard
 					title='Personal Website'
 					imgSrc='/personal-website/assets/projects/personal_website.svg'
-					description='Made a personal website to highlight my expertise using Typescript, React, Python Flask, Pytorch, and Llama 3.'
-					url={location.pathname + '/Personal%20Website'}
+					description='Made a personal website to highlight my expertise using Typescript and React.'
+					url={location.pathname + '/PersonalWebsite'}
 					displayAnimation={false}
 				/>
 				<InfoCard
 					title='Online Food Store'
 					imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
 					description='Built an online food store website with HTML, CSS, JavaScript, PHP, and MySQL.'
-					url={location.pathname + '/Online%20Food%20Store'}
+					url={location.pathname + '/OnlineFood%20Store'}
 					displayAnimation={false}
 				/>
 			</div>
@@ -39,8 +39,8 @@ const Projects = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Access Vault'
-					description='Wrote a script that automates user and file privileges so business can follow the principle of least privilege.'
-					url={location.pathname + '/Access%20Vault'}
+					description='Wrote a script that automates user and file privileges to make it easy to follow the principle of least privilege.'
+					url={location.pathname + '/AccessVault'}
 					displayAnimation={false}
 				/>
 			</div>
@@ -51,7 +51,7 @@ const Projects = () => {
 					title='Automation Scripts'
 					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 					description='Built a custom CLI to automate daily workflows and help manage time effectively.'
-					url={location.pathname + '/Automation%20Scripts'}
+					url={location.pathname + '/AutomationScripts'}
 					displayAnimation={false}
 				/>
 			</div>
