@@ -77,10 +77,7 @@ function App() {
 								"JavaScript",
 								"Python",
 							]}
-							toolsUsed={[
-								"Microsoft MakeCode",
-								"FLL Robotics",
-							]}
+							toolsUsed={["Microsoft MakeCode", "FLL Robotics"]}
 							description={[
 								"I worked at Code Ninjas as a Code Sensei (Coding Instructor) during my Junior and Senior years of high school. I tutored K-8 students in programming languages like Scratch, Make Code, and JavaScript, and started my own FLL robotics club where I taught students how to design and build the robot with LEGOs, and write software for their robot using Python.",
 
@@ -90,7 +87,7 @@ function App() {
 
 								"I started an FLL robotics club at my Code Ninjas center to introduce the students to robotics concepts. The curriculum I taught in the robotics club consisted of completing official challenges from previous FLL Robotics competitions. I taught the students some basic design principles when using the LEGO pieces to construct the robot, as well as various software techniques, like using sensor inputs and using motors effectively, to help them write efficient code for their software.  One notable project was the line following project where students had to code their robot to follow a white line on the ground.",
 
-								"Overall, I learned a lot of valuable skills from working at Code Ninjas and I was able to create a positive impact by helping future software engineers to develop their skills."
+								"Overall, I learned a lot of valuable skills from working at Code Ninjas and I was able to create a positive impact by helping future software engineers to develop their skills.",
 							]}
 						/>
 					}
@@ -113,16 +110,11 @@ function App() {
 								"Python pyqrcode library",
 								"Python Pillow Library",
 							]}
-							toolsUsed={[
-								"Docker Desktop & Docker CLI",
-								"Postman",
-								"GitHub",
-								"Visual Studio Code"
-							]}
+							toolsUsed={["Docker Desktop & Docker CLI", "Postman", "GitHub", "Visual Studio Code"]}
 							description={[
-								"As an intern for SCE at San Jose State University, I was tasked with implementing the QR Code functionality for their custom url shortener called \"Cleezy\". I worked with Python, FastAPI, Docker, Postman, and Prometheus for my tasks.",
+								'As an intern for SCE at San Jose State University, I was tasked with implementing the QR Code functionality for their custom url shortener called "Cleezy". I worked with Python, FastAPI, Docker, Postman, and Prometheus for my tasks.',
 
-								"My first task involved generating a QR Code given an alias, and have the QR Code point to the appropriate alias link. For example, an alias of \"sce\" would point to the official SCE website. I used python and the pyqrcode library to generate the QR Codes and save it on the docker container. I used FastAPI to create a qr/ endpoint where generated QR Codes would be displayed as a File Response so users could scan the qr code with their mobile device. I used Postman to send POST requests to the cleezy server to add new aliases so the qr codes could be generated. I checked if the alias existed in the SQLite database, and if it didn't, I created a new QR Code. I used python argparse to accept command line arguments for the cache size (number of qr codes to store), and appropriately added and removed QR Codes to stay within the cache size limit. I also added some branding to the QR Codes by using the pillow library from Python to add the SCE logo in the center of each generated QR Code.",
+								'My first task involved generating a QR Code given an alias, and have the QR Code point to the appropriate alias link. For example, an alias of "sce" would point to the official SCE website. I used python and the pyqrcode library to generate the QR Codes and save it on the docker container. I used FastAPI to create a qr/ endpoint where generated QR Codes would be displayed as a File Response so users could scan the qr code with their mobile device. I used Postman to send POST requests to the cleezy server to add new aliases so the qr codes could be generated. I checked if the alias existed in the SQLite database, and if it didn\'t, I created a new QR Code. I used python argparse to accept command line arguments for the cache size (number of qr codes to store), and appropriately added and removed QR Codes to stay within the cache size limit. I also added some branding to the QR Codes by using the pillow library from Python to add the SCE logo in the center of each generated QR Code.',
 
 								"My second task involved using Prometheus to create a custom metric to track cleezy's performance when using the QR Codes. I used a gauge to keep track of the QR Code cache (the number of QR Codes stored), and the total size in bytes of the stored QR Codes. I used the inc(), dec(), and set() functions of the Prometheus gauge to accurately keep track of the QR Code cache size and the total number of bytes for all generated QR Codes. I made these metrics visible at the metrics/ endpoint in the cleezy application.",
 							]}
@@ -146,13 +138,9 @@ function App() {
 								"Encryption",
 								"Encryption",
 								"Data compression techniques",
-								"Cloud Computing"
+								"Cloud Computing",
 							]}
-							toolsUsed={[
-								"Linux Command Line",
-								"Autopsy (from Sleuthkit)",
-								"Oracle VirtualBox",
-							]}
+							toolsUsed={["Linux Command Line", "Autopsy (from Sleuthkit)", "Oracle VirtualBox"]}
 							description={[
 								"As a digital forensics researcher, I studied digital forensics principles and tools, including how to use the Autopsy Software by Sleuth Kit. Through my research work, I wrote the curriculum for the Cybersecurity Clinics course at SJSU.",
 
@@ -179,9 +167,7 @@ function App() {
 								"National Security",
 								"U.S. Foreign Policy",
 							]}
-							toolsUsed={[
-								"Microsoft PowerPoint",
-							]}
+							toolsUsed={["Microsoft PowerPoint"]}
 							description={[
 								"I was nominated by Professor Young Park to be one of the few students who get to participate in the USC IC CAE Scholars Research Program. This research program focuses on US National Security.",
 
@@ -206,11 +192,7 @@ function App() {
 								"Ultralytics",
 								"YOLOv8",
 							]}
-							toolsUsed={[
-								"Google Colab",
-								"Kaggle (GTSRB Dataset)",
-								"Roboflow (GTSDB Dataset)"
-							]}
+							toolsUsed={["Google Colab", "Kaggle (GTSRB Dataset)", "Roboflow (GTSDB Dataset)"]}
 							description={[
 								"I was an undergraduate student researcher in the Project Engineering Success program at San Jose State University. Project Engineering Success is a first-year research program for first-year engineering majors at San Jose State.",
 
@@ -220,7 +202,7 @@ function App() {
 
 								"In the second semester, I worked on creating an object detection model to identify various traffic signs in a in real-time. I used the ultralytics library and the YOLOv8 model for road sign object detection along with the German Traffic Sign Detection Benchmark (GTSDB) dataset. After training, my model was able to identify various German Traffic Signs in real-time as someone was driving their car.",
 
-								"This research has applications for self-driving cars by ensuring that autonomous cars can process data in real-time to keep passengers and others safe on the road."
+								"This research has applications for self-driving cars by ensuring that autonomous cars can process data in real-time to keep passengers and others safe on the road.",
 							]}
 						/>
 					}
@@ -241,14 +223,14 @@ function App() {
 								"numpy",
 								"pillow",
 								"seaborn",
-								"TSNE visualizations"
+								"TSNE visualizations",
 							]}
 							toolsUsed={[
 								"Google Colab",
 								"Nvidia GPU",
 								"Visual Studio Code",
 								"GitHub",
-								"VirusShare Dataset"
+								"VirusShare Dataset",
 							]}
 							description={[
 								"I am an undergraduate student researcher in an NSF REU at San Jose State University. I am currently working on a research topic concerning zero-day malware detection using images and generative models.",
@@ -259,7 +241,7 @@ function App() {
 
 								"To evaluate the performance of each model and each color space, I am using classifiers, FID scores, and TSNE visualizations. I am using a custom TensorFlow implementation of a multilayer perceptron (MLP) classifier, and the Random Forest Classifier and Support Vector Machine Classifier from scikit-learn. I am using both a binary classifier (original malware image vs. synthetically generated malware image), as well as a multi-class classifier.",
 
-								"This research has applications for improving zero-day malware detection rates by using generative models to enhance the training data for malware detection models."
+								"This research has applications for improving zero-day malware detection rates by using generative models to enhance the training data for malware detection models.",
 							]}
 						/>
 					}
@@ -281,13 +263,9 @@ function App() {
 								"Asynchronous Bash Programming",
 								"Bash arrays",
 								"Bash functions",
-								"Bash file I/O"
+								"Bash file I/O",
 							]}
-							toolsUsed={[
-								"Linux terminal",
-								"Visual Studio Code",
-								"GitHub"
-							]}
+							toolsUsed={["Linux terminal", "Visual Studio Code", "GitHub"]}
 							description={[
 								"Automation Scripts is a custom CLI that I wrote using Bash to help users automate their workflows and manage their time better. Automation Scripts uses optargs to perform specific operations, and can help users with opening apps, opening webpages, opening files or directories on their system, and run automated workflows to help keep track of and manage time.",
 
@@ -295,7 +273,7 @@ function App() {
 
 								"Automation Scripts can also keep track of time for its users and help them manage their time. Users can set up workflows consisting of the amount of time they want to spend on a certain task, and the tasks they want to complete. Automation Scripts then has the ability to set up its user's workflow and keep track of the time spent on a task, providing audible messages when time is almost finished for that task.",
 
-								"Automation Scripts allows users to automate their workflow and ensure that they are managing their time well."
+								"Automation Scripts allows users to automate their workflow and ensure that they are managing their time well.",
 							]}
 						/>
 					}
@@ -311,13 +289,9 @@ function App() {
 								"Linux Commands",
 								"File and user permissions",
 								"Bash functions",
-								"Bash file I/O"
+								"Bash file I/O",
 							]}
-							toolsUsed={[
-								"Linux terminal",
-								"Visual Studio Code",
-								"GitHub"
-							]}
+							toolsUsed={["Linux terminal", "Visual Studio Code", "GitHub"]}
 							description={[
 								"Access Vault in a bash script I wrote that helps automate file and user permissions so organizations can follow the principle of least privilege. Access Vault uses file  I/O to update permissions based on values listed in a csv file.",
 
@@ -343,11 +317,7 @@ function App() {
 								"Bash arrays",
 								"Apache Web Server",
 							]}
-							toolsUsed={[
-								"GitHub",
-								"GitHub Actions",
-								"Visual Studio Code"
-							]}
+							toolsUsed={["GitHub", "GitHub Actions", "Visual Studio Code"]}
 							description={[
 								"Online Food Store was a web application that I built as a class project in CMPE 131 (Software Engineering 1). I worked with a team of 6 other people to build the Online Food Store website using agile and scrum methodologies.",
 
@@ -355,7 +325,7 @@ function App() {
 
 								"To test our web application, I used the PHPUnit testing framework to run automated tests to ensure that the PHP Script was getting the correct results from the database query. I also set up a GitHub action to run that PHPUnit test whenever a new commit was pushed to GitHub to run an automated integration test on our web application. This automated GitHub action allowed my group to see if a new commit broke any existing code.",
 
-								"Throughout the project, I helped maintain our team's product backlog, and come up with user stories and personas to define the product goal and product vision. I supported my team in our weekly scrum meetings and progress updates."
+								"Throughout the project, I helped maintain our team's product backlog, and come up with user stories and personas to define the product goal and product vision. I supported my team in our weekly scrum meetings and progress updates.",
 							]}
 						/>
 					}
@@ -375,11 +345,7 @@ function App() {
 								"OpenCV",
 								"Generating documentation with Sphinx",
 							]}
-							toolsUsed={[
-								"Roboflow Image Annotator",
-								"GitHub",
-								"Visual Studio Code"
-							]}
+							toolsUsed={["Roboflow Image Annotator", "GitHub", "Visual Studio Code"]}
 							description={[
 								"Cornhole Referee is a project I made to keep track of the score for a the red team and blue team in a cornhole game, similar to how a human referee might do so.",
 
@@ -389,7 +355,7 @@ function App() {
 
 								"To collect my data, I wrote a python script using OpenCV to capture images from a live camera feed. I then stored these images and used Roboflow to annotate my images with boundary boxes. I also applied image augmentations like rotations, exposure, and saturation to allow my model to identify objects of interest in various lighting conditions and camera angle placements.",
 
-								"I generated Python documentation using Sphinx document generator. I wrote docstrings for my defined functions in the Google docstring format, and then generated HTML pages containing the documentation for my project."
+								"I generated Python documentation using Sphinx document generator. I wrote docstrings for my defined functions in the Google docstring format, and then generated HTML pages containing the documentation for my project.",
 							]}
 						/>
 					}
@@ -409,13 +375,7 @@ function App() {
 								"AWS Web Hosting",
 								"AWS S3",
 							]}
-							toolsUsed={[
-								"Linux Terminal",
-								"GitHub",
-								"Visual Studio Code",
-								"AWS Console",
-								"Node"
-							]}
+							toolsUsed={["Linux Terminal", "GitHub", "Visual Studio Code", "AWS Console", "Node"]}
 							description={[
 								"Yes, I am talking about the website that you are viewing right now. This is my personal website which I wrote in React using TypeScript and Tailwind CSS.",
 

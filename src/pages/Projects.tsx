@@ -12,7 +12,7 @@ const Projects = () => {
 					title='Cornhole Referee'
 					imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
 					description='Developed referee system to track points in a cornhole game using Python, YOLOv8 and Supervision.'
-					url={location.pathname + '/CornholeReferee'}
+					url={location.pathname + "/CornholeReferee"}
 					displayAnimation={true}
 				/>
 			</div>
@@ -23,14 +23,14 @@ const Projects = () => {
 					title='Personal Website'
 					imgSrc='/personal-website/assets/projects/personal_website.svg'
 					description='Made a personal website to highlight my expertise using Typescript and React.'
-					url={location.pathname + '/PersonalWebsite'}
+					url={location.pathname + "/PersonalWebsite"}
 					displayAnimation={true}
 				/>
 				<InfoCard
 					title='Online Food Store'
 					imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
 					description='Built an online food store website with HTML, CSS, JavaScript, PHP, and MySQL.'
-					url={location.pathname + '/OnlineFoodStore'}
+					url={location.pathname + "/OnlineFoodStore"}
 					displayAnimation={true}
 				/>
 			</div>
@@ -39,8 +39,9 @@ const Projects = () => {
 			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
 				<InfoCard
 					title='Access Vault'
+					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 					description='Wrote a script that automates user and file privileges to make it easy to follow the principle of least privilege.'
-					url={location.pathname + '/AccessVault'}
+					url={location.pathname + "/AccessVault"}
 					displayAnimation={true}
 				/>
 			</div>
@@ -51,7 +52,7 @@ const Projects = () => {
 					title='Automation Scripts'
 					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 					description='Built a custom CLI to automate daily workflows and help manage time effectively.'
-					url={location.pathname + '/AutomationScripts'}
+					url={location.pathname + "/AutomationScripts"}
 					displayAnimation={true}
 				/>
 			</div>

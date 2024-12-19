@@ -19,11 +19,16 @@ const InfoPage = ({ title, imgSrc, url, skillsLearned, toolsUsed, description }:
 	));
 	return (
 		<>
-			<h1 className='text-center text-lg font-bold underline dark:text-white'>{title}</h1>
+			<h1 className='my-2 text-center text-3xl font-bold underline dark:text-white'>{title}</h1>
 			<div className='grid grid-cols-1 md:flex'>
-				<div className='w-full md:w-1/4 px-2'>
-					{(imgSrc !== undefined) && <img src={imgSrc} alt='Information Image' className='dark:text-white my-2 w-full max-h-80' />}
-					<hr />
+				<div className='w-full md:w-1/4 px-2 min-h-screen'>
+					{imgSrc !== undefined && (
+						<img
+							src={imgSrc}
+							alt='Information Image'
+							className='dark:text-white my-2 w-full max-h-80'
+						/>
+					)}
 					<a href={url} target='_blank' className='block text-blue-400 underline my-2'>
 						Learn More <FaExternalLinkAlt className='inline size-3 text-black dark:text-white' />
 					</a>
