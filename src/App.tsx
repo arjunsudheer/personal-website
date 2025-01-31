@@ -259,7 +259,6 @@ function App() {
 								"Linux Commands",
 								"Bash conditionals",
 								"Bash control flow statements",
-								"Bash functions",
 								"Asynchronous Bash Programming",
 								"Bash arrays",
 								"Bash functions",
@@ -283,6 +282,7 @@ function App() {
 					element={
 						<InfoPage
 							title='Access Vault'
+							imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 							url='https://github.com/arjunsudheer/access-vault'
 							skillsLearned={[
 								"Bash Scripting",

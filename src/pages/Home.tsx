@@ -5,7 +5,7 @@ const Home = () => {
 				<div className='w-full md:w-1/2 md:border-b md:border-r border-black dark:border-white p-3'>
 					<h1 className='text-3xl font-bold underline m-2 text-center'>Arjun Sudheer</h1>
 					<h3 className='text-center'>
-						<span className='underline m-2'>University:</span>San Jose State University
+						<span className='underline m-2'>University:</span> San Jose State University
 					</h3>
 					<h3 className='text-center'>
 						<span className='underline m-2'>Major:</span> Software Engineering
