@@ -16,12 +16,14 @@ const Navbar = () => {
 
 	return (
 		<>
-			<div className='w-full border-b border-black dark:border-white dark:text-white md:hidden'>
-				<RxHamburgerMenu className='h-10 mr-5 float-right' onClick={toggleNavbar} />
+			<div className='w-full border-b p-2 border-black dark:border-white md:hidden bg-slate-400 dark:bg-slate-500 dark:text-white relative'>
+				<div className='py-2 flex justify-center items-center relative'>
+					<RxHamburgerMenu className='h-10 absolute right-5' onClick={toggleNavbar} />
+				</div>
 			</div>
 			<nav
 				className={classNames(
-					"grid grid-cols-1 text-center md:flex md:justify-evenly md:p-2.5 md:bg-blue-300 dark:bg-slate-800 dark:text-white",
+					"grid grid-cols-1 text-center md:flex md:justify-evenly md:p-2.5 bg-slate-400 dark:bg-slate-500 dark:text-white",
 					{ hidden: navbarShow === "none" }
 				)}
 			>

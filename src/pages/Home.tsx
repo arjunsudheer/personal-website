@@ -5,7 +5,7 @@ const Home = () => {
 				<div className='w-full md:w-1/2 md:border-b md:border-r border-black dark:border-white p-3'>
 					<h1 className='text-3xl font-bold underline m-2 text-center'>Arjun Sudheer</h1>
 					<h3 className='text-center'>
-						<span className='underline m-2'>University:</span>San Jose State University
+						<span className='underline m-2'>University:</span> San Jose State University
 					</h3>
 					<h3 className='text-center'>
 						<span className='underline m-2'>Major:</span> Software Engineering
@@ -16,7 +16,7 @@ const Home = () => {
 				</div>
 				<div className='w-full md:w-1/2 md:border-b border-black dark:border-white p-3'>
 					<img
-						src='/assets/home/Arjun_Sudheer_Professional_Headshot.jpg'
+						src='/personal-website/assets/home/Arjun_Sudheer_Professional_Headshot.jpg'
 						alt='A picture of Arjun Sudheer'
 						className='mx-auto w-full md:w-1/3'
 					/>
@@ -67,8 +67,8 @@ const Home = () => {
 			</p>
 			<p className='m-3 dark:text-white'>
 				Please feel free to learn more about my experiences and expertise by clicking various
-				sections on the navbar above. If you ever want to reach out or have a
-				quick chat, please don't hesitate to reach out to me at: arjun.sudheer@sjsu.edu.
+				sections on the navbar above. If you ever want to reach out or have a quick chat, please
+				don't hesitate to reach out to me at: arjun.sudheer@sjsu.edu.
 			</p>
 
 			<div className='grid grid-cols-1 md:flex dark:text-white'>
