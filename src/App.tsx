@@ -1,13 +1,13 @@
-import Navbar from "./reusable_components/Navbar";
-import Footer from "./reusable_components/Footer";
-import InfoPage from "./reusable_components/InfoPage";
+import Navbar from "./navigation/Navbar";
+import Footer from "./navigation/Footer";
 
 import Home from "./pages/Home";
-import Courses from "./pages/Courses";
-import Certifications from "./pages/Certifications";
 import Experience from "./pages/Experience";
 import Research from "./pages/Research";
 import Projects from "./pages/Projects";
+import Courses from "./pages/Courses";
+import Certifications from "./pages/Certifications";
+import InfoPage from "./components/InfoPage";
 
 import { Navigate, Route, Routes } from "react-router-dom";
 
@@ -29,24 +29,25 @@ function App() {
 						<InfoPage
 							title='Cupertino Robotics'
 							imgSrc='/personal-website/assets/experience/Cupertino_Robotics_Logo.jpg'
-							url='https://github.com/Tino-FRC-2473/FRC2022-Vision/commits/main/?author=arjunsudheer'
+							urls={
+								new Map([
+									[
+										"GitHub",
+										"https://github.com/Tino-FRC-2473/FRC2022-Vision/commits/main/?author=arjunsudheer",
+									],
+								])
+							}
 							skillsLearned={[
 								"Communication",
 								"Teamwork",
 								"Leadership",
 								"Teaching",
 								"Organization",
-								"FTC Robotics / FRC Robotics",
 								"OpenCV",
 								"Java",
 								"Python",
 							]}
-							toolsUsed={[
-								"Android Studio",
-								"FTC & FRC Robotics hardware",
-								"Webcams",
-								"Nvidia Jetson",
-							]}
+							toolsUsed={["Android Studio", "Webcams", "Nvidia Jetson"]}
 							description={[
 								"In my High School's robotics team, I held two leadership positions. When I was in FTC, I was a software team lead, and when I was in FRC, I was the computer vision lead.",
 
@@ -65,7 +66,7 @@ function App() {
 						<InfoPage
 							title='Code Ninjas'
 							imgSrc='/personal-website/assets/experience/Code_Ninjas_Logo.jpg'
-							url='https://www.codeninjas.com/ca-cupertino'
+							urls={new Map([["Company Website", "https://www.codeninjas.com/ca-cupertino"]])}
 							skillsLearned={[
 								"Communication",
 								"Teamwork",
@@ -98,14 +99,21 @@ function App() {
 						<InfoPage
 							title='SCE Internship'
 							imgSrc='/personal-website/assets/experience/SCE_SJSU_Logo.jpg'
-							url='https://github.com/SCE-Development/cleezy/commits/dev/?author=arjunsudheer'
+							urls={
+								new Map([
+									[
+										"GitHub",
+										"https://github.com/SCE-Development/cleezy/commits/dev/?author=arjunsudheer",
+									],
+								])
+							}
 							skillsLearned={[
-								"Python Programming",
+								"Python",
 								"FastAPI",
 								"Prometheus",
-								"Starting, Shutting Down, and Managing Docker containers",
+								"Managing Docker containers",
 								"Organization",
-								"Sending HTTP POST requests using Postman",
+								"Postman",
 								"Python argparse library",
 								"Python pyqrcode library",
 								"Python Pillow Library",
@@ -127,7 +135,8 @@ function App() {
 					element={
 						<InfoPage
 							title='Digital Forensics Research'
-							url='https://github.com/SCE-Development/cleezy/commits/dev/?author=arjunsudheer'
+							imgSrc='/personal-website/assets/research/autopsy-logo.svg'
+							urls={new Map([["Autopsy Forensics Tool", "https://www.autopsy.com/"]])}
 							skillsLearned={[
 								"Cybersecurity",
 								"Digital Forensics",
@@ -157,7 +166,7 @@ function App() {
 						<InfoPage
 							title='IC CAE Scholar Research Program'
 							imgSrc='/personal-website/assets/research/ICCAE_Scholar_Ransomware_Attacks.jpg'
-							url='https://www.dni.gov/index.php/iccae'
+							urls={new Map([["ICCAE Program Website", "https://www.dni.gov/index.php/iccae"]])}
 							skillsLearned={[
 								"Cybersecurity",
 								"National Security",
@@ -182,7 +191,7 @@ function App() {
 						<InfoPage
 							title='Project Engineering Success AI Research Program'
 							imgSrc='/personal-website/assets/research/Traffic_Signs_AI_Research.jpg'
-							url='https://github.com/arjunsudheer/traffic-sign-detection'
+							urls={new Map([["GitHub", "https://github.com/arjunsudheer/traffic-sign-detection"]])}
 							skillsLearned={[
 								"Tensorflow",
 								"Keras",
@@ -213,7 +222,14 @@ function App() {
 						<InfoPage
 							title='Zero-day Malware Detection Using Diffusion and GAN Models'
 							imgSrc='/personal-website/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
-							url='https://github.com/arjunsudheer/identifying-malware-images-using-generative-models-research'
+							urls={
+								new Map([
+									[
+										"GitHub",
+										"https://github.com/arjunsudheer/identifying-malware-images-using-generative-models-research",
+									],
+								])
+							}
 							skillsLearned={[
 								"Tensorflow",
 								"Keras",
@@ -253,7 +269,7 @@ function App() {
 						<InfoPage
 							title='Automation Scripts'
 							imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
-							url='https://github.com/arjunsudheer/automation-scripts'
+							urls={new Map([["GitHub", "https://github.com/arjunsudheer/automation-scripts"]])}
 							skillsLearned={[
 								"Bash Scripting",
 								"Linux Commands",
@@ -283,7 +299,7 @@ function App() {
 						<InfoPage
 							title='Access Vault'
 							imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
-							url='https://github.com/arjunsudheer/access-vault'
+							urls={new Map([["GitHub", "https://github.com/arjunsudheer/access-vault"]])}
 							skillsLearned={[
 								"Bash Scripting",
 								"Linux Commands",
@@ -306,7 +322,9 @@ function App() {
 						<InfoPage
 							title='Online Food Store'
 							imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
-							url='https://github.com/arjunsudheer/CMPE-131-Online-Food-Store'
+							urls={
+								new Map([["GitHub", "https://github.com/arjunsudheer/CMPE-131-Online-Food-Store"]])
+							}
 							skillsLearned={[
 								"HTML",
 								"CSS",
@@ -336,7 +354,7 @@ function App() {
 						<InfoPage
 							title='Cornhole Referee'
 							imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
-							url='https://github.com/arjunsudheer/cornhole-referee'
+							urls={new Map([["GitHub", "https://github.com/arjunsudheer/cornhole-referee"]])}
 							skillsLearned={[
 								"Supervised Machine Learning",
 								"Python",
@@ -366,7 +384,7 @@ function App() {
 						<InfoPage
 							title='Personal Website'
 							imgSrc='/personal-website/assets/projects/personal_website.svg'
-							url='https://github.com/arjunsudheer/personal-website'
+							urls={new Map([["GitHub", "https://github.com/arjunsudheer/personal-website"]])}
 							skillsLearned={[
 								"React",
 								"TypeScript",
