@@ -22,7 +22,7 @@ const Courses = () => {
 			<InfoCard
 				title='Computer Networks 1'
 				keyHighlights={["Course Code: CMPE 148"]}
-				topSkills={["Computer Networks", "TCP/IP", "OSI Model", "Network Protocols"]}
+				topSkills={["TCP/IP", "OSI Model", "Network Protocols"]}
 				textRight={false}
 				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=157668'
 				internalLink={false}
@@ -91,7 +91,7 @@ const Courses = () => {
 			<InfoCard
 				title='Applied Probability and Statistics 1'
 				keyHighlights={["Course Code: MATH 161A"]}
-				topSkills={["Probability", "Discrete and Continuous Random Variables", "Problem Solving"]}
+				topSkills={["Probability", "Random Variables", "Problem Solving"]}
 				textRight={false}
 				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=159819'
 				internalLink={false}
@@ -107,7 +107,7 @@ const Courses = () => {
 			<InfoCard
 				title='Engineering Reports'
 				keyHighlights={["Course Code: ENGR 100W"]}
-				topSkills={["Technical Writing", "Report Writing", "Communication Skills"]}
+				topSkills={["Technical Writing", "Report Writing", "Communication/Presenting Skills"]}
 				textRight={false}
 				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=161487'
 				internalLink={false}
