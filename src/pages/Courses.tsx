@@ -12,6 +12,22 @@ const Courses = () => {
 				internalLink={false}
 			/>
 			<InfoCard
+				title='Introduction to Database Management Systems'
+				keyHighlights={["Course Code: CS 157A"]}
+				topSkills={["SQL", "Database Design", "Normalization"]}
+				textRight={true}
+				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=157891'
+				internalLink={false}
+			/>
+			<InfoCard
+				title='Computer Networks 1'
+				keyHighlights={["Course Code: CMPE 148"]}
+				topSkills={["Computer Networks", "TCP/IP", "OSI Model", "Network Protocols"]}
+				textRight={false}
+				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=157668'
+				internalLink={false}
+			/>
+			<InfoCard
 				title='Introduction to Data Structures'
 				keyHighlights={["Course Code: CS 46B"]}
 				topSkills={["Data Structures", "Java"]}
@@ -73,11 +89,27 @@ const Courses = () => {
 				internalLink={false}
 			/>
 			<InfoCard
+				title='Applied Probability and Statistics 1'
+				keyHighlights={["Course Code: MATH 161A"]}
+				topSkills={["Probability", "Discrete and Continuous Random Variables", "Problem Solving"]}
+				textRight={false}
+				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=159819'
+				internalLink={false}
+			/>
+			<InfoCard
 				title='Calculus 3'
 				keyHighlights={["Course Code: MATH 32"]}
 				topSkills={["Vectors", "Multi-variable Calculus"]}
-				textRight={false}
+				textRight={true}
 				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=10&coid=41254'
+				internalLink={false}
+			/>
+			<InfoCard
+				title='Engineering Reports'
+				keyHighlights={["Course Code: ENGR 100W"]}
+				topSkills={["Technical Writing", "Report Writing", "Communication Skills"]}
+				textRight={false}
+				url='https://catalog.sjsu.edu/preview_course_nopop.php?catoid=17&coid=161487'
 				internalLink={false}
 			/>
 			<InfoCard

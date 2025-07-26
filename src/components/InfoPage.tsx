@@ -8,7 +8,7 @@ import { useNavigate } from "react-router-dom";
 interface InfoPageProps {
 	title: string;
 	imgSrc: string;
-	urls: Map<string, string>; // Key is the urlTitle, value is the url itself
+	urls?: Map<string, string>; // Key is the urlTitle, value is the url itself
 	skillsLearned: string[];
 	toolsUsed: string[];
 	description: string[]; // Separate each paragraph into its own element in the array
@@ -99,23 +99,25 @@ const InfoPage = ({
 						className='w-full max-h-70 object-contain rounded-xl mb-6'
 					/>
 					{/* Links shown in a centered list below the image */}
-					<div className='w-full text-center'>
-						<h2 className='font-semibold text-lg mb-2 dark:text-white underline'>Learn More:</h2>
-						<ul>
-							{Array.from(urls).map(([label, url]) => (
-								<li key={label}>
-									<a
-										href={url}
-										target='_blank'
-										rel='noopener noreferrer'
-										className='text-blue-500 hover:underline block mb-1'
-									>
-										{label}
-									</a>
-								</li>
-							))}
-						</ul>
-					</div>
+					{urls && (
+						<div className='w-full text-center'>
+							<h2 className='font-semibold text-lg mb-2 dark:text-white underline'>Learn More:</h2>
+							<ul>
+								{Array.from(urls).map(([label, url]) => (
+									<li key={label}>
+										<a
+											href={url}
+											target='_blank'
+											rel='noopener noreferrer'
+											className='text-blue-500 hover:underline block mb-1'
+										>
+											{label}
+										</a>
+									</li>
+								))}
+							</ul>
+						</div>
+					)}
 				</div>
 			</div>
 

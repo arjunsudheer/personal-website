@@ -97,7 +97,7 @@ function App() {
 					path='experience/SCEInternship'
 					element={
 						<InfoPage
-							title='SCE Internship'
+							title='SCE Software Engineering Internship'
 							imgSrc='/personal-website/assets/experience/SCE_SJSU_Logo.jpg'
 							urls={
 								new Map([
@@ -125,6 +125,30 @@ function App() {
 								'My first task involved generating a QR Code given an alias, and have the QR Code point to the appropriate alias link. For example, an alias of "sce" would point to the official SCE website. I used python and the pyqrcode library to generate the QR Codes and save it on the docker container. I used FastAPI to create a qr/ endpoint where generated QR Codes would be displayed as a File Response so users could scan the qr code with their mobile device. I used Postman to send POST requests to the cleezy server to add new aliases so the qr codes could be generated. I checked if the alias existed in the SQLite database, and if it didn\'t, I created a new QR Code. I used python argparse to accept command line arguments for the cache size (number of qr codes to store), and appropriately added and removed QR Codes to stay within the cache size limit. I also added some branding to the QR Codes by using the pillow library from Python to add the SCE logo in the center of each generated QR Code.',
 
 								"My second task involved using Prometheus to create a custom metric to track cleezy's performance when using the QR Codes. I used a gauge to keep track of the QR Code cache (the number of QR Codes stored), and the total size in bytes of the stored QR Codes. I used the inc(), dec(), and set() functions of the Prometheus gauge to accurately keep track of the QR Code cache size and the total number of bytes for all generated QR Codes. I made these metrics visible at the metrics/ endpoint in the cleezy application.",
+							]}
+						/>
+					}
+				/>
+				<Route
+					path='experience/CiscoInternship'
+					element={
+						<InfoPage
+							title='Cisco Software Engineering Internship'
+							imgSrc='/personal-website/assets/home/CiscoFireworks.gif'
+							skillsLearned={[
+								"Python",
+								"Flask",
+								"Jinja",
+								"JavaScript",
+								"HTML",
+								"CSS",
+								"LangChain",
+								"LLMs",
+								"MySQL",
+							]}
+							toolsUsed={["GitHub", "Visual Studio Code", "DBeaver", "Linux Server"]}
+							description={[
+								"As a Software Engineering Intern at Cisco, I am working on an internal tool to help keep track of tests and verifications for Cisco routers. I am working as a full stack developer.",
 							]}
 						/>
 					}
@@ -220,8 +244,8 @@ function App() {
 					path='/research/Zero-dayMalwareDetectionUsingDiffusionandGANModels'
 					element={
 						<InfoPage
-							title='Zero-day Malware Detection Using Diffusion and GAN Models'
-							imgSrc='/personal-website/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
+							title='Synthetic Malware Image Generation Based on Generative Models Against Zero-Day Attacks'
+							imgSrc='/personal-website/assets/research/Zero-day_Malware_Research.jpeg'
 							urls={
 								new Map([
 									[
@@ -231,11 +255,11 @@ function App() {
 								])
 							}
 							skillsLearned={[
-								"Tensorflow",
-								"Keras",
-								"Ransomware Attacks",
-								"Scikit-learn",
 								"Python",
+								"PyTorch",
+								"scikit-learn",
+								"Diffusion Models",
+								"Ransomware Attacks",
 								"numpy",
 								"pillow",
 								"seaborn",
@@ -247,17 +271,52 @@ function App() {
 								"Visual Studio Code",
 								"GitHub",
 								"VirusShare Dataset",
+								"Malicia Dataset",
 							]}
 							description={[
-								"I am an undergraduate student researcher in an NSF REU at San Jose State University. I am currently working on a research topic concerning zero-day malware detection using images and generative models.",
+								'My research paper, "Synthetic Malware Image Generation Based on Generative Models Against Zero-Day Attacks", was accepted by the Silicon Valley Cybersecurity Conference (SVCC) 2025. I presented my paper at SVCC 2025, and it will soon be published on IEEE Xplore.',
 
-								"My research aims to address the issue of the lack of adequate training data with regard to zero-day malware detection. As a result, I am writing DCGAN, WGAN-GP, and Diffusion models to generate synthetic malware and evaluating which of the three models produces the highest quality images. I am also evaluating the monochrome, grayscale, RGB, and CMYK color spaces to see which color space representation performs the best in synthetic malware image generation. The end goal is to see if generative models can be used to enhance the quality of malware datasets to increase the chances of detecting zero-day malware attacks.",
+								"I began working on this research as part of an NSF REU program at San Jose State University. My research evaluates a Diffusion model and a WGAN-GP model to see which model can generate a higher quality of synthetic malware images. Through my research, I found that Diffusion consistently outperforms WGAN-GP in synthetic malware image generation and can provide a higher quality of synthetic malware images for zero-day malware detection.",
 
 								"I use the open source VirusShare dataset which contains Windows binary executable malware files. I use 22 families totaling 98 GB of malware data for my research. To convert the binary files into image format, I use the NumPy and pillow libraries in Python to reshape the binary data into a 2-dimensional array, and then convert that 2-D array into an image in the four color spaces that I am testing.",
 
-								"To evaluate the performance of each model and each color space, I am using classifiers, FID scores, and TSNE visualizations. I am using a custom TensorFlow implementation of a multilayer perceptron (MLP) classifier, and the Random Forest Classifier and Support Vector Machine Classifier from scikit-learn. I am using both a binary classifier (original malware image vs. synthetically generated malware image), as well as a multi-class classifier.",
+								"My research addresses the issue of the lack of adequate training data and obfuscation techniques used with regard to zero-day malware detection. I compare the effectiveness of a WGAN-GP and a Diffusion model in malware image generation across the monochrome, grayscale, RGB, and CMYK color spaces. My research proposes the idea of sample filtering based on the cosine similarity score, and a feedback loop that allows for high-quality synthetic images to be added to the training dataset. This method helps improve both the quality and quantity of the training dataset, which allows for improved accuracy in zero-day malware detection.",
 
-								"This research has applications for improving zero-day malware detection rates by using generative models to enhance the training data for malware detection models.",
+								"An evaluation on the quality of the generated synthetic images showed that the Diffusion model consistently outperforms the WGAN-GP model due to its ability to capture dataset diversity and generate more similar samples to the training data. Additionally, the sample filtering and feedback loop approach shows promise, as my research showed an improvement in zero-day malware detection rates by up to 15%.",
+							]}
+						/>
+					}
+				/>
+				<Route
+					path='/research/CyberWarriorLLMChallenge'
+					element={
+						<InfoPage
+							title='Demo: A Real-time Multi-Agent Network Attack Detection and Incident Response System'
+							imgSrc='/personal-website/assets/research/CyberWarrior_LLM_Challenge.jpeg'
+							urls={
+								new Map([["GitHub", "https://github.com/arjunsudheer/cyberwarrior-llm-challenge"]])
+							}
+							skillsLearned={[
+								"Python",
+								"LLMs",
+								"LangChain",
+								"scikit-learn",
+								"Software Defined Networking",
+								"RAG",
+								"reAct agents",
+							]}
+							toolsUsed={[
+								"Google Colab",
+								"Nvidia GPU",
+								"Visual Studio Code",
+								"GitHub",
+								"VirusShare Dataset",
+								"Malicia Dataset",
+							]}
+							description={[
+								'My research paper, "Demo: A Real-time Multi-Agent Network Attack Detection and Incident Response System", proposes a framework for detecting and responding to network-based attacks in real-time.',
+
+								"I presented my research work at the Silicon Valley Cybersecurity Conference (SVCC) 2025. I won 1st place in the CyberWarrior LLM Challenge event at SVCC 2025.",
 							]}
 						/>
 					}

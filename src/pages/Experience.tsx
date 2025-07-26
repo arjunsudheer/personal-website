@@ -7,7 +7,20 @@ const Experience = () => {
 	return (
 		<>
 			<InfoCard
-				title='SCE Internship'
+				title='Cisco Software Engineering Internship'
+				keyHighlights={[
+					"Developing a full stack web application to track router testing and compliance checks",
+					"Integrating LLM-agents to simplify data retrieval and automate test status updates",
+					"Using HTML, CSS, JavaScript, Jinja, Python, Flask, and MySQL to build the system",
+				]}
+				topSkills={["Python", "Flask", "JavaScript", "MySQL", "Jinja", "LLMs"]}
+				textRight={true}
+				url={location.pathname + "/CiscoInternship"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/home/CiscoFireworks.gif'
+			/>
+			<InfoCard
+				title='SCE Software Engineering Internship'
 				keyHighlights={[
 					"Built a full stack URL shortening service using Python's FastAPI library, SQLite, and Docket for over 500 users",
 					"Created a RESTful API using FastAPI to create, retrieve, and delete, stored URLs with the SQLite3 database",

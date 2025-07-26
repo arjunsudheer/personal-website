@@ -7,7 +7,20 @@ const Research = () => {
 	return (
 		<>
 			<InfoCard
-				title='Identifying Malware Images Using Diffusion and GAN Models'
+				title='Demo: A Real-time Multi-Agent Network Attack Detection and Incident Response System'
+				keyHighlights={[
+					"Developed a multi-agent network intrusion detection and response system",
+					"Utilized RAG with a vector database (FAISS) to enhance the LLM's understanding of the incoming network data",
+					"Used LangChain reAct agents with chain-of-thought reasoning to implement autonomous LLM agents",
+				]}
+				topSkills={["LLMs", "LangChain", "reAct agents"]}
+				textRight={true}
+				url={location.pathname + "/CyberWarriorLLMChallenge"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/research/CyberWarrior_LLM_Challenge.jpeg'
+			/>
+			<InfoCard
+				title='Synthetic Malware Image Generation Based on Generative Models Against Zero-Day Attacks'
 				keyHighlights={[
 					"Developed a Diffusion model to generate synthetic malware samples to improve Zero-day malware detection rate",
 					"Ran Random Forest and Multi-Layer Perceptron classifiers to analyze validity of generated malware",
@@ -17,7 +30,7 @@ const Research = () => {
 				textRight={false}
 				url={location.pathname + "/Zero-dayMalwareDetectionUsingDiffusionandGANModels"}
 				internalLink={true}
-				imgSrc='/personal-website/assets/research/Zero-day_Malware_Detection_Using_Diffusion_and_GAN_Models.jpeg'
+				imgSrc='/personal-website/assets/research/Zero-day_Malware_Research.jpeg'
 			/>
 			<InfoCard
 				title='Autonomous Car Systems - Traffic Sign Detection'
