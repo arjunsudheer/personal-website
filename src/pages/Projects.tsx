@@ -1,4 +1,4 @@
-import InfoCard from "../reusable_components/InfoCard";
+import InfoCard from "../components/InfoCard";
 import { useLocation } from "react-router-dom";
 
 const Projects = () => {
@@ -6,56 +6,68 @@ const Projects = () => {
 
 	return (
 		<>
-			<h3 className='underline text-lg m-3 dark:text-white'>AI Projects</h3>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-				<InfoCard
-					title='Cornhole Referee'
-					imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
-					description='Developed referee system to track points in a cornhole game using Python, YOLOv8 and Supervision.'
-					url={location.pathname + "/CornholeReferee"}
-					displayAnimation={true}
-				/>
-			</div>
-
-			<h3 className='underline text-lg m-3 dark:text-white'>Web Development Projects</h3>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-				<InfoCard
-					title='Personal Website'
-					imgSrc='/personal-website/assets/projects/personal_website.svg'
-					description='Made a personal website to highlight my expertise using Typescript and React.'
-					url={location.pathname + "/PersonalWebsite"}
-					displayAnimation={true}
-				/>
-				<InfoCard
-					title='Online Food Store'
-					imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
-					description='Built an online food store website with HTML, CSS, JavaScript, PHP, and MySQL.'
-					url={location.pathname + "/OnlineFoodStore"}
-					displayAnimation={true}
-				/>
-			</div>
-
-			<h3 className='underline text-lg m-3 dark:text-white'>Cybersecurity Projects</h3>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-				<InfoCard
-					title='Access Vault'
-					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
-					description='Wrote a script that automates user and file privileges to make it easy to follow the principle of least privilege.'
-					url={location.pathname + "/AccessVault"}
-					displayAnimation={true}
-				/>
-			</div>
-
-			<h3 className='underline text-lg m-3 dark:text-white'>Bash Scripting Projects</h3>
-			<div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3'>
-				<InfoCard
-					title='Automation Scripts'
-					imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
-					description='Built a custom CLI to automate daily workflows and help manage time effectively.'
-					url={location.pathname + "/AutomationScripts"}
-					displayAnimation={true}
-				/>
-			</div>
+			<InfoCard
+				title='Cornhole Referee'
+				keyHighlights={[
+					"Developed a supervised machine learning model using YOLOv8 to keep track ofhte score in a corhole game",
+					"Implemented object tracking and points scoring using YOLOv8 and Supervision",
+					"Created a custom dataset by capturing images using OpenCV, and annotating images using Roboflow",
+				]}
+				topSkills={["Python", "YOLOv8", "Supervision"]}
+				textRight={false}
+				url={location.pathname + "/CornholeReferee"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
+			/>
+			<InfoCard
+				title='Personal Website'
+				keyHighlights={[
+					"Developed a personal website to showcase my experience and expertise in software engineering",
+					"Implemented a responsive website that provides a good user experience in both desktop nad mobile environments",
+				]}
+				topSkills={["React", "TypeScript", "Tailwind CSS"]}
+				textRight={true}
+				url={location.pathname + "/PersonalWebsite"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/projects/personal_website.svg'
+			/>
+			<InfoCard
+				title='Online Food Store'
+				keyHighlights={[
+					"Developed a full stack web application using agile and scrum methodologies",
+					"Implemented automated unit tests and GitHub actions to ensure correct functionality",
+					"Stored online orders in the MySQL relational database",
+				]}
+				topSkills={["JavaScript", "PHP", "MySQL"]}
+				textRight={false}
+				url={location.pathname + "/OnlineFoodStore"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
+			/>
+			<InfoCard
+				title='Access Vault'
+				keyHighlights={[
+					"Developed a Bash Script to automate file and user permissions to easily follow the principle of least privilege",
+					"Read permissions from a file for easy updates",
+				]}
+				topSkills={["Bash", "Git"]}
+				textRight={true}
+				url={location.pathname + "/AccessVault"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
+			/>
+			<InfoCard
+				title='Automation Scripts'
+				keyHighlights={[
+					"Developed a bash command line program that automates user-defined workflows",
+					"Kept track of time taken for each task and automatically sets up apps and web pages for its users",
+				]}
+				topSkills={["Bash", "Git"]}
+				textRight={false}
+				url={location.pathname + "/AutomationScripts"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
+			/>
 		</>
 	);
 };

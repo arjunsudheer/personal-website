@@ -7,28 +7,28 @@ const Footer = () => {
 	const githubProfile = "https://github.com/arjunsudheer";
 
 	return (
-		<footer className='bg-slate-400 dark:bg-slate-500 dark:text-white flex p-0.5 mt-auto'>
-			<div id='contact-icon-links' className='px-0.5 flex justify-around w-full'>
+		<footer className='bg-gray-200 dark:bg-slate-500 dark:text-white flex mt-auto'>
+			<div id='contact-icon-links' className='flex justify-around items-center w-full'>
 				<FaFacebook
-					className='text-xl m-5 hover:cursor-pointer hover:text-blue-700 inline'
+					className='text-xl my-3 hover:cursor-pointer hover:text-blue-700 inline'
 					onClick={() => {
 						window.open(facebookProfile);
 					}}
 				/>
 				<FaInstagramSquare
-					className='text-xl m-5 hover:cursor-pointer hover:text-pink-300 inline'
+					className='text-xl my-3 hover:cursor-pointer hover:text-pink-300 inline'
 					onClick={() => {
 						window.open(instagramProfile);
 					}}
 				/>
 				<FaLinkedin
-					className='text-xl m-5 hover:cursor-pointer hover:text-blue-700 inline'
+					className='text-xl my-3 hover:cursor-pointer hover:text-blue-700 inline'
 					onClick={() => {
 						window.open(linkedinProfile);
 					}}
 				/>
 				<FaGithub
-					className='text-xl m-5 hover:cursor-pointer hover:text-gray-700 inline'
+					className='text-xl my-3 hover:cursor-pointer hover:text-gray-700 inline'
 					onClick={() => {
 						window.open(githubProfile);
 					}}
