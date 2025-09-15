@@ -145,9 +145,10 @@ function App() {
 								"JavaScript",
 								"HTML",
 								"CSS",
-								"LangChain",
-								"LLMs",
+								"Autogen",
+								"OpenAI API",
 								"MySQL",
+								"Docker",
 							]}
 							toolsUsed={["GitHub", "Visual Studio Code", "DBeaver", "Linux Server"]}
 							description={[
@@ -258,6 +259,7 @@ function App() {
 										"GitHub",
 										"https://github.com/arjunsudheer/identifying-malware-images-using-generative-models-research",
 									],
+									["Publication", "https://ieeexplore.ieee.org/abstract/document/11133622"],
 								])
 							}
 							skillsLearned={[
@@ -301,7 +303,10 @@ function App() {
 							title='Demo: A Real-time Multi-Agent Network Attack Detection and Incident Response System'
 							imgSrc='/personal-website/assets/research/CyberWarrior_LLM_Challenge.jpeg'
 							urls={
-								new Map([["GitHub", "https://github.com/arjunsudheer/cyberwarrior-llm-challenge"]])
+								new Map([
+									["GitHub", "https://github.com/arjunsudheer/cyberwarrior-llm-challenge"],
+									["Publication", "https://ieeexplore.ieee.org/abstract/document/11133641"],
+								])
 							}
 							skillsLearned={[
 								"Python",
@@ -471,7 +476,32 @@ function App() {
 								"My personal website showcases my work and research experience, personal projects, courses that I've completed, and any certifications that I have earned. My personal website is also responsive to it is easy to use in both desktop and mobile environments.",
 
 								"My personal website is hosted on GitHub Pages.",
-								"My personal website is hosted on GitHub Pages.",
+							]}
+						/>
+					}
+				/>
+				<Route
+					path='/projects/GymBuddy'
+					element={
+						<InfoPage
+							title='GymBuddy'
+							imgSrc='/personal-website/assets/projects/GymBuddy.jpg'
+							urls={new Map([["GitHub", "https://github.com/arjunsudheer/gym-buddy"]])}
+							skillsLearned={[
+								"Kotlin",
+								"Jetpack Compose",
+								"Gemini API",
+								"Google Maps API",
+								"Places API",
+								"Room API",
+							]}
+							toolsUsed={["Android Studio", "Android Emulator", "Google Play Services"]}
+							description={[
+								"GymBuddy is an Android app that I developed using Kotlin and Jetpack Compose. The app helps users create and track their weekly fitness plans.",
+
+								"GymBuddy integrates Maps, Places, and Gemini APIs to surface nearby gyms and health insights.",
+
+								"GymBuddy stores user data locally with Room API to ensure privacy and offline access.",
 							]}
 						/>
 					}
