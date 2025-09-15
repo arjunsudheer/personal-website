@@ -7,9 +7,29 @@ const Projects = () => {
 	return (
 		<>
 			<InfoCard
+				title='GymBuddy'
+				keyHighlights={[
+					"Created Android app using Kotlin and Jetpack Compose for creating and tracking weekly fitness plans",
+					"Integrated Maps, Places, and Gemini APIs to surface nearby gyms and health insights",
+					" Stored user data locally with Room API to ensure privacy and offline access",
+				]}
+				topSkills={[
+					"Kotlin",
+					"Jetpack Compose",
+					"Gemini API",
+					"Google Maps API",
+					"Places API",
+					"Room API",
+				]}
+				textRight={false}
+				url={location.pathname + "/GymBuddy"}
+				internalLink={true}
+				imgSrc='/personal-website/assets/projects/GymBuddy.jpg'
+			/>
+			<InfoCard
 				title='Cornhole Referee'
 				keyHighlights={[
-					"Developed a supervised machine learning model using YOLOv8 to keep track ofhte score in a corhole game",
+					"Developed a supervised machine learning model using YOLOv8 to keep track of the score in a cornhole game",
 					"Implemented object tracking and points scoring using YOLOv8 and Supervision",
 					"Created a custom dataset by capturing images using OpenCV, and annotating images using Roboflow",
 				]}

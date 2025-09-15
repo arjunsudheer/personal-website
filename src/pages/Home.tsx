@@ -100,25 +100,29 @@ const Home = () => {
 					<h1 className='text-4xl font-bold mb-4'>My Experience</h1>
 					<p className='text-lg mx-auto mb-4'>
 						I am comfortable with Python, Java, SQL Databases, and Frontend technologies like HTML,
-						CSS, Tailwind CSS, JavaScript, and React. I have experience building full-stack
-						applications, integrating LLM agents into applications, and generative AI models.
+						CSS, Tailwind CSS, JavaScript, and React. I have experience developing full-stack
+						applications, integrating LLM agents into applications, and building generative AI
+						models.
 					</p>
 					<p className='text-lg mx-auto mb-4'>
-						I interned at the Software and Computer Engineering Society Club at SJSU, where I
-						implemented the QR code generation feature for a URL shortening service. I used tools
-						like Docker and Prometheus to keep track of the number of QR codes stored and their size
-						on disk. Later this summer, I will be joining Cisco as a Software Developer in their
-						technical Co-op program.
+						I am currently a Software Engineer Intern at Cisco. I am working on a full-stack web
+						application to track testing and compliance metrics for Cisco's products. I am using
+						Python with Flask, MySQL, and integrating a multi-agent conversational chatbot using
+						Microsoft Semantic Kernel. I have previously been a Software Engineering Intern at the
+						Software and Computer Engineering Society Club at SJSU, where I implemented the QR code
+						generation feature for a URL shortening service. I used tools like Docker and Prometheus
+						to keep track of the number of QR codes stored and their size on disk.
 					</p>
 					<p className='text-lg mx-auto mb-4'>
-						I also have research experience. My first paper, titled "Synthetic Malware Image
-						Generation Based on Generative Models" was accepted by the Silicon Valley Cybersecurity
-						Conference. In that paper, I utilized a Diffusion model to generate synthetic malware in
-						the form of images to help improve zero-day malware detection rates. I proposed a
-						feedback loop evaluation system to add high-quality synthetic images to the train
-						dataset, enhancing zero-day malware detection rates by up to 15%. I am now working on a
-						new research paper that utilizes LLMs to automate and speed-up incident management,
-						detection, and response for network-based environments.
+						I also have research experience. I have two published papers which I presented at the
+						Silicon Valley Cybersecurity Conference in 2025. My first paper, titled "Synthetic
+						Malware Image Generation Based on Generative Models" utilizes a Diffusion model to
+						generate synthetic malware in an image format. I proposed a feedback loop evaluation
+						system to add high-quality synthetic images to the training dataset, enhancing zero-day
+						malware detection rates by up to 15%. My second research paper titled "A Real-time
+						Multi-Agent Network Attack Detection and Incident Response System" incorporates multiple
+						AI-agents to improve the robustness of network attack detection, and automate incident
+						response.
 					</p>
 					<p className='text-lg mx-auto'>
 						Please feel free to learn more about my experience by clicking various sections on the
@@ -152,8 +156,8 @@ const Home = () => {
 					<h1 className='text-4xl font-bold mb-4'>I Would Love To Connect</h1>
 					<p className='text-lg mx-auto'>
 						Please reach out to me at{" "}
-						<a className='hover:underline text-blue-400' href='mailto:arjun.sudheer@sjsu.edu'>
-							arjun.sudheer@sjsu.edu
+						<a className='hover:underline text-blue-400' href='mailto:arjunsudheer05@outlook.com'>
+							arjunsudheer05@outlook.com
 						</a>
 						.
 					</p>
