@@ -6,7 +6,7 @@ const Certifications = () => {
 			<InfoCard
 				title='Machine Learning'
 				keyHighlights={["Offered By: DeepLearning.AI"]}
-				topSkills={["Supervised Machine Learning", "Unsupervised Machine Learning"]}
+				topSkills={["Supervised Learning", "Unsupervised Learning"]}
 				textRight={false}
 				url='https://www.coursera.org/account/accomplishments/specialization/TFVH59H5YMEJ?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=pdf_header_button&utm_product=s12n'
 				internalLink={false}

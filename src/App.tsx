@@ -476,6 +476,7 @@ function App() {
 								"My personal website showcases my work and research experience, personal projects, courses that I've completed, and any certifications that I have earned. My personal website is also responsive to it is easy to use in both desktop and mobile environments.",
 
 								"My personal website is hosted on GitHub Pages.",
+								"My personal website is hosted on GitHub Pages.",
 							]}
 						/>
 					}
