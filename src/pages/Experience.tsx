@@ -9,11 +9,22 @@ const Experience = () => {
 			<InfoCard
 				title='Cisco Software Engineering Internship'
 				keyHighlights={[
-					"Developing a full stack web application to track router testing and compliance checks",
-					"Integrating LLM-agents to simplify data retrieval and automate test status updates",
-					"Using HTML, CSS, JavaScript, Jinja, Python, Flask, and MySQL to build the system",
+					"Engineered full-stack web app using Python, MySQL, and JavaScript to track product compliance for 100+ users",
+					"Scaled platform across business units, driving a 200% increase in active users",
+					"Integrated Agentic-AI via OpenAI and Autogen to automate updates and retrieval, boosting satisfaction by 50%",
+					"Developed sandbox environment to validate new features pre-deployment, reducing production errors by 70%",
 				]}
-				topSkills={["Python", "Flask", "JavaScript", "MySQL", "Jinja", "LLMs"]}
+				topSkills={[
+					"Python",
+					"Flask",
+					"JavaScript",
+					"MySQL",
+					"Jinja",
+					"Autogen",
+					"OpenAI API",
+					"Docker",
+					"Git",
+				]}
 				textRight={true}
 				url={location.pathname + "/CiscoInternship"}
 				internalLink={true}
@@ -22,10 +33,9 @@ const Experience = () => {
 			<InfoCard
 				title='SCE Software Engineering Internship'
 				keyHighlights={[
-					"Built a full stack URL shortening service using Python's FastAPI library, SQLite, and Docket for over 500 users",
-					"Created a RESTful API using FastAPI to create, retrieve, and delete, stored URLs with the SQLite3 database",
-					"Implemented QR code generation with the pyqrcode library to redirect user to the shortened link upon scanning",
-					"Added custom Prometheus metrics to track the total number of QR Codes and their size in bytes",
+					"Developed FastAPI-based (Python) URL shortener with SQLite and Docker, serving 500+ users",
+					"Designed RESTful endpoints for URL storage and retrieval, with QR code redirection via PyQRCode",
+					"Added Prometheus metrics to monitor QR code volume and byte size for performance tracking",
 				]}
 				topSkills={["Python", "FastAPI", "SQLite", "Docker", "Prometheus"]}
 				textRight={false}

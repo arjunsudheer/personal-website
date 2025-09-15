@@ -9,9 +9,9 @@ const Research = () => {
 			<InfoCard
 				title='Demo: A Real-time Multi-Agent Network Attack Detection and Incident Response System'
 				keyHighlights={[
-					"Developed a multi-agent network intrusion detection and response system",
-					"Utilized RAG with a vector database (FAISS) to enhance the LLM's understanding of the incoming network data",
-					"Used LangChain reAct agents with chain-of-thought reasoning to implement autonomous LLM agents",
+					"Built multi-agent intrusion detection and response system using LangChain reAct with chain-of-thought reasoning",
+					"Enhanced agent reasoning via RAG and FAISS, achieving 0.981 faithfulness and 0.78 relevance",
+					"Trained a multi-class network classifier with an F1-score of 0.983 for real-time threat response",
 				]}
 				topSkills={["LLMs", "LangChain", "reAct agents"]}
 				textRight={true}
@@ -22,11 +22,11 @@ const Research = () => {
 			<InfoCard
 				title='Synthetic Malware Image Generation Based on Generative Models Against Zero-Day Attacks'
 				keyHighlights={[
-					"Developed a Diffusion model to generate synthetic malware samples to improve Zero-day malware detection rate",
-					"Ran Random Forest and Multi-Layer Perceptron classifiers to analyze validity of generated malware",
-					"Used PyTorch, scikit-learn, numpy, and CUDA with Nvidia GPUs to train the model",
+					"Created Diffusion model to generate synthetic malware images, improving Zero-day detection rates by 15%",
+					"Validated samples using Random Forest and MLP classifiers for high fidelity",
+					"Trained models with scikit-learn and PyTorch on Nvidia GPUs for scalable performance",
 				]}
-				topSkills={["Python", "PyTorch", "Diffusion (Generative AI)"]}
+				topSkills={["Python", "PyTorch", "scikit-learn", "Diffusion (Generative AI)", "CUDA"]}
 				textRight={false}
 				url={location.pathname + "/Zero-dayMalwareDetectionUsingDiffusionandGANModels"}
 				internalLink={true}
