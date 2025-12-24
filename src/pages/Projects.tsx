@@ -7,24 +7,16 @@ const Projects = () => {
 	return (
 		<>
 			<InfoCard
-				title='GymBuddy'
+				title='Stock News'
 				keyHighlights={[
-					"Created Android app using Kotlin and Jetpack Compose for creating and tracking weekly fitness plans",
-					"Integrated Maps, Places, and Gemini APIs to surface nearby gyms and health insights",
-					" Stored user data locally with Room API to ensure privacy and offline access",
+					"Engineered multi-agent stock debate using Autogen and DuckDuckGo Search, with live news from Yahoo Finance",
+					"Moderated debate using Llama Guard 3, set up cron job to email stock recommendations using Gmail SMTP",
 				]}
-				topSkills={[
-					"Kotlin",
-					"Jetpack Compose",
-					"Gemini API",
-					"Google Maps API",
-					"Places API",
-					"Room API",
-				]}
-				textRight={false}
-				url={location.pathname + "/GymBuddy"}
+				topSkills={["Python", "Autogen", "Web Scraping", "SMTP", "Cron Job"]}
+				textRight={true}
+				url={location.pathname + "/StockNews"}
 				internalLink={true}
-				imgSrc='/personal-website/assets/projects/GymBuddy.jpg'
+				imgSrc='/personal-website/assets/projects/Stock_News.png'
 			/>
 			<InfoCard
 				title='Cornhole Referee'
@@ -38,55 +30,6 @@ const Projects = () => {
 				url={location.pathname + "/CornholeReferee"}
 				internalLink={true}
 				imgSrc='/personal-website/assets/projects/Cornhole_Referee.jpg'
-			/>
-			<InfoCard
-				title='Personal Website'
-				keyHighlights={[
-					"Developed a personal website to showcase my experience and expertise in software engineering",
-					"Implemented a responsive website that provides a good user experience in both desktop nad mobile environments",
-				]}
-				topSkills={["React", "TypeScript", "Tailwind CSS"]}
-				textRight={true}
-				url={location.pathname + "/PersonalWebsite"}
-				internalLink={true}
-				imgSrc='/personal-website/assets/projects/personal_website.svg'
-			/>
-			<InfoCard
-				title='Online Food Store'
-				keyHighlights={[
-					"Developed a full stack web application using agile and scrum methodologies",
-					"Implemented automated unit tests and GitHub actions to ensure correct functionality",
-					"Stored online orders in the MySQL relational database",
-				]}
-				topSkills={["JavaScript", "PHP", "MySQL"]}
-				textRight={false}
-				url={location.pathname + "/OnlineFoodStore"}
-				internalLink={true}
-				imgSrc='/personal-website/assets/projects/Online_Food_Store.jpg'
-			/>
-			<InfoCard
-				title='Access Vault'
-				keyHighlights={[
-					"Developed a Bash Script to automate file and user permissions to easily follow the principle of least privilege",
-					"Read permissions from a file for easy updates",
-				]}
-				topSkills={["Bash", "Git"]}
-				textRight={true}
-				url={location.pathname + "/AccessVault"}
-				internalLink={true}
-				imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
-			/>
-			<InfoCard
-				title='Automation Scripts'
-				keyHighlights={[
-					"Developed a bash command line program that automates user-defined workflows",
-					"Kept track of time taken for each task and automatically sets up apps and web pages for its users",
-				]}
-				topSkills={["Bash", "Git"]}
-				textRight={false}
-				url={location.pathname + "/AutomationScripts"}
-				internalLink={true}
-				imgSrc='/personal-website/assets/projects/Automation_Scripts.jpg'
 			/>
 		</>
 	);
