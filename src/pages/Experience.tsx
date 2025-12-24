@@ -43,31 +43,6 @@ const Experience = () => {
 				internalLink={true}
 				imgSrc='/personal-website/assets/experience/SCE_SJSU_Logo.jpg'
 			/>
-			<InfoCard
-				title='Code Ninjas'
-				keyHighlights={[
-					"Tutored elementary and middle school kids in Computer Science concepts",
-					"Started a robotics club to teach FLL robotics",
-				]}
-				topSkills={["Tutoring", "JavaScript", "Robotics"]}
-				textRight={true}
-				url={location.pathname + "/CodeNinjas"}
-				internalLink={true}
-				imgSrc='/personal-website/assets/experience/Code_Ninjas_Logo.jpg'
-			/>
-			<InfoCard
-				title='Cupertino Robotics'
-				keyHighlights={[
-					"Led the robot code and computer vision departments",
-					"Worked with Nvidia Jetson and Nvidia TX2 to provide camera streams via serial port connection",
-					"Ran automated test to verify robot position, angle, and encoder readings during the autonomous phase",
-				]}
-				topSkills={["Java", "Python", "Leadership"]}
-				textRight={false}
-				url={location.pathname + "/CupertinoRobotics"}
-				internalLink={true}
-				imgSrc='/personal-website/assets/experience/Cupertino_Robotics_Logo.jpg'
-			/>
 		</>
 	);
 };
