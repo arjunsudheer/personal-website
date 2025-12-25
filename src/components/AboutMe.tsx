@@ -37,7 +37,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    className="shrink-0 mx-auto md:mx-0 sticky top-24"
+                    className="shrink-0 mx-auto md:mx-0"
                 >
                     <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl">
                         <img 
