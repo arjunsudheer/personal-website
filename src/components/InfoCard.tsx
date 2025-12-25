@@ -34,13 +34,12 @@ const InfoCard = ({ title, description, topSkills, urls, imgSrc }: InfoCardData)
 
             {imgSrc && (
                 <div className="w-full bg-gray-200 dark:bg-slate-700 flex items-center justify-center h-48 sm:h-64 overflow-hidden">
-                    {/* object-contain ensures images are never cutoff */}
                     <img src={imgSrc} alt={title} className='w-full h-full object-contain p-2' />
                 </div>
             )}
 
-            <div className="p-8 flex flex-col flex-grow">
-                <div className="mb-8 flex-grow">
+            <div className="p-8 flex flex-col grow">
+                <div className="mb-8 grow">
                     <p className="text-center text-gray-700 dark:text-gray-300 leading-relaxed">
                         {description}
                     </p>
