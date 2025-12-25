@@ -7,6 +7,10 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    
+    # This gives the action permission to update your gh-pages branch
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout Code
@@ -23,6 +27,8 @@ jobs:
 
     - name: Deploy to GitHub Pages
       run: |
-        git config --global user.name "${{ secrets.USERNAME }}"
-        git config --global user.email "${{ secrets.EMAIL }}"
-        npm run deploy
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        npm run deploy -- -r https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
