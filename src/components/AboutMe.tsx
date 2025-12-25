@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import Typewriter from "typewriter-effect";
 import { FaGithub, FaInstagramSquare, FaLinkedin, FaGraduationCap, FaArrowRight } from "react-icons/fa";
 
 const SocialTile = ({ icon: Icon, text, link, colorClass }: { icon: any, text: string, link: string, colorClass: string }) => (
@@ -22,42 +22,6 @@ const QuickLinkButton = ({ label, targetId }: { label: string, targetId: string 
     </button>
 );
 
-const Typewriter = ({ texts }: { texts: string[] }) => {
-    const [index, setIndex] = useState(0);
-    const [displayText, setDisplayText] = useState("");
-    const [isDeleting, setIsDeleting] = useState(false);
-    const [speed, setSpeed] = useState(150);
-
-    useEffect(() => {
-        const handleType = () => {
-            const currentText = texts[index];
-            if (!isDeleting) {
-                setDisplayText(currentText.substring(0, displayText.length + 1));
-                if (displayText === currentText) {
-                    setSpeed(2000); 
-                    setIsDeleting(true);
-                } else { setSpeed(100); }
-            } else {
-                setDisplayText(currentText.substring(0, displayText.length - 1));
-                if (displayText === "") {
-                    setIsDeleting(false);
-                    setIndex((prev) => (prev + 1) % texts.length);
-                    setSpeed(500);
-                } else { setSpeed(50); }
-            }
-        };
-        const timer = setTimeout(handleType, speed);
-        return () => clearTimeout(timer);
-    }, [displayText, isDeleting, index, texts, speed]);
-
-    return (
-        <span className="text-blue-600 dark:text-blue-400 font-mono font-bold">
-            {displayText}
-            <span className="animate-pulse">|</span>
-        </span>
-    );
-};
-
 const AboutMe = () => {
     const socialLinks = {
         instagram: "https://www.instagram.com/arjun.sudheer.75/",
@@ -65,14 +29,6 @@ const AboutMe = () => {
         github: "https://github.com/arjunsudheer",
         googleScholar: "https://scholar.google.com/citations?user=3aoNkawAAAAJ&hl=en"
     };
-
-    const typewriterStrings = [
-        "Software Engineering Intern",
-        "AI Research Author",
-        "Full-Stack Developer",
-        "Cybersecurity Specialist",
-        "Machine Learning Enthusiast"
-    ];
 
     return (
         <section className="w-full min-h-screen flex items-center py-20 px-4 bg-white dark:bg-slate-900 transition-colors">
@@ -95,8 +51,22 @@ const AboutMe = () => {
                 <div className="grow">
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                         <h1 className="text-5xl font-extrabold mb-4 dark:text-white">Hi, I'm Arjun</h1>
-                        <div className="text-xl md:text-2xl h-10 mb-6">
-                            <Typewriter texts={typewriterStrings} />
+                        <div className="text-xl md:text-2xl h-10 mb-6 text-blue-600 dark:text-blue-400 font-mono font-bold">
+                            <Typewriter 
+                                options={{
+                                    strings: [
+                                        "Software Engineer",
+                                        "AI Research Author",
+                                        "Full-Stack Developer",
+                                        "Cybersecurity Specialist",
+                                        "Machine Learning Enthusiast"
+                                    ],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 40,
+                                    deleteSpeed: 25
+                                }}
+                            />
                         </div>
                         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
                             I'm a junior at San Jose State University studying software engineering. 
