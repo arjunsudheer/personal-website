@@ -27,7 +27,7 @@ jobs:
           version: 10
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lockfile --only-built-dependencies=esbuild
+        run: pnpm install --frozen-lockfile --config.only-built-dependencies=esbuild
 
       - name: Deploy to GitHub Pages
         run: |
