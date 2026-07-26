@@ -1,21 +1,31 @@
-import AboutMe from "./components/AboutMe";
-import Section from "./components/Section";
-import { ALL_SECTIONS } from "./data/data";
+import { HashRouter, Route, Routes } from "react-router-dom";
+import AboutPage from "./pages/about/About";
+import BlogsPage from "./pages/blogs/Blogs";
+import ExperiencePage from "./pages/experience/Experience";
+import PublicationsPage from "./pages/publications/Publications";
+import Navbar from "./components/ui/Navbar";
 
-function App() {
+export function AppRoutes() {
     return (
-        <main className="bg-white dark:bg-slate-900 min-h-screen transition-colors">
-            <AboutMe />
-            {ALL_SECTIONS.map((section, index) => (
-                <Section 
-                    key={section.id}
-                    id={section.id}
-                    index={index}
-                    title={section.title}
-                    data={section.data}
-                />
-            ))}
-        </main>
+        <div className="min-h-screen overflow-x-hidden bg-fixed bg-[radial-gradient(circle_at_12%_0%,_rgba(125,211,252,0.2),_transparent_30%),radial-gradient(circle_at_85%_15%,_rgba(167,139,250,0.15),_transparent_25%),linear-gradient(135deg,_#07111f,_#101a2d_52%,_#0a1322)] text-slate-100">
+            <Navbar />
+            <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 pb-16 pt-40 sm:px-8 lg:px-10">
+                <Routes>
+                    <Route path="/" element={<AboutPage />} />
+                    <Route path="/experience" element={<ExperiencePage />} />
+                    <Route path="/publications" element={<PublicationsPage />} />
+                    <Route path="/blogs" element={<BlogsPage />} />
+                </Routes>
+            </main>
+        </div>
+    );
+}
+
+export function App() {
+    return (
+        <HashRouter>
+            <AppRoutes />
+        </HashRouter>
     );
 }
 

@@ -1,9 +1,10 @@
+import type { ComponentType, SVGProps } from "react";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
 import { FaGithub, FaInstagramSquare, FaLinkedin, FaGraduationCap, FaArrowRight } from "react-icons/fa";
 
-const SocialTile = ({ icon: Icon, text, link, colorClass }: { icon: any, text: string, link: string, colorClass: string }) => (
-    <div 
+const SocialTile = ({ icon: Icon, text, link, colorClass }: { icon: ComponentType<SVGProps<SVGSVGElement>>, text: string, link: string, colorClass: string }) => (
+    <div
         onClick={() => window.open(link)}
         className="flex items-center gap-2 px-3 py-2 rounded-lg bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 transition-all cursor-pointer border border-transparent hover:border-blue-400 group"
     >
@@ -13,7 +14,7 @@ const SocialTile = ({ icon: Icon, text, link, colorClass }: { icon: any, text: s
 );
 
 const QuickLinkButton = ({ label, targetId }: { label: string, targetId: string }) => (
-    <button 
+    <button
         onClick={() => document.getElementById(targetId)?.scrollIntoView({ behavior: 'smooth' })}
         className="flex items-center justify-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-bold transition-all shadow-md hover:shadow-lg hover:-translate-y-1 active:translate-y-0 w-full sm:w-auto"
     >
@@ -33,16 +34,16 @@ const AboutMe = () => {
     return (
         <section className="w-full min-h-screen flex items-center py-20 px-4 bg-white dark:bg-slate-900 transition-colors">
             <div className="w-[90%] md:w-[66%] mx-auto flex flex-col md:flex-row items-start gap-12">
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, scale: 0.8 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     className="shrink-0 mx-auto md:mx-0"
                 >
                     <div className="w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden border-4 border-blue-500 shadow-2xl">
-                        <img 
+                        <img
                             src="/personal-website/assets/home/Arjun_Sudheer_Professional_Headshot.jpg"
-                            alt="Arjun Sudheer" 
+                            alt="Arjun Sudheer"
                             className="w-full h-full object-cover object-[center_30%]"
                         />
                     </div>
@@ -52,7 +53,7 @@ const AboutMe = () => {
                     <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
                         <h1 className="text-5xl font-extrabold mb-4 dark:text-white">Hi, I'm Arjun</h1>
                         <div className="text-xl md:text-2xl h-10 mb-6 text-blue-600 dark:text-blue-400 font-mono font-bold">
-                            <Typewriter 
+                            <Typewriter
                                 options={{
                                     strings: [
                                         "Software Engineer",
@@ -69,9 +70,9 @@ const AboutMe = () => {
                             />
                         </div>
                         <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-8">
-                            I'm a junior at San Jose State University studying software engineering. 
-                            I am passionate about building secure, intelligent systems, ranging from 
-                            full-stack web applications to advanced AI research involving RAG and 
+                            I'm a junior at San Jose State University studying software engineering.
+                            I am passionate about building secure, intelligent systems, ranging from
+                            full-stack web applications to advanced AI research involving RAG and
                             generative models.
                         </p>
                         <div className="flex flex-wrap gap-3 mb-10">
