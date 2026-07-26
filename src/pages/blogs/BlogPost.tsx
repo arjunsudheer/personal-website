@@ -9,7 +9,6 @@ const BlogPostPage = () => {
         return <Navigate to="/" replace />;
     }
 
-    // Check if the blog post exists in metadata
     const postExists = blogPosts.some((post) => post.slug === slug);
     if (!postExists) {
         return <Navigate to="/" replace />;
