@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { describe, expect, it } from 'vitest';
+import { describe, expect, it, vi } from 'vitest';
 import { AppRoutes } from './App';
 
 describe('App routing', () => {
@@ -36,14 +36,34 @@ describe('App routing', () => {
         expect(screen.getByRole('heading', { name: /publications/i })).toBeInTheDocument();
     });
 
-    it('renders the blogs page when navigating to /blogs', () => {
+    it('renders the blog list when navigating to /blog', () => {
         render(
-            <MemoryRouter initialEntries={['/blogs']}>
+            <MemoryRouter initialEntries={['/blog']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
         expect(screen.getByRole('heading', { name: /blogs/i })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: /first blog/i })).toHaveAttribute('href', '/blog/first-blog');
+    });
+
+    it('renders a Markdown post when navigating to its slug', async () => {
+        vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
+            ok: true,
+            text: async () => '# First Blog\n\nRendered from Markdown.',
+        }));
+
+        render(
+            <MemoryRouter initialEntries={['/blog/first-blog']}>
+                <AppRoutes />
+            </MemoryRouter>
+        );
+
+        expect(await screen.findByRole('heading', { name: /first blog/i })).toBeInTheDocument();
+        expect(screen.getByText(/rendered from markdown/i)).toBeInTheDocument();
+        expect(fetch).toHaveBeenCalledWith('/personal-website/blog/first-blog.md', expect.any(Object));
+
+        vi.unstubAllGlobals();
     });
 
     it('redirects unknown routes to the about page', () => {

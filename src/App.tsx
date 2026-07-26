@@ -1,5 +1,6 @@
 import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import AboutPage from "./pages/about/About";
+import BlogPostPage from "./pages/blogs/BlogPost";
 import BlogsPage from "./pages/blogs/Blogs";
 import ExperiencePage from "./pages/experience/Experience";
 import PublicationsPage from "./pages/publications/Publications";
@@ -14,7 +15,8 @@ export function AppRoutes() {
                     <Route path="/" element={<AboutPage />} />
                     <Route path="/experience" element={<ExperiencePage />} />
                     <Route path="/publications" element={<PublicationsPage />} />
-                    <Route path="/blogs" element={<BlogsPage />} />
+                    <Route path="/blog" element={<BlogsPage />} />
+                    <Route path="/blog/:slug" element={<BlogPostPage />} />
                     <Route path="*" element={<Navigate to="/" replace />} />
                 </Routes>
             </main>

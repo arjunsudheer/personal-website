@@ -1,19 +1,5 @@
-import BlogCard from "../../components/blogs/BlogCard";
-
-const blogPosts = [
-    {
-        title: "Designing calm interfaces for security and AI tools",
-        description: "Reflections on building software that feels clear, helpful, and trustworthy under real-world constraints.",
-        readTime: "4 min read",
-        blogLink: "https://github.com/arjunsudheer",
-    },
-    {
-        title: "From prompt experiments to dependable workflows",
-        description: "Notes on turning exploratory AI ideas into systems with stronger structure, feedback, and reliability.",
-        readTime: "5 min read",
-        blogLink: "https://github.com/arjunsudheer/synthetic-malware-generation-based-on-generative-models-against-zero-day-attacks",
-    },
-];
+import { Link } from "react-router-dom";
+import { blogPosts } from "../../data/blog-post-metadata";
 
 const BlogsPage = () => {
     return (
@@ -21,11 +7,25 @@ const BlogsPage = () => {
             <div className="space-y-3">
                 <h1 className="text-4xl font-semibold tracking-tight text-sky-200 sm:text-5xl">Blogs</h1>
             </div>
-            <div className="w-full space-y-4 md:w-[90%] lg:w-[95%]">
-                {blogPosts.map((post) => (
-                    <BlogCard key={post.title} {...post} />
-                ))}
-            </div>
+            {blogPosts.length === 0 ? (
+                <p className="text-slate-200">No blogs have been published yet.</p>
+            ) : (
+                <div className="w-full space-y-4 md:w-[90%] lg:w-[95%]">
+                    {blogPosts.map((post) => (
+                        <Link
+                            key={post.slug}
+                            to={`/blog/${post.slug}`}
+                            className="group block w-full rounded-[1.75rem] border border-white/20 bg-slate-950/25 p-5 shadow-[0_20px_60px_rgba(2,6,23,0.28)] backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-white/35 hover:bg-white/15 sm:p-7"
+                        >
+                            <div className="flex flex-wrap items-start justify-between gap-3">
+                                <h2 className="text-xl font-semibold text-white">{post.title}</h2>
+                                <p className="text-sm text-slate-200">{post.readTime}</p>
+                            </div>
+                            <p className="mt-3 text-sm text-slate-200">{post.description}</p>
+                        </Link>
+                    ))}
+                </div>
+            )}
         </section>
     );
 };

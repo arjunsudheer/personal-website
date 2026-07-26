@@ -5,7 +5,7 @@ const navbarLinks = [
     { label: "About", to: "/" },
     { label: "Experience", to: "/experience" },
     { label: "Publications", to: "/publications" },
-    { label: "Blogs", to: "/blogs" },
+    { label: "Blogs", to: "/blog" },
 ];
 
 const Navbar = () => {
