@@ -13,7 +13,7 @@ describe('App routing', () => {
 
         expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
-        expect(screen.getByText(/I build dependable software at the intersection of web development, AI, and security/i)).toBeInTheDocument();
+        expect(screen.getByText(/software engineer intern/i)).toBeInTheDocument();
     });
 
     it('renders the experience page when navigating to /experience', () => {
@@ -44,5 +44,16 @@ describe('App routing', () => {
         );
 
         expect(screen.getByRole('heading', { name: /blogs/i })).toBeInTheDocument();
+    });
+
+    it('redirects unknown routes to the about page', () => {
+        render(
+            <MemoryRouter initialEntries={['/does-not-exist']}>
+                <AppRoutes />
+            </MemoryRouter>
+        );
+
+        expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
     });
 });

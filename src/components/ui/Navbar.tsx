@@ -69,7 +69,7 @@ const Navbar = () => {
     }, [location.pathname]);
 
     return (
-        <nav aria-label="Primary navigation" className="fixed inset-x-0 top-0 z-30 h-36 bg-[linear-gradient(135deg,_#07111f,_#101a2d)]/95 backdrop-blur-xl">
+        <nav aria-label="Primary navigation" className="fixed inset-x-0 top-0 z-30 h-36 bg-[linear-gradient(135deg,#07111f,#101a2d)]/95 backdrop-blur-xl">
             <NavLink to="/" className="fixed left-4 top-4 text-lg font-semibold tracking-[0.12em] text-white transition-opacity hover:opacity-75 sm:left-8 sm:top-5 sm:text-xl">
                 Arjun Sudheer
             </NavLink>

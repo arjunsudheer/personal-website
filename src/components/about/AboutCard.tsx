@@ -32,11 +32,11 @@ const AboutCard = ({ profileImageUrl, name, headline, university, graduationDate
                         </div>
                     </div>
                     <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/30 p-4">
-                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-violet-300/10 text-violet-200">
+                        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-sky-300/10 text-sky-200">
                             <FaLocationDot className="text-lg" />
                         </div>
                         <div>
-                            <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-violet-200 uppercase">Based in</p>
+                            <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-sky-200 uppercase">Based in</p>
                             <p className="mt-1 text-sm font-medium text-white">{location}</p>
                         </div>
                     </div>

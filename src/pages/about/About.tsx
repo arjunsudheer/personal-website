@@ -1,5 +1,5 @@
-import { FaAws, FaBrain, FaChartLine, FaDatabase, FaDiagramProject, FaEnvelope, FaGithub, FaGoogleScholar, FaInstagram, FaJava, FaLinkedin } from "react-icons/fa6";
-import { SiAndroid, SiAndroidstudio, SiC, SiCplusplus, SiCss, SiDocker, SiFastapi, SiFirebase, SiFlask, SiGithubactions, SiGit, SiGnubash, SiGooglecloud, SiHtml5, SiJavascript, SiKotlin, SiLangchain, SiLinux, SiMysql, SiNumpy, SiPandas, SiPostgresql, SiPostman, SiPrometheus, SiPython, SiPytorch, SiQdrant, SiReact, SiScikitlearn, SiScrumalliance, SiSpringboot, SiTailwindcss, SiTensorflow, SiTestinglibrary, SiTypescript, SiUml } from "react-icons/si";
+import { FaAws, FaBrain, FaDatabase, FaDiagramProject, FaEnvelope, FaGithub, FaGoogleScholar, FaInstagram, FaJava, FaLinkedin } from "react-icons/fa6";
+import { SiC, SiCplusplus, SiCss, SiDocker, SiFastapi, SiFirebase, SiFlask, SiGithubactions, SiGit, SiGnubash, SiGooglecloud, SiHtml5, SiJavascript, SiLangchain, SiLinux, SiMysql, SiNumpy, SiPandas, SiPostgresql, SiPostman, SiPrometheus, SiPython, SiPytorch, SiReact, SiScikitlearn, SiScrumalliance, SiSpringboot, SiTailwindcss, SiTensorflow, SiTestinglibrary, SiTypescript, SiUml } from "react-icons/si";
 import AboutCard from "../../components/about/AboutCard";
 import DescriptionCard from "../../components/about/DescriptionCard";
 import SkillCard from "../../components/about/SkillCard";
@@ -23,8 +23,6 @@ const skillGroups = [
             { skillName: "PyTorch", skillIcon: <SiPytorch /> },
             { skillName: "TensorFlow", skillIcon: <SiTensorflow /> },
             { skillName: "Scikit-learn", skillIcon: <SiScikitlearn /> },
-            { skillName: "Seaborn", skillIcon: <FaChartLine /> },
-            { skillName: "Matplotlib", skillIcon: <FaChartLine /> },
             { skillName: "NumPy", skillIcon: <SiNumpy /> },
             { skillName: "Pandas", skillIcon: <SiPandas /> },
             { skillName: "LangChain", skillIcon: <SiLangchain /> },
@@ -41,8 +39,6 @@ const skillGroups = [
             { skillName: "HTML", skillIcon: <SiHtml5 /> },
             { skillName: "CSS", skillIcon: <SiCss /> },
             { skillName: "Tailwind CSS", skillIcon: <SiTailwindcss /> },
-            { skillName: "Kotlin", skillIcon: <SiKotlin /> },
-            { skillName: "Android", skillIcon: <SiAndroid /> },
         ],
     },
     {
@@ -55,7 +51,6 @@ const skillGroups = [
             { skillName: "Linux", skillIcon: <SiLinux /> },
             { skillName: "AWS", skillIcon: <FaAws /> },
             { skillName: "GCP", skillIcon: <SiGooglecloud /> },
-            { skillName: "Android Studio", skillIcon: <SiAndroidstudio /> },
         ],
     },
     {
@@ -66,7 +61,6 @@ const skillGroups = [
             { skillName: "Firebase", skillIcon: <SiFirebase /> },
             { skillName: "FAISS", skillIcon: <FaDatabase /> },
             { skillName: "ChromaDB", skillIcon: <FaDatabase /> },
-            { skillName: "Qdrant", skillIcon: <SiQdrant /> },
         ],
     },
     {

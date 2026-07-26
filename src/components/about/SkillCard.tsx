@@ -12,7 +12,7 @@ interface SkillCardProps {
 
 const SkillCard = ({ category, skills }: SkillCardProps) => {
     return (
-        <section className="rounded-[1.5rem] border border-white/15 bg-slate-950/25 p-4 shadow-[0_12px_36px_rgba(2,6,23,0.2)] backdrop-blur-xl">
+        <section className="rounded-3xl border border-white/15 bg-slate-950/25 p-4 shadow-[0_12px_36px_rgba(2,6,23,0.2)] backdrop-blur-xl">
             <h3 className="text-sm font-semibold uppercase tracking-[0.25em] text-cyan-300">{category}</h3>
             <div className="mt-4 flex flex-wrap gap-2">
                 {skills.map((skill) => (
