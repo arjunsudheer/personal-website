@@ -9,8 +9,9 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist -b gh-pages"
+    "predeploy": "pnpm build",
+    "deploy": "gh-pages -d dist -b gh-pages -r https://x-access-token:$GITHUB_TOKEN@github.com/arjunsudheer/personal-website.git",
+    "preinstall": "npx only-allow pnpm"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
