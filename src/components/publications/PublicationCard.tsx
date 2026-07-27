@@ -1,8 +1,8 @@
 interface PublicationCardProps {
-    title: string;
-    publishedIn: string;
-    abstract: string;
-    publicationLink: string;
+    readonly title: string;
+    readonly publishedIn: string;
+    readonly abstract: string;
+    readonly publicationLink: string;
 }
 
 const PublicationCard = ({ title, publishedIn, abstract, publicationLink }: PublicationCardProps) => {

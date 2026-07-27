@@ -3,7 +3,7 @@ import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
 interface BlogPostProps {
-    slug: string;
+    readonly slug: string;
 }
 
 const BlogPost = ({ slug }: BlogPostProps) => {

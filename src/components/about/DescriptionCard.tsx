@@ -1,14 +1,14 @@
 import type { ReactNode } from "react";
 
 type SocialProfileIcon = {
-    profileName: string;
-    profileIcon: ReactNode;
-    profileLink: string;
+    readonly profileName: string;
+    readonly profileIcon: ReactNode;
+    readonly profileLink: string;
 };
 
 interface DescriptionCardProps {
-    description: string;
-    socialProfiles: SocialProfileIcon[];
+    readonly description: string;
+    readonly socialProfiles: SocialProfileIcon[];
 }
 
 const DescriptionCard = ({ description, socialProfiles }: DescriptionCardProps) => {

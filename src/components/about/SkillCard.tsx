@@ -1,13 +1,13 @@
 import type { ReactNode } from "react";
 
 type Skill = {
-    skillName: string;
-    skillIcon: ReactNode;
+    readonly skillName: string;
+    readonly skillIcon: ReactNode;
 };
 
 interface SkillCardProps {
-    category: string;
-    skills: Skill[];
+    readonly category: string;
+    readonly skills: Skill[];
 }
 
 const SkillCard = ({ category, skills }: SkillCardProps) => {

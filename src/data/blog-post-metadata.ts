@@ -1,8 +1,8 @@
 export interface BlogPostMetadata {
-    slug: string;
-    title: string;
-    description: string;
-    readTime: string;
+    readonly slug: string;
+    readonly title: string;
+    readonly description: string;
+    readonly readTime: string;
 }
 
 export const blogPosts: BlogPostMetadata[] = [

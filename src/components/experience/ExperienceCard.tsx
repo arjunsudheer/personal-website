@@ -1,12 +1,12 @@
 interface ExperienceCardProps {
-    companyLogoUrl: string;
-    company: string;
-    role: string;
-    startDate: string;
-    endDate: string;
-    location: string;
-    executiveSummary: string;
-    contributions: string[];
+    readonly companyLogoUrl: string;
+    readonly company: string;
+    readonly role: string;
+    readonly startDate: string;
+    readonly endDate: string;
+    readonly location: string;
+    readonly executiveSummary: string;
+    readonly contributions: string[];
 }
 
 const ExperienceCard = ({ companyLogoUrl, company, role, startDate, endDate, location, executiveSummary, contributions }: ExperienceCardProps) => {

@@ -1,12 +1,12 @@
 import { FaLocationDot, FaUserGraduate } from "react-icons/fa6";
 
 interface AboutCardProps {
-    profileImageUrl: string;
-    name: string;
-    headline: string;
-    university: string;
-    graduationDate: string;
-    location: string;
+    readonly profileImageUrl: string;
+    readonly name: string;
+    readonly headline: string;
+    readonly university: string;
+    readonly graduationDate: string;
+    readonly location: string;
 }
 
 const AboutCard = ({ profileImageUrl, name, headline, university, graduationDate, location }: AboutCardProps) => {
