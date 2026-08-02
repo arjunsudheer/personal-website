@@ -5,11 +5,11 @@ interface AboutCardProps {
     readonly name: string;
     readonly headline: string;
     readonly university: string;
-    readonly graduationDate: string;
+    readonly program: string;
     readonly location: string;
 }
 
-const AboutCard = ({ profileImageUrl, name, headline, university, graduationDate, location }: AboutCardProps) => {
+const AboutCard = ({ profileImageUrl, name, headline, university, program, location }: AboutCardProps) => {
     return (
         <section className="h-full rounded-4xl border border-white/20 bg-slate-950/25 p-6 shadow-[0_24px_70px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-8">
             <div className="flex flex-col items-center text-center">
@@ -28,7 +28,7 @@ const AboutCard = ({ profileImageUrl, name, headline, university, graduationDate
                         <div className="min-w-0">
                             <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-sky-200 uppercase">Education</p>
                             <p className="mt-1 text-sm font-medium text-white">{university}</p>
-                            <p className="mt-0.5 text-xs text-slate-400">{graduationDate}</p>
+                            <p className="mt-0.5 text-xs text-slate-400">{program}</p>
                         </div>
                     </div>
                     <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/30 p-4">

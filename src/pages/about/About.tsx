@@ -1,5 +1,5 @@
 import { FaAws, FaBrain, FaDatabase, FaDiagramProject, FaEnvelope, FaGithub, FaGoogleScholar, FaInstagram, FaJava, FaLinkedin } from "react-icons/fa6";
-import { SiC, SiCplusplus, SiCss, SiDocker, SiFastapi, SiFlask, SiGithubactions, SiGit, SiGnubash, SiGooglecloud, SiHtml5, SiJavascript, SiLangchain, SiLinux, SiMysql, SiPostgresql, SiPostman, SiPrometheus, SiPython, SiPytorch, SiReact, SiScrumalliance, SiSpringboot, SiTailwindcss, SiTestinglibrary, SiTypescript, SiUml, SiNginx } from "react-icons/si";
+import { SiC, SiCplusplus, SiCss, SiDocker, SiFastapi, SiFlask, SiGithubactions, SiGit, SiGnubash, SiGooglecloud, SiHtml5, SiJavascript, SiLangchain, SiLinux, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiOpentelemetry, SiOpenapiinitiative, SiOpenaigym, SiPostgresql, SiPostman, SiPrometheus, SiPython, SiPytorch, SiReact, SiScrumalliance, SiSpringboot, SiTailwindcss, SiTestinglibrary, SiTypescript, SiUml, SiNginx, SiSqlite } from "react-icons/si";
 import AboutCard from "../../components/about/AboutCard";
 import DescriptionCard from "../../components/about/DescriptionCard";
 import SkillCard from "../../components/about/SkillCard";
@@ -23,9 +23,9 @@ const skillGroups = [
             { skillName: "Spring Boot", skillIcon: <SiSpringboot /> },
             { skillName: "FastAPI", skillIcon: <SiFastapi /> },
             { skillName: "Flask", skillIcon: <SiFlask /> },
-            { skillName: "REST API", skillIcon: <SiFlask /> },
-            { skillName: "Node.js", skillIcon: <SiReact /> },
-            { skillName: "Next.js", skillIcon: <SiReact /> },
+            { skillName: "REST API", skillIcon: <SiOpenapiinitiative /> },
+            { skillName: "Node.js", skillIcon: <SiNodedotjs /> },
+            { skillName: "Next.js", skillIcon: <SiNextdotjs /> },
             { skillName: "React.js", skillIcon: <SiReact /> },
             { skillName: "HTML", skillIcon: <SiHtml5 /> },
             { skillName: "CSS", skillIcon: <SiCss /> },
@@ -38,11 +38,11 @@ const skillGroups = [
             { skillName: "LLMs", skillIcon: <FaBrain /> },
             { skillName: "LangChain", skillIcon: <SiLangchain /> },
             { skillName: "LangGraph", skillIcon: <SiLangchain /> },
-            { skillName: "OpenAI API", skillIcon: <SiLangchain /> },
-            { skillName: "RAG", skillIcon: <SiLangchain /> },
-            { skillName: "MCP", skillIcon: <SiLangchain /> },
-            { skillName: "Evals", skillIcon: <SiLangchain /> },
-            { skillName: "Machine Learning", skillIcon: <SiLangchain /> },
+            { skillName: "OpenAI API", skillIcon: <SiOpenaigym /> },
+            { skillName: "RAG", skillIcon: <SiOpenapiinitiative /> },
+            { skillName: "MCP", skillIcon: <SiOpentelemetry /> },
+            { skillName: "Evals", skillIcon: <SiOpentelemetry /> },
+            { skillName: "Machine Learning", skillIcon: <FaBrain /> },
             { skillName: "PyTorch", skillIcon: <SiPytorch /> },
         ]
     },
@@ -53,11 +53,11 @@ const skillGroups = [
             { skillName: "Linux", skillIcon: <SiLinux /> },
             { skillName: "Docker", skillIcon: <SiDocker /> },
             { skillName: "Git", skillIcon: <SiGit /> },
-            { skillName: "GitHub Actions", skillIcon: <SiGit /> },
+            { skillName: "GitHub Actions", skillIcon: <SiGithubactions /> },
             { skillName: "GCP", skillIcon: <SiGooglecloud /> },
             { skillName: "AWS", skillIcon: <FaAws /> },
             { skillName: "Nginx", skillIcon: <SiNginx /> },
-            { skillName: "OpenTelemetry", skillIcon: <SiGit /> },
+            { skillName: "OpenTelemetry", skillIcon: <SiOpentelemetry /> },
             { skillName: "Prometheus", skillIcon: <SiPrometheus /> },
             { skillName: "Postman", skillIcon: <SiPostman /> },
         ],
@@ -65,11 +65,11 @@ const skillGroups = [
     {
         category: "Databases",
         skills: [
-            { skillName: "SQL", skillIcon: <SiMysql /> },
+            { skillName: "SQL", skillIcon: <SiSqlite /> },
             { skillName: "MySQL", skillIcon: <SiMysql /> },
             { skillName: "PostgreSQL", skillIcon: <SiPostgresql /> },
-            { skillName: "SQLite", skillIcon: <SiMysql /> },
-            { skillName: "MongoDB", skillIcon: <SiMysql /> },
+            { skillName: "SQLite", skillIcon: <SiSqlite /> },
+            { skillName: "MongoDB", skillIcon: <SiMongodb /> },
             { skillName: "FAISS", skillIcon: <FaDatabase /> },
             { skillName: "ChromaDB", skillIcon: <FaDatabase /> },
         ],
@@ -99,12 +99,12 @@ const AboutPage = () => {
                     name="Arjun Sudheer"
                     headline="Software Engineer • AI/ML • Cloud"
                     university="San José State University"
-                    graduationDate="B.S. Software Engineering"
+                    program="B.S. Software Engineering"
                     location="Cupertino, CA"
                 />
 
                 <DescriptionCard
-                    description="I’m a software engineer focused on building reliable AI-powered systems and cloud-native applications. My work spans Python, Java, full-stack development, agentic workflows, and applied machine learning with a strong emphasis on dependable software engineering practices. I enjoy turning complex problems into practical products and collaborating across engineering, research, and product teams."
+                    description="I'm a software engineer focused on building reliable AI-powered systems and cloud-native applications. My work spans Python, Java, full-stack development, agentic workflows, and applied machine learning with a strong emphasis on dependable software engineering practices. I enjoy turning complex problems into practical products and collaborating across engineering, research, and product teams."
                     socialProfiles={[
                         { profileName: "LinkedIn", profileIcon: <FaLinkedin />, profileLink: "https://www.linkedin.com/in/arjun-sudheer-20b1a0214/" },
                         { profileName: "GitHub", profileIcon: <FaGithub />, profileLink: "https://github.com/arjunsudheer" },

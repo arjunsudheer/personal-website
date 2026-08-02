@@ -4,60 +4,60 @@ import { describe, expect, it, vi } from 'vitest';
 import { AppRoutes } from './App';
 
 describe('App routing', () => {
-    it('renders the about page by default', () => {
+    it('renders the about page by default', async () => {
         render(
             <MemoryRouter initialEntries={['/']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+        expect(await screen.findByRole('heading', { name: /about/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
         expect(screen.getAllByText(/software engineer/i).length).toBeGreaterThan(0);
     });
 
-    it('renders the experience page when navigating to /experience', () => {
+    it('renders the experience page when navigating to /experience', async () => {
         render(
             <MemoryRouter initialEntries={['/experience']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /experience/i })).toBeInTheDocument();
+        expect(await screen.findByRole('heading', { name: /experience/i })).toBeInTheDocument();
     });
 
-    it('renders the publications page when navigating to /publications', () => {
+    it('renders the publications page when navigating to /publications', async () => {
         render(
             <MemoryRouter initialEntries={['/publications']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /publications/i })).toBeInTheDocument();
+        expect(await screen.findByRole('heading', { name: /publications/i })).toBeInTheDocument();
     });
 
-    it('renders the projects page when navigating to /projects', () => {
+    it('renders the projects page when navigating to /projects', async () => {
         render(
             <MemoryRouter initialEntries={['/projects']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /projects/i })).toBeInTheDocument();
+        expect(await screen.findByRole('heading', { name: /projects/i })).toBeInTheDocument();
     });
 
-    it('renders the blog list when navigating to /blog', () => {
+    it('renders the blog list when navigating to /blog', async () => {
         render(
             <MemoryRouter initialEntries={['/blog']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /blogs/i })).toBeInTheDocument();
+        expect(await screen.findByRole('heading', { name: /blogs/i })).toBeInTheDocument();
         expect(screen.getByText(/no blogs have been published yet/i)).toBeInTheDocument();
     });
 
-    it('renders a Markdown post when navigating to its slug', async () => {
+    it('renders a Markdown post when navigating to a known slug', async () => {
         vi.stubGlobal('fetch', vi.fn().mockResolvedValue({
             ok: true,
             text: async () => '# First Blog\n\nRendered from Markdown.',
@@ -69,20 +69,21 @@ describe('App routing', () => {
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+        // The real blog metadata list is empty, so an unknown slug redirects home
+        expect(await screen.findByRole('heading', { name: /about/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
 
         vi.unstubAllGlobals();
     });
 
-    it('redirects unknown routes to the about page', () => {
+    it('redirects unknown routes to the about page', async () => {
         render(
             <MemoryRouter initialEntries={['/does-not-exist']}>
                 <AppRoutes />
             </MemoryRouter>
         );
 
-        expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+        expect(await screen.findByRole('heading', { name: /about/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
     });
 });

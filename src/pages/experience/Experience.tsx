@@ -19,7 +19,7 @@ const experienceItems = [
     {
         companyLogoUrl: "/personal-website/assets/experience/cisco_logo.jpg",
         company: "Cisco",
-        role: "Software Engineering Intern",
+        role: "Software Engineer Intern",
         startDate: "Jul 2025",
         endDate: "Dec 2025",
         location: "San Jose, CA",
@@ -36,7 +36,7 @@ const experienceItems = [
         company: "San Jose State University",
         role: "Research Assistant",
         startDate: "Jun 2024",
-        endDate: "Jun 2025",
+        endDate: "Jul 2025",
         location: "San Jose, CA",
         executiveSummary: "Published 3 peer-reviewed papers on LLM-driven cybersecurity systems and generative-model-based malware detection",
         contributions: [
@@ -49,9 +49,9 @@ const experienceItems = [
     {
         companyLogoUrl: "/personal-website/assets/experience/charles_w_davidson_college_of_engineering_at_sjsu_logo.jpg",
         company: "San Jose State University",
-        role: "Software Engineering Intern",
-        startDate: "Jul 2025",
-        endDate: "Dec 2025",
+        role: "Software Engineer Intern",
+        startDate: "Jun 2024",
+        endDate: "Aug 2024",
         location: "San Jose, CA",
         executiveSummary: "Built a production-ready FastAPI URL shortener serving 500+ users with Dockerized deployment and observability.",
         contributions: [
@@ -84,7 +84,7 @@ const ExperiencePage = () => {
             </div>
             <div className="w-full space-y-4 md:w-[90%] lg:w-[95%]">
                 {experienceItems.map((item) => (
-                    <ExperienceCard key={item.company} {...item} />
+                    <ExperienceCard key={`${item.company}-${item.role}-${item.startDate}`} {...item} />
                 ))}
             </div>
         </section>

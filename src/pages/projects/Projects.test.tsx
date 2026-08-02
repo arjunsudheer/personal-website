@@ -7,7 +7,16 @@ describe('ProjectsPage', () => {
         render(<ProjectsPage />);
 
         expect(screen.getByRole('heading', { name: /projects/i })).toBeInTheDocument();
-        expect(screen.getByText(/multi-agent network defense platform/i)).toBeInTheDocument();
-        expect(screen.getByText(/ai compliance tracking assistant/i)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /cornhole referee/i })).toBeInTheDocument();
+        expect(screen.getByRole('link', { name: /cornhole referee/i })).toHaveAttribute(
+            'href',
+            'https://github.com/arjunsudheer/cornhole-referee'
+        );
+    });
+
+    it('does not include the private Daily Compass project', () => {
+        render(<ProjectsPage />);
+
+        expect(screen.queryByText(/daily compass/i)).not.toBeInTheDocument();
     });
 });
