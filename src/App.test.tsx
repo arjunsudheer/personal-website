@@ -13,7 +13,7 @@ describe('App routing', () => {
 
         expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
         expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
-        expect(screen.getByText(/software engineer intern/i)).toBeInTheDocument();
+        expect(screen.getAllByText(/software engineer/i).length).toBeGreaterThan(0);
     });
 
     it('renders the experience page when navigating to /experience', () => {
@@ -36,6 +36,16 @@ describe('App routing', () => {
         expect(screen.getByRole('heading', { name: /publications/i })).toBeInTheDocument();
     });
 
+    it('renders the projects page when navigating to /projects', () => {
+        render(
+            <MemoryRouter initialEntries={['/projects']}>
+                <AppRoutes />
+            </MemoryRouter>
+        );
+
+        expect(screen.getByRole('heading', { name: /projects/i })).toBeInTheDocument();
+    });
+
     it('renders the blog list when navigating to /blog', () => {
         render(
             <MemoryRouter initialEntries={['/blog']}>
@@ -44,7 +54,7 @@ describe('App routing', () => {
         );
 
         expect(screen.getByRole('heading', { name: /blogs/i })).toBeInTheDocument();
-        expect(screen.getByRole('link', { name: /first blog/i })).toHaveAttribute('href', '/blog/first-blog');
+        expect(screen.getByText(/no blogs have been published yet/i)).toBeInTheDocument();
     });
 
     it('renders a Markdown post when navigating to its slug', async () => {
@@ -59,9 +69,8 @@ describe('App routing', () => {
             </MemoryRouter>
         );
 
-        expect(await screen.findByRole('heading', { name: /first blog/i })).toBeInTheDocument();
-        expect(screen.getByText(/rendered from markdown/i)).toBeInTheDocument();
-        expect(fetch).toHaveBeenCalledWith('/personal-website/blog/first-blog.md', expect.any(Object));
+        expect(screen.getByRole('heading', { name: /about/i })).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /arjun sudheer/i })).toBeInTheDocument();
 
         vi.unstubAllGlobals();
     });

@@ -18,7 +18,7 @@ const AboutCard = ({ profileImageUrl, name, headline, university, graduationDate
                     alt={name}
                     className="h-32 w-32 rounded-full border border-white/50 object-cover object-[center_18%] shadow-[0_12px_36px_rgba(56,189,248,0.25)] sm:h-36 sm:w-36"
                 />
-                <h2 className="mt-6 text-3xl font-semibold text-white">{name}</h2>
+                <h2 className="mt-6 text-3xl font-semibold text-white sm:text-3xl">{name}</h2>
                 <p className="mt-2 text-base text-sky-200">{headline}</p>
                 <div className="mt-8 w-full max-w-md space-y-3 text-left">
                     <div className="flex items-center gap-4 rounded-2xl border border-white/10 bg-slate-950/30 p-4">

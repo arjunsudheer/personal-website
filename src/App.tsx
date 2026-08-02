@@ -3,6 +3,7 @@ import AboutPage from "./pages/about/About";
 import BlogPostPage from "./pages/blogs/BlogPost";
 import BlogsPage from "./pages/blogs/Blogs";
 import ExperiencePage from "./pages/experience/Experience";
+import ProjectsPage from "./pages/projects/Projects";
 import PublicationsPage from "./pages/publications/Publications";
 import Navbar from "./components/ui/Navbar";
 
@@ -14,6 +15,7 @@ export function AppRoutes() {
                 <Routes>
                     <Route path="/" element={<AboutPage />} />
                     <Route path="/experience" element={<ExperiencePage />} />
+                    <Route path="/projects" element={<ProjectsPage />} />
                     <Route path="/publications" element={<PublicationsPage />} />
                     <Route path="/blog" element={<BlogsPage />} />
                     <Route path="/blog/:slug" element={<BlogPostPage />} />
