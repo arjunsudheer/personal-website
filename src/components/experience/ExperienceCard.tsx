@@ -19,7 +19,7 @@ const ExperienceCard = ({ companyLogoUrl, company, role, startDate, endDate, loc
                 <div className="hidden w-px rounded-full bg-white/20 sm:block" />
                 <div className="flex-1">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                        <h2 className="flex-1 min-w-0 text-xl font-semibold text-white">{company}</h2>
+                        <h2 className="min-w-0 flex-1 text-xl font-semibold text-white">{company}</h2>
                         <p className="rounded-full border border-white/10 bg-slate-950/20 px-3 py-1 text-xs text-slate-200">{startDate} – {endDate}</p>
                     </div>
                     <div className="mt-2 flex flex-wrap items-center justify-between gap-2">
