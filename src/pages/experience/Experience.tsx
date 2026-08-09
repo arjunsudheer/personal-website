@@ -8,10 +8,10 @@ const experienceItems = [
         startDate: "May 2026",
         endDate: "Aug 2026",
         location: "Santa Clara, CA",
-        executiveSummary: "Engineered a multi-agent analysis and evaluation system for Java libraries at Oracle Cloud Infrastructure (OCI).",
+        executiveSummary: "Worked in the Java Platform Group, that develops the JDK, to create a multi-agent analysis and evaluation system for evaluating open-source Java libraries.",
         contributions: [
-            "Architected a Codex skill and Spring Boot server to analyze and score Java libraries' release models",
-            "Developed a state-machine coordinator handling dependency analysis, retries, and Server-Sent Events streaming",
+            "Worked in Oracle Cloud Infrastructure's (OCI) Java Platform Group, which develops the JDK, to build a Codex skill that analyzes the development practices of open-source Java libraries and evaluates the effectiveness of their release models",
+            "Developed a Spring Boot-based state machine coordinator on Java 26 that orchestrated recursive dependency analysis and ensured robustness against network instability and data formatting errors",
             "Implemented OpenTelemetry-traced LLM judges in self-improving agent loops, boosting eval pass rate by 17%",
             "Added deterministic guardrails and prompt optimizations, enabling smaller models and cutting AI costs by 90%"
         ],
