@@ -16,6 +16,6 @@ describe('PublicationsPage', () => {
         const links = screen.getAllByRole('link');
         const hrefs = links.map((link) => link.getAttribute('href'));
         expect(new Set(hrefs).size).toBe(hrefs.length);
-        expect(hrefs.length).toBe(3);
+        expect(hrefs.length).toBe(4);
     });
 });
