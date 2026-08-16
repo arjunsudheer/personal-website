@@ -13,7 +13,7 @@ const experienceItems = [
             "Worked in Oracle Cloud Infrastructure's (OCI) Java Platform Group, which develops the JDK, to build a Codex skill that analyzes the development practices of open-source Java libraries and evaluates the effectiveness of their release models",
             "Developed a Spring Boot-based state machine coordinator on Java 26 that orchestrated recursive dependency analysis and ensured robustness against network instability and data formatting errors",
             "Implemented OpenTelemetry-traced LLM judges in self-improving agent loops, boosting eval pass rate by 17%",
-            "Added deterministic guardrails and prompt optimizations, enabling smaller models and cutting AI costs by 90%"
+            "Optimized agent harness with guardrails and prompt tuning, enabling smaller models and cutting AI costs by 90%"
         ],
     },
     {
@@ -40,7 +40,7 @@ const experienceItems = [
         location: "San Jose, CA",
         executiveSummary: "Published 3 peer-reviewed papers on LLM-driven cybersecurity systems and generative-model-based malware detection",
         contributions: [
-            "Published 3 peer-reviewed papers on LLM-driven cybersecurity and agentic AI systems (IEEE x2, JSAN)",
+            "Published 4 peer-reviewed papers on LLM-driven cybersecurity and agentic AI systems (IEEE x3, JSAN)",
             "Built a real-time multi-agent intrusion detection and incident response system for live network traffic (IEEE)",
             "Trained a PyTorch diffusion model generating malware images, improving zero-day detection by 15% (IEEE)",
             "Designed an ensemble detection and LLM-judge pipeline achieving 99%+ accuracy and 1.0 groundedness (JSAN)",
