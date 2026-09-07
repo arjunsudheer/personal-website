@@ -16,7 +16,7 @@ const BlogPostPage = () => {
 
     return (
         <section className="space-y-8">
-            <Link to="/blog" className="inline-flex text-sm font-medium text-sky-200 transition hover:text-white">
+            <Link to="/blog" className="inline-flex text-sm font-medium text-sky-200 transition hover:text-sky-500">
                 ← All posts
             </Link>
             <BlogPostContent slug={slug} />

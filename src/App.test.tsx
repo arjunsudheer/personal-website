@@ -54,7 +54,7 @@ describe('App routing', () => {
         );
 
         expect(await screen.findByRole('heading', { name: /blogs/i })).toBeInTheDocument();
-        expect(screen.getByText(/no blogs have been published yet/i)).toBeInTheDocument();
+        expect(screen.getByRole('heading', { name: /how i use ai to code/i })).toBeInTheDocument();
     });
 
     it('renders a Markdown post when navigating to a known slug', async () => {
