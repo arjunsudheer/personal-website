@@ -15,10 +15,10 @@ const navbarLinks = [
 const Navbar = () => {
     return (
         <nav aria-label="Primary navigation" className="fixed inset-x-0 top-0 z-30 h-32 bg-[linear-gradient(135deg,#07111f,#101a2d)]/95 backdrop-blur-xl sm:h-36">
-            <NavLink to="/" className="fixed left-1/2 top-3 flex -translate-x-1/2 items-center justify-center text-base font-semibold tracking-[0.12em] text-white transition-opacity hover:opacity-75 sm:left-8 sm:top-5 sm:translate-x-0 sm:justify-start sm:text-xl">
+            <NavLink to="/" className="fixed left-1/2 top-3 flex -translate-x-1/2 items-center justify-center text-base font-semibold tracking-[0.12em] text-white transition-opacity hover:opacity-75 sm:text-xl">
                 Arjun Sudheer
             </NavLink>
-            <ul className="fixed left-1/2 top-12 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white/20 bg-slate-950/45 px-1.5 py-1.5 shadow-[0_12px_40px_rgba(2,6,23,0.35),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl sm:top-4 sm:gap-2 sm:px-2.5 sm:py-2.5">
+            <ul className="fixed left-1/2 top-12 flex -translate-x-1/2 items-center gap-1 rounded-full border border-white/20 bg-slate-950/45 px-1.5 py-1.5 shadow-[0_12px_40px_rgba(2,6,23,0.35),inset_0_1px_0_rgba(255,255,255,0.18)] backdrop-blur-2xl sm:top-14 sm:gap-2 sm:px-2.5 sm:py-2.5">
                 {navbarLinks.map((link) => (
                     <li key={link.to} className="relative z-10">
                         <NavLink

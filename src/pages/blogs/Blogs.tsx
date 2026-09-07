@@ -19,7 +19,7 @@ const BlogsPage = () => {
                         >
                             <div className="flex flex-wrap items-start justify-between gap-3">
                                 <h2 className="text-xl font-semibold text-white">{post.title}</h2>
-                                <p className="text-sm text-slate-200">{post.readTime}</p>
+                                <p className="text-sm text-slate-200">{post.readTime} min. read</p>
                             </div>
                             <p className="mt-3 text-sm text-slate-200">{post.description}</p>
                         </Link>
