@@ -97,7 +97,7 @@ const AboutPage = () => {
                 <AboutCard
                     profileImageUrl="/personal-website/assets/about/Arjun_Sudheer_Professional_Headshot.jpg"
                     name="Arjun Sudheer"
-                    headline="SWE • Backend & Agentic AI • Ex-Oracle, Cisco • SJSU '27"
+                    headline="SWE @ SJSU ('27) | Ex-Oracle, Cisco | Backend & Agentic AI"
                     university="San Jose State University"
                     program="B.S. Software Engineering"
                     location="Cupertino, CA"
