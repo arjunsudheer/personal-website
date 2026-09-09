@@ -29,8 +29,8 @@ describe('BlogsPage', () => {
     it('renders a link for every blog post with its metadata', async () => {
         vi.doMock('../../data/blog-post-metadata', () => ({
             blogPosts: [
-                { slug: 'first-post', title: 'First Post', description: 'An intro post.', readTime: '3 min read' },
-                { slug: 'second-post', title: 'Second Post', description: 'A follow-up post.', readTime: '5 min read' },
+                { slug: 'first-post', title: 'First Post', description: 'An intro post.', readTime: '3' },
+                { slug: 'second-post', title: 'Second Post', description: 'A follow-up post.', readTime: '5' },
             ],
         }));
 
@@ -39,7 +39,7 @@ describe('BlogsPage', () => {
         const firstLink = screen.getByRole('link', { name: /first post/i });
         expect(firstLink).toHaveAttribute('href', '/blog/first-post');
         expect(screen.getByText('An intro post.')).toBeInTheDocument();
-        expect(screen.getByText('3 min read')).toBeInTheDocument();
+        expect(screen.getByText('3 min. read')).toBeInTheDocument();
         expect(screen.getByRole('link', { name: /second post/i })).toHaveAttribute('href', '/blog/second-post');
     });
 });

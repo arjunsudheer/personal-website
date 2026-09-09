@@ -26,9 +26,9 @@ const experienceItems = [
         executiveSummary: "Built a full-stack AI-powered compliance tracking platform supporting 400+ projects and 100+ users.",
         contributions: [
             "Built a full-stack web app using Python, MySQL, JavaScript tracking 400+ compliance projects for 100+ users",
+            "Deployed GitHub Actions CI/CD, Playwright tests, Nginx reverse proxy, and watchdogs, cutting downtime by 98%",
             "Automated project updates using LangGraph AI agents, and OpenAI API, saving 5+ team hours weekly",
             "Added RAG on Google Cloud documents and database tool calls for live project data, reducing hallucinations",
-            "Deployed GitHub Actions CI/CD, Playwright tests, Nginx reverse proxy, and watchdogs, cutting downtime by 98%",
         ],
     },
     {
@@ -41,9 +41,9 @@ const experienceItems = [
         executiveSummary: "Published 3 peer-reviewed papers on LLM-driven cybersecurity systems and generative-model-based malware detection",
         contributions: [
             "Published 4 peer-reviewed papers on LLM-driven cybersecurity and agentic AI systems (IEEE x3, JSAN)",
-            "Built a real-time multi-agent intrusion detection and incident response system for live network traffic (IEEE)",
-            "Trained a PyTorch diffusion model generating malware images, improving zero-day detection by 15% (IEEE)",
-            "Designed an ensemble detection and LLM-judge pipeline achieving 99%+ accuracy and 1.0 groundedness (JSAN)",
+            "Trained a PyTorch diffusion model generating malware images, improving zero-day detection by 15%",
+            "Built a real-time multi-agent intrusion detection and incident response system for live network traffic",
+            "Designed an ensemble detection and LLM-judge pipeline achieving 99%+ accuracy and 1.0 groundedness",
         ],
     },
     {
@@ -55,10 +55,9 @@ const experienceItems = [
         location: "San Jose, CA",
         executiveSummary: "Built a production-ready FastAPI URL shortener serving 500+ users with Dockerized deployment and observability.",
         contributions: [
-            "Created a FastAPI and SQLite URL shortener serving 500+ users with QR code-based redirection",
-            "Designed a REST API and QR code service to store and map URLs to scannable codes",
-            "Added Prometheus metrics to monitor QR code volume and byte size for performance tracking",
+            "Created a FastAPI and SQLite URL shortener with REST API mapping URLs to QR codes, serving 500+ users",
             "Containerized the service with Docker and validated endpoints using Postman",
+            "Added Prometheus metrics to monitor QR code volume and byte size for performance tracking",
         ],
     },
     {
