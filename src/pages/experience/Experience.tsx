@@ -8,12 +8,12 @@ const experienceItems = [
         startDate: "May 2026",
         endDate: "Aug 2026",
         location: "Santa Clara, CA",
-        executiveSummary: "Worked in the Java Platform Group, that develops the JDK, to create a multi-agent analysis and evaluation system for evaluating open-source Java libraries.",
+        executiveSummary: "Worked in Oracle Cloud Infrastructure's (OCI) Java Platform Group, which develops the JDK, to create a multi-agent analysis and evaluation system for evaluating open-source Java libraries.",
         contributions: [
-            "Worked in Oracle Cloud Infrastructure's (OCI) Java Platform Group, which develops the JDK, to build a Codex skill that analyzes the development practices of open-source Java libraries and evaluates the effectiveness of their release models",
-            "Developed a Spring Boot-based state machine coordinator on Java 26 that orchestrated recursive dependency analysis and ensured robustness against network instability and data formatting errors",
+            "Built a Codex skill for the JDK’s Java Platform Group to standardize the scoring of open-source Java libraries’ development practices and release models",
+            "Improved run success rate by 33% by developing a fault-tolerant Java 26 Spring Boot coordinator with retry logic for dependency resolution",
             "Implemented OpenTelemetry-traced LLM judges in self-improving agent loops, boosting eval pass rate by 17%",
-            "Optimized agent harness with guardrails and prompt tuning, enabling smaller models and cutting AI costs by 90%"
+            "Optimized agent harness with guardrails and prompt tuning, enabling smaller models and a 90% AI cost reduction"
         ],
     },
     {
@@ -23,12 +23,12 @@ const experienceItems = [
         startDate: "Jul 2025",
         endDate: "Dec 2025",
         location: "San Jose, CA",
-        executiveSummary: "Built a full-stack AI-powered compliance tracking platform supporting 400+ projects and 100+ users.",
+        executiveSummary: "Built a full‑stack AI‑powered compliance tracking platform supporting 400+ projects and 100+ users.",
         contributions: [
-            "Built a full-stack web app using Python, MySQL, JavaScript tracking 400+ compliance projects for 100+ users",
-            "Deployed GitHub Actions CI/CD, Playwright tests, Nginx reverse proxy, and watchdogs, cutting downtime by 98%",
-            "Automated project updates using LangGraph AI agents, and OpenAI API, saving 5+ team hours weekly",
-            "Added RAG on Google Cloud documents and database tool calls for live project data, reducing hallucinations",
+            "Tracked 400+ compliance projects across 100+ active users by engineering a full-stack web application using Python, MySQL, and JavaScript",
+            "Deployed GitHub Actions CI/CD, Playwright tests, Nginx reverse proxy, and watchdogs on Linux, cutting downtime by 98%",
+            "Saved 5+ team hours weekly by automating project updates using LangGraph AI agents and OpenAI API",
+            "Improved technical-spec retrieval accuracy from 30% to 70% for failure root-cause analysis by replacing intranet search with a custom RAG pipeline on PRDs stored in Google Cloud",
         ],
     },
     {
@@ -38,12 +38,11 @@ const experienceItems = [
         startDate: "Jun 2024",
         endDate: "Jul 2025",
         location: "San Jose, CA",
-        executiveSummary: "Published 3 peer-reviewed papers on LLM-driven cybersecurity systems and generative-model-based malware detection",
+        executiveSummary: "Published 4 peer-reviewed papers on LLM-driven cybersecurity systems and generative-model-based malware detection.",
         contributions: [
             "Published 4 peer-reviewed papers on LLM-driven cybersecurity and agentic AI systems (IEEE x3, JSAN)",
             "Trained a PyTorch diffusion model generating malware images, improving zero-day detection by 15%",
-            "Built a real-time multi-agent intrusion detection and incident response system for live network traffic",
-            "Designed an ensemble detection and LLM-judge pipeline achieving 99%+ accuracy and 1.0 groundedness",
+            "Architected a real-time, multi-agent intrusion detection and incident response system for live network traffic, achieving a 98.1% classifier F1 score and 93.2% faithfulness",
         ],
     },
     {
@@ -55,9 +54,8 @@ const experienceItems = [
         location: "San Jose, CA",
         executiveSummary: "Built a production-ready FastAPI URL shortener serving 500+ users with Dockerized deployment and observability.",
         contributions: [
-            "Created a FastAPI and SQLite URL shortener with REST API mapping URLs to QR codes, serving 500+ users",
-            "Containerized the service with Docker and validated endpoints using Postman",
-            "Added Prometheus metrics to monitor QR code volume and byte size for performance tracking",
+            "Created a FastAPI and SQLite URL shortener with REST API mapping URLs to QR codes for 500+ users, containerizing the service with Docker and validating endpoints with Postman",
+            "Bounded cache memory with Prometheus metrics and a 100-entry FIFO eviction policy for short-lived QR codes",
         ],
     },
     {

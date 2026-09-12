@@ -9,7 +9,7 @@ const projects = [
     },
     {
         title: "Cornhole Referee",
-        description: "Cornhole Referee is a computer vision project that tracks bean bags in real time to score cornhole games. I trained a YOLOv8 model to detect game elements and used Roboflow's Supervision library to assign points via PolygonZones. I collected and annotated data using OpenCV, applied image augmentations, and documented the project with Sphinx using Google-style docstrings.",
+        description: "Cornhole Referee is a computer vision project that tracks bean bags in real time to score cornhole games. I trained a YOLOv8 model, achieving 98% precision and 98.4% mAP@50, to detect game elements and used Roboflow's Supervision library to assign points via PolygonZones. I collected and annotated data using OpenCV, applied image augmentations, and documented the project with Sphinx using Google-style docstrings.",
         projectUrl: "https://github.com/arjunsudheer/cornhole-referee",
         skills: ["Python", "OpenCV", "Yolov8", "Roboflow", "Sphinx"],
     }

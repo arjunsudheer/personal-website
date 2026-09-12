@@ -1,5 +1,5 @@
 import { FaAws, FaBrain, FaDatabase, FaDiagramProject, FaEnvelope, FaGithub, FaGoogleScholar, FaInstagram, FaJava, FaLinkedin } from "react-icons/fa6";
-import { SiC, SiCplusplus, SiCss, SiDocker, SiFastapi, SiFlask, SiGithubactions, SiGit, SiGnubash, SiGooglecloud, SiHtml5, SiJavascript, SiLangchain, SiLinux, SiMongodb, SiMysql, SiNextdotjs, SiNodedotjs, SiOpentelemetry, SiOpenapiinitiative, SiOpenaigym, SiPostgresql, SiPostman, SiPrometheus, SiPython, SiPytorch, SiReact, SiScrumalliance, SiSpringboot, SiTailwindcss, SiTestinglibrary, SiTypescript, SiUml, SiNginx, SiSqlite } from "react-icons/si";
+import { SiCss, SiDocker, SiFastapi, SiFlask, SiGithubactions, SiGit, SiGnubash, SiGooglecloud, SiHtml5, SiJavascript, SiLangchain, SiLinux, SiMongodb, SiMysql, SiOpentelemetry, SiOpenapiinitiative, SiOpenaigym, SiPostgresql, SiPostman, SiPrometheus, SiPython, SiPytorch, SiReact, SiScrumalliance, SiSpringboot, SiTailwindcss, SiTestinglibrary, SiTypescript, SiUml, SiNginx, SiSqlite } from "react-icons/si";
 import AboutCard from "../../components/about/AboutCard";
 import DescriptionCard from "../../components/about/DescriptionCard";
 import SkillCard from "../../components/about/SkillCard";
@@ -12,8 +12,6 @@ const skillGroups = [
             { skillName: "Java", skillIcon: <FaJava /> },
             { skillName: "JavaScript", skillIcon: <SiJavascript /> },
             { skillName: "TypeScript", skillIcon: <SiTypescript /> },
-            { skillName: "C", skillIcon: <SiC /> },
-            { skillName: "C++", skillIcon: <SiCplusplus /> },
             { skillName: "Bash", skillIcon: <SiGnubash /> },
         ],
     },
@@ -24,8 +22,6 @@ const skillGroups = [
             { skillName: "FastAPI", skillIcon: <SiFastapi /> },
             { skillName: "Flask", skillIcon: <SiFlask /> },
             { skillName: "REST API", skillIcon: <SiOpenapiinitiative /> },
-            { skillName: "Node.js", skillIcon: <SiNodedotjs /> },
-            { skillName: "Next.js", skillIcon: <SiNextdotjs /> },
             { skillName: "React.js", skillIcon: <SiReact /> },
             { skillName: "HTML", skillIcon: <SiHtml5 /> },
             { skillName: "CSS", skillIcon: <SiCss /> },
@@ -36,13 +32,11 @@ const skillGroups = [
         category: "AI & Agents",
         skills: [
             { skillName: "LLMs", skillIcon: <FaBrain /> },
-            { skillName: "LangChain", skillIcon: <SiLangchain /> },
             { skillName: "LangGraph", skillIcon: <SiLangchain /> },
             { skillName: "OpenAI API", skillIcon: <SiOpenaigym /> },
             { skillName: "RAG", skillIcon: <SiOpenapiinitiative /> },
             { skillName: "MCP", skillIcon: <SiOpentelemetry /> },
             { skillName: "Evals", skillIcon: <SiOpentelemetry /> },
-            { skillName: "Machine Learning", skillIcon: <FaBrain /> },
             { skillName: "PyTorch", skillIcon: <SiPytorch /> },
         ]
     },
