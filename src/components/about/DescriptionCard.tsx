@@ -14,7 +14,7 @@ interface DescriptionCardProps {
 const DescriptionCard = ({ description, socialProfiles }: DescriptionCardProps) => {
     return (
         <section className="flex h-full flex-col rounded-4xl border border-white/20 bg-slate-950/25 p-6 shadow-[0_24px_70px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-8">
-            <p className="text-sm font-medium tracking-[0.18em] text-sky-200 uppercase">A little more</p>
+            <p className="text-sm font-medium tracking-[0.18em] text-sky-200 uppercase">About Me</p>
             <p className="mt-4 text-base leading-8 text-slate-200">{description}</p>
             <div className="mt-auto flex justify-center gap-4 pt-7">
                 {socialProfiles.map((profile, idx) => {
