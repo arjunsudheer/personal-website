@@ -98,7 +98,7 @@ const AboutPage = () => {
                 />
 
                 <DescriptionCard
-                    description="I'm a software engineer focused on building reliable AI-powered systems and cloud-native applications. My work spans Python, Java, full-stack development, agentic workflows, and applied machine learning with a strong emphasis on dependable software engineering practices. I enjoy turning complex problems into practical products and collaborating across engineering, research, and product teams."
+                    description="Hi, I'm Arjun. I am currently pursuing a Bachelor of Science in Software Engineering at San Jose State University, with an expected graduation in May 2027.  I am interested in new-grad SWE roles focused on building full-stack and agentic-AI applications. From my research work and internships at Cisco and Oracle, I have gained proficiency in Python, Java, and agentic AI development, with a strong academic foundation and hands-on experience in cybersecurity, AI/ML, and web application development. Outside of work, I enjoy playing basketball, pickleball, and going on hikes. Let's connect and work together!"
                     socialProfiles={[
                         { profileName: "LinkedIn", profileIcon: <FaLinkedin />, profileLink: "https://www.linkedin.com/in/arjun-sudheer-20b1a0214/" },
                         { profileName: "GitHub", profileIcon: <FaGithub />, profileLink: "https://github.com/arjunsudheer" },
