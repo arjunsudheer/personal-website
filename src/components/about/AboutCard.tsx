@@ -9,7 +9,14 @@ interface AboutCardProps {
     readonly location: string;
 }
 
-const AboutCard = ({ profileImageUrl, name, headline, university, program, location }: AboutCardProps) => {
+const AboutCard = ({
+    profileImageUrl,
+    name,
+    headline,
+    university,
+    program,
+    location,
+}: AboutCardProps) => {
     return (
         <section className="h-full rounded-4xl border border-white/20 bg-slate-950/25 p-6 shadow-[0_24px_70px_rgba(2,6,23,0.32)] backdrop-blur-2xl sm:p-8">
             <div className="flex flex-col items-center text-center">
@@ -26,7 +33,9 @@ const AboutCard = ({ profileImageUrl, name, headline, university, program, locat
                             <FaUserGraduate className="text-lg" />
                         </div>
                         <div className="min-w-0">
-                            <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-sky-200 uppercase">Education</p>
+                            <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-sky-200 uppercase">
+                                Education
+                            </p>
                             <p className="mt-1 text-sm font-medium text-white">{university}</p>
                             <p className="mt-0.5 text-xs text-slate-400">{program}</p>
                         </div>
@@ -36,7 +45,9 @@ const AboutCard = ({ profileImageUrl, name, headline, university, program, locat
                             <FaLocationDot className="text-lg" />
                         </div>
                         <div>
-                            <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-sky-200 uppercase">Based in</p>
+                            <p className="text-[0.65rem] font-semibold tracking-[0.16em] text-sky-200 uppercase">
+                                Based in
+                            </p>
                             <p className="mt-1 text-sm font-medium text-white">{location}</p>
                         </div>
                     </div>

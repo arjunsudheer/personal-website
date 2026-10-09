@@ -5,7 +5,9 @@ const BlogsPage = () => {
     return (
         <section className="space-y-8">
             <div className="space-y-3">
-                <h1 className="text-4xl font-semibold tracking-tight text-sky-200 sm:text-5xl">Blogs</h1>
+                <h1 className="text-4xl font-semibold tracking-tight text-sky-200 sm:text-5xl">
+                    Blogs
+                </h1>
             </div>
             {blogPosts.length === 0 ? (
                 <p className="text-slate-200">No blogs have been published yet.</p>
