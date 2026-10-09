@@ -20,13 +20,39 @@ export function AppRoutes() {
             <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 pb-16 pt-40 sm:px-8 lg:px-10">
                 <Suspense fallback={<RouteFallback />}>
                     <Routes>
-                        <Route path="/" element={<AboutPage />} />
-                        <Route path="/experience" element={<ExperiencePage />} />
-                        <Route path="/projects" element={<ProjectsPage />} />
-                        <Route path="/publications" element={<PublicationsPage />} />
-                        <Route path="/blog" element={<BlogsPage />} />
-                        <Route path="/blog/:slug" element={<BlogPostPage />} />
-                        <Route path="*" element={<Navigate to="/" replace />} />
+                        <Route
+                            path="/"
+                            element={<AboutPage />}
+                        />
+                        <Route
+                            path="/experience"
+                            element={<ExperiencePage />}
+                        />
+                        <Route
+                            path="/projects"
+                            element={<ProjectsPage />}
+                        />
+                        <Route
+                            path="/publications"
+                            element={<PublicationsPage />}
+                        />
+                        <Route
+                            path="/blog"
+                            element={<BlogsPage />}
+                        />
+                        <Route
+                            path="/blog/:slug"
+                            element={<BlogPostPage />}
+                        />
+                        <Route
+                            path="*"
+                            element={
+                                <Navigate
+                                    to="/"
+                                    replace
+                                />
+                            }
+                        />
                     </Routes>
                 </Suspense>
             </main>
