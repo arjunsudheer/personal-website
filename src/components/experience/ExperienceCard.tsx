@@ -6,7 +6,6 @@ interface ExperienceCardProps {
     readonly endDate: string;
     readonly location: string;
     readonly executiveSummary: string;
-    readonly contributions: string[];
 }
 
 const ExperienceCard = ({
@@ -17,7 +16,6 @@ const ExperienceCard = ({
     endDate,
     location,
     executiveSummary,
-    contributions,
 }: ExperienceCardProps) => {
     return (
         <article className="site-card w-full p-5 sm:p-7">
@@ -44,11 +42,6 @@ const ExperienceCard = ({
                         <p className="site-muted text-sm">{location}</p>
                     </div>
                     <p className="mt-5 text-sm leading-7">{executiveSummary}</p>
-                    <ul className="site-muted mt-4 list-disc space-y-2 pl-5 text-sm">
-                        {contributions.map((contribution) => (
-                            <li key={contribution}>{contribution}</li>
-                        ))}
-                    </ul>
                 </div>
             </div>
         </article>

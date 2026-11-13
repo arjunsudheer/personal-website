@@ -9,13 +9,7 @@ const experienceItems = [
         endDate: "Aug 2026",
         location: "Santa Clara, CA",
         executiveSummary:
-            "Worked in Oracle Cloud Infrastructure's (OCI) Java Platform Group, which develops the JDK, to create a multi-agent analysis and evaluation system for evaluating open-source Java libraries.",
-        contributions: [
-            "Built a Codex skill for the JDK’s Java Platform Group to standardize the scoring of open-source Java libraries’ development practices and release models",
-            "Improved run success rate by 33% by developing a fault-tolerant Java 26 Spring Boot coordinator with retry logic for dependency resolution",
-            "Implemented OpenTelemetry-traced LLM judges in self-improving agent loops, boosting eval pass rate by 17%",
-            "Optimized agent harness with guardrails and prompt tuning, enabling smaller models and a 90% AI cost reduction",
-        ],
+            "Built a custom agent harness for Oracle's Java Platform Group to evaluate open-source Java libraries, with error correction, evals, and agent loops. The harness improved reliability and enabled a 90% reduction in AI costs.",
     },
     {
         companyLogoUrl: "/personal-website/assets/experience/cisco_logo.jpg",
@@ -25,13 +19,7 @@ const experienceItems = [
         endDate: "Dec 2025",
         location: "San Jose, CA",
         executiveSummary:
-            "Built a full‑stack AI‑powered compliance tracking platform supporting 400+ projects and 100+ users.",
-        contributions: [
-            "Tracked 400+ compliance projects across 100+ active users by engineering a full-stack web application using Python, MySQL, and JavaScript",
-            "Deployed GitHub Actions CI/CD, Playwright tests, Nginx reverse proxy, and watchdogs on Linux, cutting downtime by 98%",
-            "Saved 5+ team hours weekly by automating project updates using LangGraph AI agents and OpenAI API",
-            "Improved technical-spec retrieval accuracy from 30% to 70% for failure root-cause analysis by replacing intranet search with a custom RAG pipeline on PRDs stored in Google Cloud",
-        ],
+            "Built an AI-powered compliance platform used by 100+ people across 400+ projects, and automated project updates to save the team time. Reduced downtime by adding automated tests and CI/CD, and implemented technical-spec retrieval with agents built using LangGraph.",
     },
     {
         companyLogoUrl: "/personal-website/assets/experience/san_jose_state_university_logo.jpg",
@@ -41,12 +29,7 @@ const experienceItems = [
         endDate: "Jul 2025",
         location: "San Jose, CA",
         executiveSummary:
-            "Published 4 peer-reviewed papers on LLM-driven cybersecurity systems and generative-model-based malware detection.",
-        contributions: [
-            "Published 4 peer-reviewed papers on LLM-driven cybersecurity and agentic AI systems (IEEE x3, JSAN)",
-            "Trained a PyTorch diffusion model generating malware images, improving zero-day detection by 15%",
-            "Architected a real-time, multi-agent intrusion detection and incident response system for live network traffic, achieving a 98.1% classifier F1 score and 93.2% faithfulness",
-        ],
+            "Published four peer-reviewed papers on LLM-driven cybersecurity and agentic AI. Developed approaches for malware detection and real-time, multi-agent intrusion detection and response.",
     },
     {
         companyLogoUrl:
@@ -57,11 +40,7 @@ const experienceItems = [
         endDate: "Aug 2024",
         location: "San Jose, CA",
         executiveSummary:
-            "Built a production-ready FastAPI URL shortener serving 500+ users with Dockerized deployment and observability.",
-        contributions: [
-            "Created a FastAPI and SQLite URL shortener with REST API mapping URLs to QR codes for 500+ users, containerizing the service with Docker and validating endpoints with Postman",
-            "Bounded cache memory with Prometheus metrics and a 100-entry FIFO eviction policy for short-lived QR codes",
-        ],
+            "Built and deployed a Dockerized FastAPI URL shortener used by 500+ people. Added monitoring and a bounded cache to keep the service observable and efficient.",
     },
     {
         companyLogoUrl: "/personal-website/assets/experience/codeninjas_logo.jpg",
@@ -71,11 +50,7 @@ const experienceItems = [
         endDate: "Aug 2023",
         location: "Cupertino, CA",
         executiveSummary:
-            "Taught programming fundamentals through hands-on projects in JavaScript, robotics, and game-based learning for young students.",
-        contributions: [
-            "Led engaging classes on JavaScript fundamentals and programming concepts for elementary and middle-school learners",
-            "Designed structured lessons that improved student confidence, curiosity, and technical understanding",
-        ],
+            "Taught programming fundamentals to elementary and middle-school students through hands-on JavaScript, robotics, and game projects.",
     },
 ];
 
@@ -83,9 +58,7 @@ const ExperiencePage = () => {
     return (
         <section className="space-y-8">
             <div className="space-y-3">
-                <h1 className="text-3xl font-semibold tracking-tight">
-                    Experience
-                </h1>
+                <h1 className="text-3xl font-semibold tracking-tight">Experience</h1>
             </div>
             <div className="w-full space-y-4 md:w-[90%] lg:w-[95%]">
                 {experienceItems.map((item) => (

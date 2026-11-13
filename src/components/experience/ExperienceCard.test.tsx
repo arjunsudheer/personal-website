@@ -9,11 +9,7 @@ const baseProps = {
     startDate: "Jun 2024",
     endDate: "Aug 2024",
     location: "Redwood City, CA",
-    executiveSummary: "Worked on cloud infrastructure features.",
-    contributions: [
-        "Delivered reliable platform work.",
-        "Collaborated with cross-functional teams.",
-    ],
+    executiveSummary: "Built cloud infrastructure features with a cross-functional team.",
 };
 
 describe("ExperienceCard", () => {
@@ -24,25 +20,15 @@ describe("ExperienceCard", () => {
         expect(screen.getByText(/software engineer intern/i)).toBeInTheDocument();
         expect(screen.getByText("Jun 2024 – Aug 2024")).toBeInTheDocument();
         expect(screen.getByText("Redwood City, CA")).toBeInTheDocument();
-        expect(screen.getByText(/delivered reliable platform work/i)).toBeInTheDocument();
+        expect(
+            screen.getByText(baseProps.executiveSummary),
+        ).toBeInTheDocument();
     });
 
-    it("renders every contribution as a separate list item", () => {
+    it("renders the summary without a contribution list", () => {
         render(<ExperienceCard {...baseProps} />);
 
-        const items = screen.getAllByRole("listitem");
-        expect(items).toHaveLength(baseProps.contributions.length);
-    });
-
-    it("renders no contribution list items when the list is empty", () => {
-        render(
-            <ExperienceCard
-                {...baseProps}
-                contributions={[]}
-            />,
-        );
-
-        expect(screen.queryByRole("listitem")).not.toBeInTheDocument();
+        expect(screen.queryByRole("list")).not.toBeInTheDocument();
     });
 
     it("uses the company name in the logo alt text", () => {
