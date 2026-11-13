@@ -1,190 +1,56 @@
 import {
-    FaAws,
-    FaBrain,
-    FaDatabase,
-    FaDiagramProject,
-    FaEnvelope,
     FaGithub,
     FaGoogleScholar,
     FaInstagram,
-    FaJava,
     FaLinkedin,
 } from "react-icons/fa6";
-import {
-    SiCss,
-    SiDocker,
-    SiFastapi,
-    SiFlask,
-    SiGithubactions,
-    SiGit,
-    SiGnubash,
-    SiGooglecloud,
-    SiHtml5,
-    SiJavascript,
-    SiLangchain,
-    SiLinux,
-    SiMongodb,
-    SiMysql,
-    SiOpentelemetry,
-    SiOpenapiinitiative,
-    SiOpenaigym,
-    SiPostgresql,
-    SiPostman,
-    SiPrometheus,
-    SiPython,
-    SiPytorch,
-    SiReact,
-    SiScrumalliance,
-    SiSpringboot,
-    SiTailwindcss,
-    SiTestinglibrary,
-    SiTypescript,
-    SiUml,
-    SiNginx,
-    SiSqlite,
-} from "react-icons/si";
 import AboutCard from "../../components/about/AboutCard";
 import DescriptionCard from "../../components/about/DescriptionCard";
-import SkillCard from "../../components/about/SkillCard";
-
-const skillGroups = [
-    {
-        category: "Programming Languages",
-        skills: [
-            { skillName: "Python", skillIcon: <SiPython /> },
-            { skillName: "Java", skillIcon: <FaJava /> },
-            { skillName: "JavaScript", skillIcon: <SiJavascript /> },
-            { skillName: "TypeScript", skillIcon: <SiTypescript /> },
-            { skillName: "Bash", skillIcon: <SiGnubash /> },
-        ],
-    },
-    {
-        category: "Backend & Web Development",
-        skills: [
-            { skillName: "Spring Boot", skillIcon: <SiSpringboot /> },
-            { skillName: "FastAPI", skillIcon: <SiFastapi /> },
-            { skillName: "Flask", skillIcon: <SiFlask /> },
-            { skillName: "REST API", skillIcon: <SiOpenapiinitiative /> },
-            { skillName: "React.js", skillIcon: <SiReact /> },
-            { skillName: "HTML", skillIcon: <SiHtml5 /> },
-            { skillName: "CSS", skillIcon: <SiCss /> },
-            { skillName: "Tailwind CSS", skillIcon: <SiTailwindcss /> },
-        ],
-    },
-    {
-        category: "AI & Agents",
-        skills: [
-            { skillName: "LLMs", skillIcon: <FaBrain /> },
-            { skillName: "LangGraph", skillIcon: <SiLangchain /> },
-            { skillName: "OpenAI API", skillIcon: <SiOpenaigym /> },
-            { skillName: "RAG", skillIcon: <SiOpenapiinitiative /> },
-            { skillName: "MCP", skillIcon: <SiOpentelemetry /> },
-            { skillName: "Evals", skillIcon: <SiOpentelemetry /> },
-            { skillName: "PyTorch", skillIcon: <SiPytorch /> },
-        ],
-    },
-
-    {
-        category: "Cloud & DevOps",
-        skills: [
-            { skillName: "Linux", skillIcon: <SiLinux /> },
-            { skillName: "Docker", skillIcon: <SiDocker /> },
-            { skillName: "Git", skillIcon: <SiGit /> },
-            { skillName: "GitHub Actions", skillIcon: <SiGithubactions /> },
-            { skillName: "GCP", skillIcon: <SiGooglecloud /> },
-            { skillName: "AWS", skillIcon: <FaAws /> },
-            { skillName: "Nginx", skillIcon: <SiNginx /> },
-            { skillName: "OpenTelemetry", skillIcon: <SiOpentelemetry /> },
-            { skillName: "Prometheus", skillIcon: <SiPrometheus /> },
-            { skillName: "Postman", skillIcon: <SiPostman /> },
-        ],
-    },
-    {
-        category: "Databases",
-        skills: [
-            { skillName: "SQL", skillIcon: <SiSqlite /> },
-            { skillName: "MySQL", skillIcon: <SiMysql /> },
-            { skillName: "PostgreSQL", skillIcon: <SiPostgresql /> },
-            { skillName: "SQLite", skillIcon: <SiSqlite /> },
-            { skillName: "MongoDB", skillIcon: <SiMongodb /> },
-            { skillName: "FAISS", skillIcon: <FaDatabase /> },
-            { skillName: "ChromaDB", skillIcon: <FaDatabase /> },
-        ],
-    },
-    {
-        category: "Software Engineering",
-        skills: [
-            { skillName: "CI/CD", skillIcon: <SiGithubactions /> },
-            { skillName: "Test-Driven Development", skillIcon: <SiTestinglibrary /> },
-            { skillName: "UML", skillIcon: <SiUml /> },
-            { skillName: "Object-Oriented Programming", skillIcon: <FaDiagramProject /> },
-            { skillName: "Agile/Scrum", skillIcon: <SiScrumalliance /> },
-        ],
-    },
-];
+import ExperienceTimeline from "../../components/experience/ExperienceTimeline";
 
 const AboutPage = () => {
     return (
-        <section className="space-y-8">
-            <div className="space-y-3">
-                <h1 className="text-4xl font-semibold tracking-tight text-sky-200 sm:text-5xl">
-                    About
-                </h1>
-            </div>
-
-            <div className="grid items-stretch gap-5 lg:grid-cols-2">
+        <div className="space-y-16">
+            <section className="grid items-center gap-8 md:grid-cols-[minmax(12rem,1fr)_2fr] md:gap-12">
                 <AboutCard
                     profileImageUrl="/personal-website/assets/about/Arjun_Sudheer_Professional_Headshot.jpg"
                     name="Arjun Sudheer"
-                    headline="SWE @ SJSU ('27) | Ex-Oracle, Cisco | Backend & Agentic AI"
-                    university="San Jose State University"
-                    program="B.S. Software Engineering"
-                    location="Cupertino, CA"
                 />
-
-                <DescriptionCard
-                    description="Hi, I'm Arjun. I am currently pursuing a Bachelor of Science in Software Engineering at San Jose State University, with an expected graduation in May 2027.  I am interested in new-grad SWE roles focused on building full-stack and agentic-AI applications. From my research work and internships at Cisco and Oracle, I have gained proficiency in Python, Java, and agentic AI development, with a strong academic foundation and hands-on experience in cybersecurity, AI/ML, and web application development. Outside of work, I enjoy playing basketball, pickleball, and going on hikes. Let's connect and work together!"
-                    socialProfiles={[
-                        {
-                            profileName: "LinkedIn",
-                            profileIcon: <FaLinkedin />,
-                            profileLink: "https://www.linkedin.com/in/arjun-sudheer-20b1a0214/",
-                        },
-                        {
-                            profileName: "GitHub",
-                            profileIcon: <FaGithub />,
-                            profileLink: "https://github.com/arjunsudheer",
-                        },
-                        {
-                            profileName: "Google Scholar",
-                            profileIcon: <FaGoogleScholar />,
-                            profileLink:
-                                "https://scholar.google.com/citations?hl=en&user=3aoNkawAAAAJ",
-                        },
-                        {
-                            profileName: "Instagram",
-                            profileIcon: <FaInstagram />,
-                            profileLink: "https://www.instagram.com/arjun.sudheer.75/",
-                        },
-                        {
-                            profileName: "Email",
-                            profileIcon: <FaEnvelope />,
-                            profileLink: "mailto:arjunsudheer05@outlook.com",
-                        },
-                    ]}
-                />
-            </div>
-
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-                {skillGroups.map((group) => (
-                    <SkillCard
-                        key={group.category}
-                        category={group.category}
-                        skills={group.skills}
+                <div>
+                    <h1 className="mb-4 text-3xl font-semibold tracking-tight sm:text-4xl">
+                        Arjun Sudheer
+                    </h1>
+                    <DescriptionCard
+                        description="Hi, I'm Arjun. I am currently pursuing a Bachelor of Science in Software Engineering at San Jose State University, with an expected graduation in May 2027. I am interested in new-grad SWE roles focused on building full-stack and agentic-AI applications. From my research work and internships at Cisco and Oracle, I have gained proficiency in Python, Java, and agentic AI development, with a strong academic foundation and hands-on experience in cybersecurity, AI/ML, and web application development. Outside of work, I enjoy playing basketball, pickleball, and going on hikes."
+                        socialProfiles={[
+                            {
+                                profileName: "LinkedIn",
+                                profileIcon: <FaLinkedin />,
+                                profileLink:
+                                    "https://www.linkedin.com/in/arjun-sudheer-20b1a0214/",
+                            },
+                            {
+                                profileName: "GitHub",
+                                profileIcon: <FaGithub />,
+                                profileLink: "https://github.com/arjunsudheer",
+                            },
+                            {
+                                profileName: "Google Scholar",
+                                profileIcon: <FaGoogleScholar />,
+                                profileLink:
+                                    "https://scholar.google.com/citations?hl=en&user=3aoNkawAAAAJ",
+                            },
+                            {
+                                profileName: "Instagram",
+                                profileIcon: <FaInstagram />,
+                                profileLink: "https://www.instagram.com/arjun.sudheer.75/",
+                            },
+                        ]}
                     />
-                ))}
-            </div>
-        </section>
+                </div>
+            </section>
+            <ExperienceTimeline />
+        </div>
     );
 };
 

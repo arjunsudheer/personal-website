@@ -21,7 +21,7 @@ const ProjectsPage = () => {
     return (
         <section className="space-y-8">
             <div className="space-y-3">
-                <h1 className="text-4xl font-semibold tracking-tight text-sky-200 sm:text-5xl">
+                <h1 className="text-3xl font-semibold tracking-tight">
                     Projects
                 </h1>
             </div>

@@ -6,37 +6,40 @@ describe("AboutPage", () => {
     it("renders the about page content", () => {
         render(<AboutPage />);
 
-        expect(screen.getByRole("heading", { name: /about/i })).toBeInTheDocument();
-        expect(screen.getByRole("heading", { name: /arjun sudheer/i })).toBeInTheDocument();
+        expect(screen.getByRole("img", { name: "Arjun Sudheer" })).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: "Arjun Sudheer" })).toBeInTheDocument();
+        expect(screen.getByText(/Hi, I'm Arjun/i)).toBeInTheDocument();
+        expect(screen.queryByText(/programming languages/i)).not.toBeInTheDocument();
+    });
+
+    it("renders the experience section after the about content in reverse-chronological order", () => {
+        render(<AboutPage />);
+
+        const aboutContent = screen.getByText(/Hi, I'm Arjun/i);
+        const experienceHeading = screen.getByRole("heading", { name: "Experience" });
         expect(
-            screen.getByText(/SWE @ SJSU \('27\) | Ex-Oracle, Cisco | Backend & Agentic AI/i),
-        ).toBeInTheDocument();
+            aboutContent.compareDocumentPosition(experienceHeading) &
+                Node.DOCUMENT_POSITION_FOLLOWING,
+        ).toBeTruthy();
+
+        const employers = screen
+            .getAllByRole("heading", { level: 3 })
+            .map((heading) => heading.textContent);
+        expect(employers).toEqual([
+            "Oracle Cloud Infrastructure",
+            "Cisco",
+            "San Jose State University",
+            "San Jose State University",
+            "Code Ninjas",
+        ]);
     });
 
-    it("renders each skill category exactly once", () => {
+    it("links to the four social profiles without an email link", () => {
         render(<AboutPage />);
 
-        const categories = [
-            "Programming Languages",
-            "Backend & Web Development",
-            "AI & Agents",
-            "Cloud & DevOps",
-            "Databases",
-            "Software Engineering",
-        ];
-
-        for (const category of categories) {
-            expect(
-                screen.getAllByRole("heading", { name: new RegExp(category, "i") }),
-            ).toHaveLength(1);
-        }
-    });
-
-    it("links out to every social profile", () => {
-        render(<AboutPage />);
-
-        for (const name of ["LinkedIn", "GitHub", "Google Scholar", "Instagram", "Email"]) {
+        for (const name of ["LinkedIn", "GitHub", "Google Scholar", "Instagram"]) {
             expect(screen.getByRole("link", { name })).toBeInTheDocument();
         }
+        expect(screen.queryByRole("link", { name: "Email" })).not.toBeInTheDocument();
     });
 });

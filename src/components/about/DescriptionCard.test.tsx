@@ -28,6 +28,12 @@ describe("DescriptionCard", () => {
         expect(linkedin).toHaveAttribute("href", "https://linkedin.com/in/example");
         expect(linkedin).toHaveAttribute("target", "_blank");
         expect(linkedin).toHaveAttribute("rel", "noreferrer");
+        expect(linkedin).toHaveAttribute("aria-describedby");
+        expect(screen.getByRole("tooltip", { name: "LinkedIn" })).toHaveClass(
+            "bottom-full",
+            "mb-1",
+        );
+        expect(linkedin.parentElement).toHaveClass("justify-center", "md:justify-start");
 
         expect(screen.getByRole("link", { name: "GitHub" })).toHaveAttribute(
             "href",
