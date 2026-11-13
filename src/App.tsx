@@ -3,7 +3,6 @@ import { HashRouter, Navigate, Route, Routes } from "react-router-dom";
 import Navbar from "./components/ui/Navbar";
 
 const AboutPage = lazy(() => import("./pages/about/About"));
-const ExperiencePage = lazy(() => import("./pages/experience/Experience"));
 const ProjectsPage = lazy(() => import("./pages/projects/Projects"));
 const PublicationsPage = lazy(() => import("./pages/publications/Publications"));
 const BlogsPage = lazy(() => import("./pages/blogs/Blogs"));
@@ -23,10 +22,6 @@ export function AppRoutes() {
                         <Route
                             path="/"
                             element={<AboutPage />}
-                        />
-                        <Route
-                            path="/experience"
-                            element={<ExperiencePage />}
                         />
                         <Route
                             path="/projects"

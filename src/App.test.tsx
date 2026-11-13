@@ -15,14 +15,19 @@ describe("App routing", () => {
         expect(screen.getByText(/Hi, I'm Arjun/i)).toBeInTheDocument();
     });
 
-    it("renders the experience page when navigating to /experience", async () => {
+    it("falls back to the homepage when navigating to /experience", async () => {
         render(
             <MemoryRouter initialEntries={["/experience"]}>
                 <AppRoutes />
             </MemoryRouter>,
         );
 
-        expect(await screen.findByRole("heading", { name: /experience/i })).toBeInTheDocument();
+        expect(await screen.findByRole("img", { name: /arjun sudheer/i })).toBeInTheDocument();
+        expect(screen.getByText(/Hi, I'm Arjun/i)).toBeInTheDocument();
+        expect(screen.getByRole("heading", { name: "Experience", level: 2 })).toBeInTheDocument();
+        expect(
+            screen.queryByRole("heading", { name: "Experience", level: 1 }),
+        ).not.toBeInTheDocument();
     });
 
     it("renders the publications page when navigating to /publications", async () => {

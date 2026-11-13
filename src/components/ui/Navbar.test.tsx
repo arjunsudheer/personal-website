@@ -9,7 +9,7 @@ describe("Navbar", () => {
         delete document.documentElement.dataset.theme;
     });
 
-    it("renders the brand link and all navigation links", () => {
+    it("renders the brand link and navigation links without Experience", () => {
         render(
             <MemoryRouter initialEntries={["/projects"]}>
                 <Navbar />
@@ -18,34 +18,24 @@ describe("Navbar", () => {
 
         expect(screen.getByRole("navigation", { name: /primary navigation/i })).toBeInTheDocument();
         expect(screen.getByRole("link", { name: /arjun sudheer/i })).toHaveAttribute("href", "/");
-        for (const label of ["About", "Experience", "Projects", "Publications", "Blogs"]) {
+        for (const label of ["About", "Projects", "Publications", "Blogs"]) {
             expect(screen.getByRole("link", { name: label })).toBeInTheDocument();
         }
+        expect(screen.queryAllByText("Experience")).toHaveLength(0);
     });
 
     it("marks the link matching the current route as active via aria-current", () => {
         render(
-            <MemoryRouter initialEntries={["/experience"]}>
+            <MemoryRouter initialEntries={["/projects"]}>
                 <Navbar />
             </MemoryRouter>,
         );
 
-        expect(screen.getByRole("link", { name: "Experience" })).toHaveAttribute(
+        expect(screen.getByRole("link", { name: "Projects" })).toHaveAttribute(
             "aria-current",
             "page",
         );
-        expect(screen.getByRole("link", { name: "Experience" })).toHaveClass(
-            "underline",
-            "text-[var(--nav-strong)]",
-        );
-        const projectsLink = screen.getByRole("link", { name: "Projects" });
-        expect(projectsLink).not.toHaveAttribute("aria-current");
-        expect(projectsLink).toHaveClass(
-            "text-[var(--nav-muted)]",
-            "hover:text-[var(--nav-strong)]",
-        );
-        expect(projectsLink).not.toHaveClass("underline", "hover:underline");
-        expect(projectsLink).not.toHaveClass("font-bold", "hover:font-bold");
+        expect(screen.getByRole("link", { name: "About" })).not.toHaveAttribute("aria-current");
     });
 
     it("only marks About active on the exact root path, not on other routes", () => {

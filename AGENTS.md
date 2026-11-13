@@ -31,8 +31,9 @@ structured metadata/Markdown assets.
 ## Repository Layout
 
 - `src/App.tsx`: top-level route configuration and app shell.
-- `src/pages/`: page-level screens such as About, Experience, Projects, Publications, and Blogs.
-- `src/components/`: reusable UI and feature-specific components.
+- `src/pages/`: page-level screens such as About, Projects, Publications, and Blogs. The About
+  homepage includes the experience timeline.
+- `src/components/`: reusable UI and feature-specific components, including the experience timeline.
 - `src/data/`: structured metadata, such as blog post definitions.
 - `public/blog/`: Markdown source for blog articles.
 - `src/test/`: global test setup and shared test utilities.
