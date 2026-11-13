@@ -2,42 +2,40 @@
 
 ## Purpose
 
-This repository is Arjun Sudheer's personal website. It is a Vite + React + TypeScript app used to
-present profile information, experience, projects, publications, and blog posts. The project is
-intentionally lightweight and content-driven, with most content either in component files or
-structured metadata/Markdown assets.
+This repository is Arjun Sudheer's personal website. It uses Vite and TypeScript to generate
+static HTML pages, with custom elements and Declarative Shadow DOM for component styling and
+interactive behavior.
 
 ## Project Overview
 
-- Frontend stack: React 19, TypeScript, Vite, Tailwind CSS.
-- Routing: `HashRouter` is used in `src/App.tsx` so routes work correctly on GitHub Pages via URLs
-  such as `#/blog` and `#/blog/:slug`.
-- Deployment assumptions: `vite.config.ts` includes a GitHub Pages base path and the app is designed
-  to be deployed from `dist/`.
-- Blog content: Markdown files live under `public/blog/` and are rendered at runtime; metadata for
-  blog entries lives in `src/data/blog-post-metadata.ts`.
-- Tests: the repo uses Vitest with Testing Library; test files are colocated near the
-  components/pages they validate.
+- Frontend: Vite, TypeScript, custom elements, and Declarative Shadow DOM (no client-side router).
+- Pages: `/`, `/projects/`, `/publications/`, `/blog/`, and `/blog/<slug>/` are generated as
+  directory-based pages in `dist/`.
+- GitHub Pages: `vite.config.ts` retains the `/personal-website/` base path used for deployed
+  assets and links.
+- Blog content: Markdown sources live in `public/blog/`; registered post metadata (slug, title,
+  description, and read time) is in `src/data/blog-post-metadata.ts`. Vite compiles the Markdown
+  into static post pages during the build.
+- Tests: Vitest tests are colocated with the components or in `src/`.
 
 ## Working Rules
 
 - Use `pnpm` for installs and package management. The repo enforces this via the `preinstall`
   script.
 - Keep changes small and consistent with the existing structure.
-- Prefer editing existing component/page patterns instead of introducing new architectural layers.
-- Preserve deployment assumptions and URL behavior, especially anything tied to GitHub Pages or
-  hash-based routing.
+- Preserve the generated page paths and `/personal-website/` deployment base path.
+- For a blog post, update both its Markdown file and metadata entry.
 
 ## Repository Layout
 
-- `src/App.tsx`: top-level route configuration and app shell.
-- `src/pages/`: page-level screens such as About, Projects, Publications, and Blogs. The About
-  homepage includes the experience timeline.
-- `src/components/`: reusable UI and feature-specific components, including the experience timeline.
-- `src/data/`: structured metadata, such as blog post definitions.
+- `vite.config.ts`: Vite configuration, build-time Markdown loading, and static page output.
+- `src/main.ts`: registers the custom elements used to hydrate Declarative Shadow DOM.
+- `src/components/`: custom element behavior.
+- `src/site/render.ts`: page and document rendering, including Markdown-to-HTML processing.
+- `src/site.css`: global styles.
+- `src/data/`: blog metadata and structured site content.
 - `public/blog/`: Markdown source for blog articles.
-- `src/test/`: global test setup and shared test utilities.
-- `src/**/*.test.tsx`: component and page tests.
+- `src/**/*.test.ts`: component, static page, and build behavior tests.
 
 ## Standard Commands
 
@@ -45,28 +43,23 @@ Run these from the repository root:
 
 - `pnpm install`
 - `pnpm dev`
-- `pnpm build`
+- `pnpm typecheck`
 - `pnpm lint`
 - `pnpm exec vitest run`
+- `pnpm build`
 - `pnpm preview`
 
-Deployment workflow:
-
-- This site is deployed via GitHub Actions and should not be triggered manually in local
-  development.
-- The `pnpm deploy` script exists as a helper for release automation, but the project’s normal
-  deployment path is the CI workflow that publishes the built site to GitHub Pages.
+`pnpm build` type-checks the project and generates the static site in `dist/`. GitHub Actions
+deploys to GitHub Pages on pushes to `main` by running `pnpm run deploy`; that helper builds and
+publishes `dist/` to the `gh-pages` branch. CI is the normal deployment path.
 
 ## Development Guidelines
 
 - Keep styling aligned with the existing dark, minimal, glassy visual design.
-- Favor reusable presentational components over repeated markup.
-- If you add or modify a route, make sure the corresponding navigation and page wiring remain
-  consistent.
-- For blog changes, update both the Markdown content and the metadata entry so the post appears in
-  the blog list.
-- When adding UI logic, include or update the relevant tests where practical.
-- Avoid broad refactors unless the task explicitly requires them.
+- Keep custom element behavior consistent with the static HTML and Declarative Shadow DOM emitted
+  by the page renderer.
+- Preserve navigation and page links across all generated routes.
+- Include or update relevant tests when changing page rendering or custom element behavior.
 
 ## Validation Before Completion
 
@@ -76,14 +69,14 @@ Before marking work as complete, verify the relevant behavior with the smallest 
 - `pnpm exec vitest run`
 - `pnpm build`
 
-If a change affects routing, deployment paths, blog rendering, or page-level behavior, run the
-relevant checks and confirm the app still builds cleanly.
+For changes affecting generated routes, deployment paths, or blog rendering, confirm the build
+completes cleanly.
 
-## When to Ask For Guidance
+## When to Ask for Guidance
 
 Ask before making changes that affect:
 
-- routing structure or navigation architecture
+- static page generation or navigation architecture
 - GitHub Pages deployment assumptions or asset paths
 - package manager/tooling decisions
 - major dependency upgrades
@@ -91,5 +84,5 @@ Ask before making changes that affect:
 
 ## Notes
 
-This project is currently a polished personal site rather than an unfinished scaffold. The goal is
-to preserve the existing design and functionality while making targeted, safe improvements.
+This project is a polished personal site. Preserve its existing design and functionality while
+making targeted, safe improvements.
