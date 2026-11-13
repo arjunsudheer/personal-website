@@ -16,16 +16,16 @@ const PublicationCard = ({
             href={publicationLink}
             target="_blank"
             rel="noreferrer"
-            className="group block w-full rounded-[1.75rem] border border-white/20 bg-slate-950/25 p-5 shadow-[0_20px_60px_rgba(2,6,23,0.28)] backdrop-blur-2xl transition duration-300 hover:-translate-y-1 hover:border-white/35 hover:bg-white/15 sm:p-7"
+            className="site-card block w-full p-5 sm:p-7"
         >
             <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
                 <div>
-                    <h2 className="text-xl font-semibold text-white">{title}</h2>
-                    <p className="mt-2 text-sm text-sky-200">{publishedIn}</p>
+                    <h2 className="text-xl font-semibold">{title}</h2>
+                    <p className="site-muted mt-2 text-sm">{publishedIn}</p>
                 </div>
             </div>
-            <p className="mt-5 text-sm leading-7 text-slate-200">{abstract}</p>
-            <p className="mt-5 break-all text-sm font-medium text-sky-400 underline decoration-sky-400/60 underline-offset-4 transition group-hover:text-sky-300">
+            <p className="mt-5 text-sm leading-7">{abstract}</p>
+            <p className="site-link mt-5 break-all text-sm font-medium underline underline-offset-4">
                 {publicationLink}
             </p>
         </a>

@@ -28,7 +28,7 @@ const BlogPostPage = () => {
         <section className="space-y-8">
             <Link
                 to="/blog"
-                className="inline-flex text-sm font-medium text-sky-200 transition hover:text-sky-500"
+                className="site-link inline-flex text-sm font-medium transition hover:underline"
             >
                 ← All posts
             </Link>

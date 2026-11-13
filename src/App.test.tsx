@@ -11,9 +11,8 @@ describe("App routing", () => {
             </MemoryRouter>,
         );
 
-        expect(await screen.findByRole("heading", { name: /about/i })).toBeInTheDocument();
-        expect(screen.getByRole("heading", { name: /arjun sudheer/i })).toBeInTheDocument();
-        expect(screen.getAllByText(/software engineer/i).length).toBeGreaterThan(0);
+        expect(await screen.findByRole("img", { name: /arjun sudheer/i })).toBeInTheDocument();
+        expect(screen.getByText(/Hi, I'm Arjun/i)).toBeInTheDocument();
     });
 
     it("renders the experience page when navigating to /experience", async () => {
@@ -72,9 +71,8 @@ describe("App routing", () => {
             </MemoryRouter>,
         );
 
-        // The real blog metadata list is empty, so an unknown slug redirects home
-        expect(await screen.findByRole("heading", { name: /about/i })).toBeInTheDocument();
-        expect(screen.getByRole("heading", { name: /arjun sudheer/i })).toBeInTheDocument();
+        // The real blog metadata list is empty, so an unknown slug redirects home.
+        expect(await screen.findByRole("img", { name: /arjun sudheer/i })).toBeInTheDocument();
 
         vi.unstubAllGlobals();
     });
@@ -86,7 +84,6 @@ describe("App routing", () => {
             </MemoryRouter>,
         );
 
-        expect(await screen.findByRole("heading", { name: /about/i })).toBeInTheDocument();
-        expect(screen.getByRole("heading", { name: /arjun sudheer/i })).toBeInTheDocument();
+        expect(await screen.findByRole("img", { name: /arjun sudheer/i })).toBeInTheDocument();
     });
 });

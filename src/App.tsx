@@ -10,14 +10,14 @@ const BlogsPage = lazy(() => import("./pages/blogs/Blogs"));
 const BlogPostPage = lazy(() => import("./pages/blogs/BlogPost"));
 
 function RouteFallback() {
-    return <p className="text-sm text-slate-300">Loading…</p>;
+    return <p className="site-muted text-sm">Loading…</p>;
 }
 
 export function AppRoutes() {
     return (
-        <div className="min-h-screen overflow-x-hidden bg-fixed bg-[radial-gradient(circle_at_12%_0%,rgba(125,211,252,0.2),transparent_30%),radial-gradient(circle_at_85%_15%,rgba(167,139,250,0.15),transparent_25%),linear-gradient(135deg,#07111f,#101a2d_52%,#0a1322)] text-slate-100">
+        <div className="site-shell overflow-x-hidden">
             <Navbar />
-            <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 pb-16 pt-40 sm:px-8 lg:px-10">
+            <main className="mx-auto flex min-h-screen w-full max-w-6xl flex-col px-5 pb-16 pt-10 sm:px-8 lg:px-10">
                 <Suspense fallback={<RouteFallback />}>
                     <Routes>
                         <Route
