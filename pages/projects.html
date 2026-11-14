@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            if (localStorage.getItem("personal-website-theme") === "dark") {
+                document.documentElement.dataset.theme = "dark";
+            }
+        </script>
+        <style>
+            @view-transition {
+                navigation: auto;
+            }
+        </style>
+        <link rel="icon" type="image/x-icon" href="/assets/about/Arjun_Sudheer_Professional_Headshot.ico" />
+        <link rel="stylesheet" href="/src/site.css" />
+        <meta
+            name="description"
+            content="Selected software and computer vision projects by Arjun Sudheer."
+        />
+        <title>Projects | Arjun Sudheer</title>
+    </head>
+    <body>
+        <site-navbar active-section="projects" base-url="/personal-website/"></site-navbar>
+        <main class="site-main">
+            <section class="page-section">
+                <h1>Projects</h1>
+                <div class="card-list">
+                    <content-card href="https://github.com/arjunsudheer/gym-buddy" external>
+                        <h2 slot="title">GymBuddy</h2>
+                        <p slot="subtitle" class="subtitle">Personal Project</p>
+                        <p slot="text" class="text">
+                            GymBuddy is an Android app I developed to help users track their gym
+                            workouts and progress. I used Kotlin and Jetpack Compose to build a
+                            responsive UI and Room API for local data storage.
+                        </p>
+                        <span slot="link" class="link">
+                            https://github.com/arjunsudheer/gym-buddy
+                        </span>
+                    </content-card>
+                    <content-card href="https://github.com/arjunsudheer/cornhole-referee" external>
+                        <h2 slot="title">Cornhole Referee</h2>
+                        <p slot="subtitle" class="subtitle">Personal Project</p>
+                        <p slot="text" class="text">
+                            Cornhole Referee is a computer vision project that tracks bean bags in
+                            real time to score cornhole games. I trained a YOLOv8 model, achieving
+                            98% precision and 98.4% mAP@50, to detect game elements and used
+                            Roboflow's Supervision library to assign points via PolygonZones. I
+                            collected and annotated data using OpenCV, applied image augmentations,
+                            and documented the project with Sphinx using Google-style docstrings.
+                        </p>
+                        <span slot="link" class="link">
+                            https://github.com/arjunsudheer/cornhole-referee
+                        </span>
+                    </content-card>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

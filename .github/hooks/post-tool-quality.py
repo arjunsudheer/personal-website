@@ -5,7 +5,6 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
-WEB_ROOT = ROOT / "apps" / "web"
 PATH_KEYS = {"file", "filepath", "file_path", "filename", "path", "uri"}
 PATCH_PATH_PREFIXES = ("*** Update File: ", "*** Add File: ", "+++ b/")
 FORMAT_EXTENSIONS = {
@@ -50,7 +49,7 @@ def resolve_web_file(raw_path):
         candidate = ROOT / candidate
     try:
         resolved = candidate.resolve(strict=True)
-        resolved.relative_to(WEB_ROOT.resolve())
+        resolved.relative_to(ROOT)
     except (OSError, ValueError):
         return None
     if not resolved.is_file() or resolved.suffix.lower() not in FORMAT_EXTENSIONS:
@@ -73,7 +72,7 @@ files = sorted(
 if not files:
     sys.exit(0)
 
-relative_files = [str(path.relative_to(WEB_ROOT)) for path in files]
+relative_files = [str(path.relative_to(ROOT)) for path in files]
 commands = [
     ["pnpm", "exec", "prettier", "--write", *relative_files],
 ]
@@ -84,7 +83,7 @@ if lint_files:
     commands.append(["pnpm", "exec", "eslint", *lint_files])
 
 for command in commands:
-    result = subprocess.run(command, cwd=WEB_ROOT, check=False)
+    result = subprocess.run(command, cwd=ROOT, check=False)
     if result.returncode:
         print(
             json.dumps(
