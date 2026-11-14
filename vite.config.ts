@@ -8,10 +8,10 @@ import { renderBlogPostPage, renderStaticPages, type StaticPage } from "./src/si
 const baseUrl = "/personal-website/";
 const rootDirectory = fileURLToPath(new URL(".", import.meta.url));
 const sourceRoutes = {
-    "/": "index.html",
-    "/projects/": "projects/index.html",
-    "/publications/": "publications/index.html",
-    "/blog/": "blog/index.html",
+    "/": "pages/home.html",
+    "/projects/": "pages/projects.html",
+    "/publications/": "pages/publications.html",
+    "/blog/": "pages/blog.html",
 } as const;
 
 function routeFromUrl(value: string): string {
@@ -23,9 +23,13 @@ function routeFromUrl(value: string): string {
     return trimmedPath ? `/${trimmedPath}/` : "/";
 }
 
+function outputPathForRoute(route: string): string {
+    return route === "/" ? "index.html" : `${route.slice(1, -1)}/index.html`;
+}
+
 function blogPostPagesPlugin(pages: readonly StaticPage[]): Plugin {
+    const pagesByRoute = new Map(pages.map((page) => [page.route, page]));
     const blogPages = pages.filter((page) => page.content !== undefined);
-    const blogPagesByRoute = new Map(blogPages.map((page) => [page.route, page]));
 
     return {
         name: "blog-post-pages",
@@ -37,7 +41,7 @@ function blogPostPagesPlugin(pages: readonly StaticPage[]): Plugin {
                     return;
                 }
 
-                const page = blogPagesByRoute.get(routeFromUrl(request.url));
+                const page = pagesByRoute.get(routeFromUrl(request.url));
                 if (!page) {
                     next();
                     return;
@@ -54,12 +58,27 @@ function blogPostPagesPlugin(pages: readonly StaticPage[]): Plugin {
             });
         },
         generateBundle(_options, bundle) {
-            const blogListing = bundle["blog/index.html"];
+            const blogListing = bundle[sourceRoutes["/blog/"]];
             if (!blogListing || blogListing.type !== "asset") {
                 throw new Error("Vite did not emit the blog listing HTML entry.");
             }
 
             const template = String(blogListing.source);
+            for (const [route, sourcePath] of Object.entries(sourceRoutes)) {
+                const sourcePage = bundle[sourcePath];
+                if (!sourcePage || sourcePage.type !== "asset") {
+                    throw new Error(`Vite did not emit the HTML source for ${route}.`);
+                }
+
+                const outputPath = outputPathForRoute(route);
+                this.emitFile({
+                    type: "asset",
+                    fileName: outputPath,
+                    source: sourcePage.source,
+                });
+                delete bundle[sourcePath];
+            }
+
             for (const page of blogPages) {
                 const slug = page.route.slice("/blog/".length).replace(/\/$/, "");
                 this.emitFile({
@@ -99,12 +118,12 @@ export default defineConfig(async () => {
         plugins: [blogPostPagesPlugin(pages)],
         build: {
             rolldownOptions: {
-                input: {
-                    index: resolve(rootDirectory, "index.html"),
-                    "projects/index": resolve(rootDirectory, "projects/index.html"),
-                    "publications/index": resolve(rootDirectory, "publications/index.html"),
-                    "blog/index": resolve(rootDirectory, "blog/index.html"),
-                },
+                input: Object.fromEntries(
+                    Object.entries(sourceRoutes).map(([route, path]) => [
+                        route === "/" ? "index" : `${route.slice(1, -1)}/index`,
+                        resolve(rootDirectory, path),
+                    ]),
+                ),
             },
         },
     };

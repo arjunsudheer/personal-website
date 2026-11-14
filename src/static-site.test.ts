@@ -7,10 +7,10 @@ import { renderBlogPostPage, renderStaticPages } from "./site/render";
 
 const baseUrl = "/personal-website/";
 const sourceRoutes = {
-    "/": "index.html",
-    "/projects/": "projects/index.html",
-    "/publications/": "publications/index.html",
-    "/blog/": "blog/index.html",
+    "/": "pages/home.html",
+    "/projects/": "pages/projects.html",
+    "/publications/": "pages/publications.html",
+    "/blog/": "pages/blog.html",
 } as const;
 const htmlByRoute = Object.fromEntries(
     Object.entries(sourceRoutes).map(([route, path]) => [route, readFileSync(path, "utf8")]),

@@ -1,10 +1,9 @@
 # Arjun Sudheer's Personal Website
 
 This repository contains Arjun Sudheer's personal website, built as a static multi-page site with
-Vite, HTML, CSS, and TypeScript. The source pages are `index.html`, `projects/index.html`,
-`publications/index.html`, and `blog/index.html`; Vite builds these and the Markdown blog posts into
-directory-based pages for `/`, `/projects/`, `/publications/`, `/blog/`, and `/blog/<slug>/`. The
-deployed site retains the `/personal-website/` GitHub Pages base path.
+Vite, HTML, CSS, and TypeScript. The source pages are in `pages/`; Vite builds these and the
+Markdown blog posts into directory-based pages for `/`, `/projects/`, `/publications/`, `/blog/`,
+and `/blog/<slug>/`. The deployed site retains the `/personal-website/` GitHub Pages base path.
 
 ## Development
 
@@ -24,10 +23,11 @@ registered blog Markdown into article HTML.
 
 ## Blogs
 
-Write posts as Markdown files in [`public/blog/`](public/blog/adding-a-blog-post.md), then add the
-post's slug, title, description, and reading time to `src/data/blog-post-metadata.ts`. Add a
-corresponding `content-card` to `blog/index.html`. During the build, Vite reads the registered
-Markdown files and compiles them into static post pages; Markdown is not fetched at runtime.
+Write posts as Markdown files in `public/blog/`, then add the post's slug, title, description, and
+reading time to `src/data/blog-post-metadata.ts`. Add a corresponding `content-card` to
+`pages/blog.html`. See [the blog authoring guide](docs/adding-a-blog-post.md) for the full steps.
+During the build, Vite reads the registered Markdown files and compiles them into static post pages;
+Markdown is not fetched at runtime.
 
 ## Deployment
 

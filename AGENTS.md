@@ -8,8 +8,8 @@ HTML pages with three reusable custom elements.
 ## Project Overview
 
 - Frontend: Vite, TypeScript, static HTML, and custom elements (no client-side router).
-- Pages: `index.html`, `projects/index.html`, `publications/index.html`, and `blog/index.html` are
-  the source pages. Vite builds them as `/`, `/projects/`, `/publications/`, and `/blog/`, and
+- Pages: `pages/home.html`, `pages/projects.html`, `pages/publications.html`, and `pages/blog.html`
+  are the source pages. Vite builds them as `/`, `/projects/`, `/publications/`, and `/blog/`, and
   generates `/blog/<slug>/` pages from Markdown.
 - GitHub Pages: `vite.config.ts` retains the `/personal-website/` base path used for deployed assets
   and links.
@@ -28,16 +28,15 @@ HTML pages with three reusable custom elements.
 - Use pnpm 12.18.0 for installs and package management. The repo enforces pnpm via the `preinstall`
   script.
 - Keep changes small and consistent with the existing structure.
-- Keep static page content in the corresponding HTML source file and use custom elements only for
-  reusable components.
+- Keep static page content in the corresponding HTML file under `pages/` and use custom elements
+  only for reusable components.
 - Preserve generated page paths and the `/personal-website/` deployment base path.
-- For a blog post, update its Markdown file, metadata entry, and listing card in `blog/index.html`.
+- For a blog post, update its Markdown file, metadata entry, and listing card in `pages/blog.html`.
 
 ## Repository Layout
 
 - `vite.config.ts`: Vite multi-page inputs and build-time Markdown page generation.
-- `index.html`, `projects/index.html`, `publications/index.html`, and `blog/index.html`: static page
-  sources.
+- `pages/`: static HTML page sources; Vite preserves their directory-based public routes.
 - `src/main.ts`: loads the browser custom-element registry.
 - `src/components/`: implementations and shadow-root styles for the three custom elements.
 - `src/components/elements.ts`: custom-element registration.

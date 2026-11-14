@@ -2,10 +2,10 @@ import { readFileSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 
 const pageSources = [
-    { path: "index.html", route: "home" },
-    { path: "projects/index.html", route: "listing" },
-    { path: "publications/index.html", route: "listing" },
-    { path: "blog/index.html", route: "listing" },
+    { path: "pages/home.html", route: "home" },
+    { path: "pages/projects.html", route: "listing" },
+    { path: "pages/publications.html", route: "listing" },
+    { path: "pages/blog.html", route: "listing" },
 ] as const;
 
 function parsePageSource(path: string): Document {
