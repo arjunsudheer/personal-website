@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            if (localStorage.getItem("personal-website-theme") === "dark") {
+                document.documentElement.dataset.theme = "dark";
+            }
+        </script>
+        <style>
+            @view-transition {
+                navigation: auto;
+            }
+        </style>
+        <link rel="icon" type="image/x-icon" href="/assets/about/Arjun_Sudheer_Professional_Headshot.ico" />
+        <link rel="stylesheet" href="/src/site.css" />
+        <meta name="description" content="Articles and notes by Arjun Sudheer." />
+        <title>Blogs | Arjun Sudheer</title>
+    </head>
+    <body>
+        <site-navbar active-section="blog" base-url="/personal-website/"></site-navbar>
+        <main class="site-main">
+            <section class="page-section">
+                <h1>Blogs</h1>
+                <div class="card-list">
+                    <content-card href="/personal-website/blog/how-i-use-ai-to-code/">
+                        <h2 slot="title">How I Use AI to Code</h2>
+                        <p slot="subtitle" class="subtitle">7 min. read</p>
+                        <p slot="text" class="text">
+                            A practical look at how I divide coding work between GitHub Copilot and
+                            Codex, and how skills, MCP servers, subagents, and AGENTS.md shape the
+                            workflow.
+                        </p>
+                        <span slot="link" class="link">Read post</span>
+                    </content-card>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

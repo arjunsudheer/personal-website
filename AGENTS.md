@@ -2,38 +2,48 @@
 
 ## Purpose
 
-This repository is Arjun Sudheer's personal website. It uses Vite and TypeScript to generate
-static HTML pages, with custom elements and Declarative Shadow DOM for component styling and
-interactive behavior.
+This repository is Arjun Sudheer's personal website. It uses Vite and TypeScript to build static
+HTML pages with three reusable custom elements.
 
 ## Project Overview
 
-- Frontend: Vite, TypeScript, custom elements, and Declarative Shadow DOM (no client-side router).
-- Pages: `/`, `/projects/`, `/publications/`, `/blog/`, and `/blog/<slug>/` are generated as
-  directory-based pages in `dist/`.
-- GitHub Pages: `vite.config.ts` retains the `/personal-website/` base path used for deployed
-  assets and links.
+- Frontend: Vite, TypeScript, static HTML, and custom elements (no client-side router).
+- Pages: `index.html`, `projects/index.html`, `publications/index.html`, and `blog/index.html` are
+  the source pages. Vite builds them as `/`, `/projects/`, `/publications/`, and `/blog/`, and
+  generates `/blog/<slug>/` pages from Markdown.
+- GitHub Pages: `vite.config.ts` retains the `/personal-website/` base path used for deployed assets
+  and links.
+- The only custom elements are `site-navbar`, `experience-card`, and `content-card`, implemented in
+  `src/components/` and registered by `src/components/elements.ts`. Page content and layout are
+  authored directly in route-specific HTML files; `src/site/render.ts` only compiles Markdown blog
+  articles.
 - Blog content: Markdown sources live in `public/blog/`; registered post metadata (slug, title,
-  description, and read time) is in `src/data/blog-post-metadata.ts`. Vite compiles the Markdown
-  into static post pages during the build.
+  description, and read time) is in `src/data/blog-post-metadata.ts`.
+- Toolchain: pnpm is pinned to 12.18.0. TypeScript remains at 6.0.3 until `typescript-eslint`
+  supports TypeScript 7.
 - Tests: Vitest tests are colocated with the components or in `src/`.
 
 ## Working Rules
 
-- Use `pnpm` for installs and package management. The repo enforces this via the `preinstall`
+- Use pnpm 12.18.0 for installs and package management. The repo enforces pnpm via the `preinstall`
   script.
 - Keep changes small and consistent with the existing structure.
-- Preserve the generated page paths and `/personal-website/` deployment base path.
-- For a blog post, update both its Markdown file and metadata entry.
+- Keep static page content in the corresponding HTML source file and use custom elements only for
+  reusable components.
+- Preserve generated page paths and the `/personal-website/` deployment base path.
+- For a blog post, update its Markdown file, metadata entry, and listing card in `blog/index.html`.
 
 ## Repository Layout
 
-- `vite.config.ts`: Vite configuration, build-time Markdown loading, and static page output.
-- `src/main.ts`: registers the custom elements used to hydrate Declarative Shadow DOM.
-- `src/components/`: custom element behavior.
-- `src/site/render.ts`: page and document rendering, including Markdown-to-HTML processing.
-- `src/site.css`: global styles.
-- `src/data/`: blog metadata and structured site content.
+- `vite.config.ts`: Vite multi-page inputs and build-time Markdown page generation.
+- `index.html`, `projects/index.html`, `publications/index.html`, and `blog/index.html`: static page
+  sources.
+- `src/main.ts`: loads the browser custom-element registry.
+- `src/components/`: implementations and shadow-root styles for the three custom elements.
+- `src/components/elements.ts`: custom-element registration.
+- `src/site/render.ts`: Markdown-to-HTML processing and blog article page generation.
+- `src/site.css`: global page styles.
+- `src/data/`: blog post metadata.
 - `public/blog/`: Markdown source for blog articles.
 - `src/**/*.test.ts`: component, static page, and build behavior tests.
 
@@ -49,15 +59,14 @@ Run these from the repository root:
 - `pnpm build`
 - `pnpm preview`
 
-`pnpm build` type-checks the project and generates the static site in `dist/`. GitHub Actions
-deploys to GitHub Pages on pushes to `main` by running `pnpm run deploy`; that helper builds and
-publishes `dist/` to the `gh-pages` branch. CI is the normal deployment path.
+`pnpm build` type-checks the project and generates the static site in `dist/`. On pushes to `main`,
+GitHub Actions uploads `dist/` as a Pages artifact and deploys it. The repository's Pages source
+must be set to **GitHub Actions**; there is no local deploy script or `gh-pages` branch publishing.
 
 ## Development Guidelines
 
 - Keep styling aligned with the existing dark, minimal, glassy visual design.
-- Keep custom element behavior consistent with the static HTML and Declarative Shadow DOM emitted
-  by the page renderer.
+- Keep custom element behavior consistent with the slotted markup in the route HTML sources.
 - Preserve navigation and page links across all generated routes.
 - Include or update relevant tests when changing page rendering or custom element behavior.
 

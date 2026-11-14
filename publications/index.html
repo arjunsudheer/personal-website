@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script>
+            if (localStorage.getItem("personal-website-theme") === "dark") {
+                document.documentElement.dataset.theme = "dark";
+            }
+        </script>
+        <style>
+            @view-transition {
+                navigation: auto;
+            }
+        </style>
+        <link rel="icon" type="image/x-icon" href="/assets/about/Arjun_Sudheer_Professional_Headshot.ico" />
+        <link rel="stylesheet" href="/src/site.css" />
+        <meta name="description" content="Research publications by Arjun Sudheer." />
+        <title>Publications | Arjun Sudheer</title>
+    </head>
+    <body>
+        <site-navbar active-section="publications" base-url="/personal-website/"></site-navbar>
+        <main class="site-main">
+            <section class="page-section">
+                <h1>Publications</h1>
+                <div class="card-list">
+                    <content-card
+                        href="https://ieeexplore.ieee.org/document/11642309"
+                        external
+                    >
+                        <h2 slot="title">
+                            Least Significant Bit Steganography Detection and Analysis Using Large
+                            Language Models for Digital Forensics
+                        </h2>
+                        <p slot="subtitle" class="subtitle">
+                            IEEE Silicon Valley Cybersecurity Conference 2026
+                        </p>
+                        <p slot="text" class="text">
+                            We present an LLM-driven system to detect least-significant-bit
+                            steganography, extract hidden payloads, and interpret their meaning and
+                            possible intent. Using retrieval-augmented generation, our system
+                            connects findings with relevant vulnerabilities, research, and threat
+                            intelligence. It then generates structured forensic reports to support
+                            investigators.
+                        </p>
+                        <span slot="link" class="link">
+                            https://ieeexplore.ieee.org/document/11642309
+                        </span>
+                    </content-card>
+                    <content-card href="https://www.mdpi.com/2224-2708/15/2/32" external>
+                        <h2 slot="title">
+                            An LLM-Based Agentic Network Traffic Incident-Report Approach Towards
+                            Explainable-AI Network Defense
+                        </h2>
+                        <p slot="subtitle" class="subtitle">
+                            Journal of Sensor and Actuator Networks 2026
+                        </p>
+                        <p slot="text" class="text">
+                            We introduce a three-stage system that combines lightweight edge
+                            detection, an explainable ensemble classifier, and an LLM agent for
+                            evidence-based incident reporting. On the ACI IoT 2023 dataset, our
+                            ensemble achieves over 99.8% accuracy across 11 attack classes and
+                            improves UDP Flood F1 from 48% to 95%. We also introduce metrics to
+                            evaluate report faithfulness and groundedness; our generated reports
+                            score 0.64 and 1.0, respectively.
+                        </p>
+                        <span slot="link" class="link">https://www.mdpi.com/2224-2708/15/2/32</span>
+                    </content-card>
+                    <content-card
+                        href="https://ieeexplore.ieee.org/abstract/document/11133641"
+                        external
+                    >
+                        <h2 slot="title">
+                            Demo: A Real-time Multi-Agent Network Attack Detection and Incident
+                            Response System
+                        </h2>
+                        <p slot="subtitle" class="subtitle">
+                            IEEE Silicon Valley Cybersecurity Conference 2025
+                        </p>
+                        <p slot="text" class="text">
+                            We demonstrate a real-time multi-agent system that processes network
+                            traffic, detects attacks, and selects response actions. Our system uses
+                            retrieval-augmented generation to ground recommendations in
+                            vulnerability databases such as CVE. In our demonstration, it detects
+                            network attacks accurately while processing traffic at speeds suited to
+                            high-volume environments.
+                        </p>
+                        <span slot="link" class="link">
+                            https://ieeexplore.ieee.org/abstract/document/11133641
+                        </span>
+                    </content-card>
+                    <content-card
+                        href="https://ieeexplore.ieee.org/abstract/document/11133622"
+                        external
+                    >
+                        <h2 slot="title">
+                            Synthetic Malware Image Generation Based on Generative Models Against
+                            Zero-Day Attacks
+                        </h2>
+                        <p slot="subtitle" class="subtitle">
+                            IEEE Silicon Valley Cybersecurity Conference 2025
+                        </p>
+                        <p slot="text" class="text">
+                            We propose a system that uses WGAN-GP and diffusion models to generate
+                            synthetic malware images, addressing limited training data for malware
+                            detection. We represent malware binaries in four color spaces and use
+                            cosine similarity to filter generated samples. Our experiments show
+                            that these synthetic images improve malware detection performance.
+                        </p>
+                        <span slot="link" class="link">
+                            https://ieeexplore.ieee.org/abstract/document/11133622
+                        </span>
+                    </content-card>
+                </div>
+            </section>
+        </main>
+        <script type="module" src="/src/main.ts"></script>
+    </body>
+</html>

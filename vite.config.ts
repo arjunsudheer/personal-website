@@ -1,109 +1,72 @@
 import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import { defineConfig, type Plugin } from "vite";
 import { blogPosts } from "./src/data/blog-post-metadata.ts";
-import { renderStaticPages, type StaticPage } from "./src/site/render.ts";
+import { renderBlogPostPage, renderStaticPages, type StaticPage } from "./src/site/render.ts";
 
 const baseUrl = "/personal-website/";
+const rootDirectory = fileURLToPath(new URL(".", import.meta.url));
+const sourceRoutes = {
+    "/": "index.html",
+    "/projects/": "projects/index.html",
+    "/publications/": "publications/index.html",
+    "/blog/": "blog/index.html",
+} as const;
 
-function routeFromUrl(value: string, base: string): string {
+function routeFromUrl(value: string): string {
     const pathname = new URL(value, "http://localhost").pathname;
-    const baseWithoutTrailingSlash = base.endsWith("/") ? base.slice(0, -1) : base;
-
-    if (
-        pathname === base ||
-        pathname === baseWithoutTrailingSlash ||
-        pathname === "/" ||
-        pathname === "/index.html"
-    ) {
-        return "/";
-    }
-
-    const relativePath = pathname.startsWith(base) ? `/${pathname.slice(base.length)}` : pathname;
-    const trimmedPath = relativePath.replace(/^\/+|\/+$/g, "");
+    const pathWithoutBase = pathname.startsWith(baseUrl)
+        ? pathname.slice(baseUrl.length)
+        : pathname.replace(/^\/+/, "");
+    const trimmedPath = pathWithoutBase.replace(/^\/+|\/+$/g, "");
     return trimmedPath ? `/${trimmedPath}/` : "/";
 }
 
-function pageRoot(html: string): string {
-    const match = html.match(/<site-page-root\b[\s\S]*?<\/site-page-root>/);
-    if (!match) {
-        throw new Error("A generated page is missing its site-page-root element.");
-    }
-    return match[0];
-}
-
-function replaceBuiltPage(template: string, page: StaticPage): string {
-    const metadata = page.html.match(/<meta name="description" content="([^"]*)">/);
-    const title = page.html.match(/<title>([\s\S]*?)<\/title>/);
-    if (!metadata || !title) {
-        throw new Error(`Generated page ${page.route} is missing document metadata.`);
-    }
-
-    const rootPattern = /<site-page-root\b[\s\S]*?<\/site-page-root>/;
-    if (!rootPattern.test(template)) {
-        throw new Error("The built HTML is missing its site-page-root element.");
-    }
-
-    return template
-        .replace(rootPattern, () => pageRoot(page.html))
-        .replace(/<title>[\s\S]*?<\/title>/, () => `<title>${title[1]}</title>`)
-        .replace(
-            /<meta name="description" content="[^"]*">/,
-            () => `<meta name="description" content="${metadata[1]}">`,
-        );
-}
-
-function outputFileName(route: string): string {
-    if (route === "/") {
-        return "index.html";
-    }
-    return `${route.slice(1)}index.html`;
-}
-
-function stripBaseForViteDev(html: string, base: string): string {
-    return html
-        .replaceAll(`src="${base}`, 'src="/')
-        .replace(/<link\b[^>]*>/g, (linkTag) => linkTag.replaceAll(`href="${base}`, 'href="/'));
-}
-
-function staticPagesPlugin(pages: readonly StaticPage[]): Plugin {
-    const pagesByRoute = new Map(pages.map((page) => [page.route, page]));
-    const homePage = pagesByRoute.get("/");
-    if (!homePage) {
-        throw new Error("Static page generation did not return a homepage.");
-    }
+function blogPostPagesPlugin(pages: readonly StaticPage[]): Plugin {
+    const blogPages = pages.filter((page) => page.content !== undefined);
+    const blogPagesByRoute = new Map(blogPages.map((page) => [page.route, page]));
 
     return {
-        name: "static-pages",
+        name: "blog-post-pages",
         enforce: "post",
-        transformIndexHtml: {
-            order: "pre",
-            handler(html, context) {
-                const requestPath = context.originalUrl ?? context.path;
-                const route = routeFromUrl(requestPath, baseUrl);
-                const page = pagesByRoute.get(route) ?? homePage;
-                return stripBaseForViteDev(page.html, baseUrl);
-            },
+        configureServer(server) {
+            server.middlewares.use(async (request, response, next) => {
+                if (request.method !== "GET" || !request.url) {
+                    next();
+                    return;
+                }
+
+                const page = blogPagesByRoute.get(routeFromUrl(request.url));
+                if (!page) {
+                    next();
+                    return;
+                }
+
+                try {
+                    const html = await server.transformIndexHtml(request.url, page.html);
+                    response.statusCode = 200;
+                    response.setHeader("Content-Type", "text/html");
+                    response.end(html);
+                } catch (error) {
+                    next(error);
+                }
+            });
         },
         generateBundle(_options, bundle) {
-            const indexAsset = bundle["index.html"];
-            if (!indexAsset || indexAsset.type !== "asset") {
-                throw new Error("Vite did not emit the root index.html entry.");
+            const blogListing = bundle["blog/index.html"];
+            if (!blogListing || blogListing.type !== "asset") {
+                throw new Error("Vite did not emit the blog listing HTML entry.");
             }
 
-            const builtTemplate = String(indexAsset.source);
-            for (const page of pages) {
-                const html = replaceBuiltPage(builtTemplate, page);
-                const fileName = outputFileName(page.route);
-
-                if (fileName === "index.html") {
-                    indexAsset.source = html;
-                } else {
-                    this.emitFile({
-                        type: "asset",
-                        fileName,
-                        source: html,
-                    });
-                }
+            const template = String(blogListing.source);
+            for (const page of blogPages) {
+                const slug = page.route.slice("/blog/".length).replace(/\/$/, "");
+                this.emitFile({
+                    type: "asset",
+                    fileName: `blog/${slug}/index.html`,
+                    source: renderBlogPostPage(template, baseUrl, page),
+                });
             }
         },
     };
@@ -121,10 +84,28 @@ export default defineConfig(async () => {
             }),
         ),
     );
-    const pages = await renderStaticPages(baseUrl, markdownBySlug);
+    const htmlByRoute = Object.fromEntries(
+        await Promise.all(
+            Object.entries(sourceRoutes).map(async ([route, path]) => [
+                route,
+                await readFile(resolve(rootDirectory, path), "utf8"),
+            ]),
+        ),
+    );
+    const pages = await renderStaticPages(baseUrl, markdownBySlug, htmlByRoute);
 
     return {
         base: baseUrl,
-        plugins: [staticPagesPlugin(pages)],
+        plugins: [blogPostPagesPlugin(pages)],
+        build: {
+            rolldownOptions: {
+                input: {
+                    index: resolve(rootDirectory, "index.html"),
+                    "projects/index": resolve(rootDirectory, "projects/index.html"),
+                    "publications/index": resolve(rootDirectory, "publications/index.html"),
+                    "blog/index": resolve(rootDirectory, "blog/index.html"),
+                },
+            },
+        },
     };
 });

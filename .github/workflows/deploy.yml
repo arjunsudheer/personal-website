@@ -1,38 +1,58 @@
-name: Personal Website CD
+name: Deploy static site to GitHub Pages
 
 on:
     push:
         branches: ["main"]
 
-jobs:
-    build-and-deploy:
-        runs-on: ubuntu-latest
+permissions:
+    contents: read
 
-        # This gives the action permission to update your gh-pages branch
+concurrency:
+    group: pages
+    cancel-in-progress: true
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
         permissions:
-            contents: write
+            contents: read
 
         steps:
-            - name: Checkout Code
-              uses: actions/checkout@v4
+            - name: Checkout source
+              uses: actions/checkout@v7.0.1
 
-            - name: Use Node.js 24
-              uses: actions/setup-node@v4
+            - name: Set up Node.js
+              uses: actions/setup-node@v7.1.0
               with:
                   node-version: 24
 
-            - name: Setup pnpm
-              uses: pnpm/action-setup@v6
+            - name: Set up pnpm
+              uses: pnpm/action-setup@v6.1.1
               with:
-                  version: 10
+                  version: 12.18.0
 
-            - name: Install Dependencies
+            - name: Install dependencies
               run: pnpm install --frozen-lockfile --config.only-built-dependencies=esbuild
 
+            - name: Build site
+              run: pnpm build
+
+            - name: Upload Pages artifact
+              uses: actions/upload-pages-artifact@v5
+              with:
+                  path: dist
+
+    deploy:
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        runs-on: ubuntu-latest
+        needs: build
+        permissions:
+            pages: write
+            id-token: write
+
+        steps:
             - name: Deploy to GitHub Pages
-              run: |
-                  git config --global user.name "github-actions[bot]"
-                  git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                  pnpm run deploy
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              id: deployment
+              uses: actions/deploy-pages@v5
